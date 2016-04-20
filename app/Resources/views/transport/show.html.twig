@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Transport</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ transport.id }}</td>
+            </tr>
+            <tr>
+                <th>Temperaturetransport</th>
+                <td>{{ transport.temperatureTransport }}</td>
+            </tr>
+            <tr>
+                <th>Delaitransport</th>
+                <td>{{ transport.delaiTransport }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('transport_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('transport_edit', { 'id': transport.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

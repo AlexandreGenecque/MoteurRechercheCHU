@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>FrequenceRealisation list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valeurfr</th>
+                <th>Precisionfr</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for frequenceRealisation in frequenceRealisations %}
+            <tr>
+                <td><a href="{{ path('frequencerealisation_show', { 'id': frequenceRealisation.id }) }}">{{ frequenceRealisation.id }}</a></td>
+                <td>{{ frequenceRealisation.valeurFR }}</td>
+                <td>{{ frequenceRealisation.precisionFR }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('frequencerealisation_show', { 'id': frequenceRealisation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('frequencerealisation_edit', { 'id': frequenceRealisation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('frequencerealisation_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

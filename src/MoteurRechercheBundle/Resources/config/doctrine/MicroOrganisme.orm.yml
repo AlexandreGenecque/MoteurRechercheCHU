@@ -1,0 +1,20 @@
+MoteurRechercheBundle\Entity\MicroOrganisme:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\MicroOrganismeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomMicroOrganisme:
+            type: string
+            length: 255
+    manyToMany:
+        analyse_microOrganisme:
+            targetEntity: Analyse
+            inversedBy: microOrganisme_analyse
+            cascade: [ persist ]
+    lifecycleCallbacks: {  }

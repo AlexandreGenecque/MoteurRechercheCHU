@@ -1,0 +1,24 @@
+natureprelevement_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:NaturePrelevement:index" }
+    methods:  GET
+
+natureprelevement_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:NaturePrelevement:show" }
+    methods:  GET
+
+natureprelevement_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:NaturePrelevement:new" }
+    methods:  [GET, POST]
+
+natureprelevement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:NaturePrelevement:edit" }
+    methods:  [GET, POST]
+
+natureprelevement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:NaturePrelevement:delete" }
+    methods:  DELETE

@@ -1,0 +1,24 @@
+MoteurRechercheBundle\Entity\NaturePrelevement:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\NaturePrelevementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomNaturePrelevement:
+            type: string
+            length: 255
+            nullable: true
+        precisionPrelevement:
+            type: string
+            length: '150'
+            nullable: true
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: naturePrelevement
+    lifecycleCallbacks: {  }

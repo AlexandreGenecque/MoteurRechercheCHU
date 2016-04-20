@@ -1,0 +1,24 @@
+MoteurRechercheBundle\Entity\NatureMatrice:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\NatureMatriceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        valeurMatrice:
+            type: string
+            length: 255
+            nullable: true
+        precisionMatrice:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: natureMatrice
+    lifecycleCallbacks: {  }

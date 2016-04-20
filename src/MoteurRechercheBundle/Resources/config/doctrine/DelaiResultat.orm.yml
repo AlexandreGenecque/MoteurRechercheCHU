@@ -1,0 +1,24 @@
+MoteurRechercheBundle\Entity\DelaiResultat:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\DelaiResultatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        valeurResultat:
+            type: string
+            length: 255
+            nullable: true
+        frequenceRealisation:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: delaiResultat
+    lifecycleCallbacks: {  }

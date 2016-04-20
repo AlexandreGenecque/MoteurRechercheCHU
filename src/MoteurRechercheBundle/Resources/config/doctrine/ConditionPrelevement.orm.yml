@@ -1,0 +1,24 @@
+MoteurRechercheBundle\Entity\ConditionPrelevement:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\ConditionPrelevementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        valeurCP:
+            type: string
+            length: 255
+            nullable: true
+        precisionCP:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: conditionPrelevement
+    lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ConservationAvantTransport list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valeurconservation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for conservationAvantTransport in conservationAvantTransports %}
+            <tr>
+                <td><a href="{{ path('conservationavanttransport_show', { 'id': conservationAvantTransport.id }) }}">{{ conservationAvantTransport.id }}</a></td>
+                <td>{{ conservationAvantTransport.valeurConservation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('conservationavanttransport_show', { 'id': conservationAvantTransport.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('conservationavanttransport_edit', { 'id': conservationAvantTransport.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('conservationavanttransport_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

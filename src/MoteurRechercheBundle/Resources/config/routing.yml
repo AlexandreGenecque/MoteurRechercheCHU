@@ -1,0 +1,59 @@
+moteur_recherche_analyse:
+    resource: "@MoteurRechercheBundle/Resources/config/routing/analyse.yml"
+    prefix:   /analyse
+
+moteur_recherche_conditionprelevement:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/conditionprelevement.yml"
+        prefix:   /conditionprelevement
+
+moteur_recherche_conservationavanttransport:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/conservationavanttransport.yml"
+        prefix:   /conservationavanttransport
+
+moteur_recherche_delairesultat:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/delairesultat.yml"
+        prefix:   /delairesultat
+
+moteur_recherche_ficheprescription:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/ficheprescription.yml"
+        prefix:   /ficheprescription
+
+moteur_recherche_laboratoire:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/laboratoire.yml"
+        prefix:   /laboratoire
+
+moteur_recherche_microorganisme:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/microorganisme.yml"
+        prefix:   /microorganisme
+
+moteur_recherche_naturematrice:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/naturematrice.yml"
+        prefix:   /naturematrice
+
+moteur_recherche_natureprelevement:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/natureprelevement.yml"
+        prefix:   /natureprelevement
+
+moteur_recherche_principemethode:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/principemethode.yml"
+        prefix:   /principemethode
+
+moteur_recherche_renseignementclinique:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/renseignementclinique.yml"
+        prefix:   /renseignementclinique
+
+moteur_recherche_secteur:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/secteur.yml"
+        prefix:   /secteur
+
+moteur_recherche_transport:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/transport.yml"
+        prefix:   /transport
+
+moteur_recherche_insertion:
+    path:     /insertion
+    defaults: { _controller: MoteurRechercheBundle:Default:jeuxInsertion }
+
+moteur_recherche_homepage:
+    path:     /
+    defaults: { _controller: MoteurRechercheBundle:Default:index }

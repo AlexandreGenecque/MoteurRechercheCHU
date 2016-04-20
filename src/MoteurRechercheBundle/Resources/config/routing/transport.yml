@@ -1,0 +1,24 @@
+transport_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:Transport:index" }
+    methods:  GET
+
+transport_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:Transport:show" }
+    methods:  GET
+
+transport_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:Transport:new" }
+    methods:  [GET, POST]
+
+transport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:Transport:edit" }
+    methods:  [GET, POST]
+
+transport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:Transport:delete" }
+    methods:  DELETE

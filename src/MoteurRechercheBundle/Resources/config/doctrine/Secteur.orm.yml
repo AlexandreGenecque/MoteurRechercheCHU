@@ -1,0 +1,21 @@
+MoteurRechercheBundle\Entity\Secteur:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\SecteurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomSecteur:
+            type: string
+            length: 255
+            nullable: true
+    manyToOne:
+        laboratoire:
+            targetEntity: Laboratoire
+            inversedBy: secteurs
+            cascade: [ persist ]	
+    lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>MicroOrganisme list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nommicroorganisme</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for microOrganisme in microOrganismes %}
+            <tr>
+                <td><a href="{{ path('microorganisme_show', { 'id': microOrganisme.id }) }}">{{ microOrganisme.id }}</a></td>
+                <td>{{ microOrganisme.nomMicroOrganisme }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('microorganisme_show', { 'id': microOrganisme.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('microorganisme_edit', { 'id': microOrganisme.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('microorganisme_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

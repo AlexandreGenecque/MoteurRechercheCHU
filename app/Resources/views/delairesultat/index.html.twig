@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>DelaiResultat list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valeurresultat</th>
+                <th>Frequencerealisation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for delaiResultat in delaiResultats %}
+            <tr>
+                <td><a href="{{ path('delairesultat_show', { 'id': delaiResultat.id }) }}">{{ delaiResultat.id }}</a></td>
+                <td>{{ delaiResultat.valeurResultat }}</td>
+                <td>{{ delaiResultat.frequenceRealisation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('delairesultat_show', { 'id': delaiResultat.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('delairesultat_edit', { 'id': delaiResultat.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('delairesultat_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ConditionPrelevement list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valeurcp</th>
+                <th>Precisioncp</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for conditionPrelevement in conditionPrelevements %}
+            <tr>
+                <td><a href="{{ path('conditionprelevement_show', { 'id': conditionPrelevement.id }) }}">{{ conditionPrelevement.id }}</a></td>
+                <td>{{ conditionPrelevement.valeurCP }}</td>
+                <td>{{ conditionPrelevement.precisionCP }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('conditionprelevement_show', { 'id': conditionPrelevement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('conditionprelevement_edit', { 'id': conditionPrelevement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('conditionprelevement_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

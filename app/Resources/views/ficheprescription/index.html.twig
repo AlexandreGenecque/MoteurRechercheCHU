@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>FichePrescription list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomficheprescription</th>
+                <th>Url</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fichePrescription in fichePrescriptions %}
+            <tr>
+                <td><a href="{{ path('ficheprescription_show', { 'id': fichePrescription.id }) }}">{{ fichePrescription.id }}</a></td>
+                <td>{{ fichePrescription.nomFichePrescription }}</td>
+                <td>{{ fichePrescription.url }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ficheprescription_show', { 'id': fichePrescription.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ficheprescription_edit', { 'id': fichePrescription.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ficheprescription_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

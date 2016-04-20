@@ -1,0 +1,24 @@
+delairesultat_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:DelaiResultat:index" }
+    methods:  GET
+
+delairesultat_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:DelaiResultat:show" }
+    methods:  GET
+
+delairesultat_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:DelaiResultat:new" }
+    methods:  [GET, POST]
+
+delairesultat_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:DelaiResultat:edit" }
+    methods:  [GET, POST]
+
+delairesultat_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:DelaiResultat:delete" }
+    methods:  DELETE

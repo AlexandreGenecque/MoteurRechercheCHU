@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>NatureMatrice list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valeurmatrice</th>
+                <th>Precisionmatrice</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for natureMatrice in natureMatrices %}
+            <tr>
+                <td><a href="{{ path('naturematrice_show', { 'id': natureMatrice.id }) }}">{{ natureMatrice.id }}</a></td>
+                <td>{{ natureMatrice.valeurMatrice }}</td>
+                <td>{{ natureMatrice.precisionMatrice }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('naturematrice_show', { 'id': natureMatrice.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('naturematrice_edit', { 'id': natureMatrice.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('naturematrice_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

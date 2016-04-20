@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Analyse list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomanalyse</th>
+                <th>Analyte</th>
+                <th>Natureanalyse</th>
+                <th>Volumeanalyse</th>
+                <th>Contenantanalyse</th>
+                <th>Volumecontenantanalyse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for analyse in analyses %}
+            <tr>
+                <td><a href="{{ path('analyse_show', { 'id': analyse.id }) }}">{{ analyse.id }}</a></td>
+                <td>{{ analyse.nomAnalyse }}</td>
+                <td>{{ analyse.analyte }}</td>
+                <td>{{ analyse.natureAnalyse }}</td>
+                <td>{{ analyse.volumeAnalyse }}</td>
+                <td>{{ analyse.contenantAnalyse }}</td>
+                <td>{{ analyse.volumeContenantAnalyse }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('analyse_show', { 'id': analyse.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('analyse_edit', { 'id': analyse.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('analyse_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

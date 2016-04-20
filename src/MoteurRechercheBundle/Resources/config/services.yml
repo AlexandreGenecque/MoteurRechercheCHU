@@ -1,0 +1,4 @@
+services:
+#    moteur_recherche.example:
+#        class: MoteurRechercheBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

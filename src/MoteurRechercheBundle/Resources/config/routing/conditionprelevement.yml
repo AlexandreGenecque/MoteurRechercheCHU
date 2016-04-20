@@ -1,0 +1,24 @@
+conditionprelevement_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:ConditionPrelevement:index" }
+    methods:  GET
+
+conditionprelevement_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:ConditionPrelevement:show" }
+    methods:  GET
+
+conditionprelevement_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:ConditionPrelevement:new" }
+    methods:  [GET, POST]
+
+conditionprelevement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:ConditionPrelevement:edit" }
+    methods:  [GET, POST]
+
+conditionprelevement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:ConditionPrelevement:delete" }
+    methods:  DELETE

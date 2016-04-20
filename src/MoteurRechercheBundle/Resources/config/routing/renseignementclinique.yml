@@ -1,0 +1,24 @@
+renseignementclinique_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:RenseignementClinique:index" }
+    methods:  GET
+
+renseignementclinique_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:RenseignementClinique:show" }
+    methods:  GET
+
+renseignementclinique_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:RenseignementClinique:new" }
+    methods:  [GET, POST]
+
+renseignementclinique_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:RenseignementClinique:edit" }
+    methods:  [GET, POST]
+
+renseignementclinique_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:RenseignementClinique:delete" }
+    methods:  DELETE

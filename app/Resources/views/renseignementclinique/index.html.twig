@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>RenseignementClinique list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valeurrc</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for renseignementClinique in renseignementCliniques %}
+            <tr>
+                <td><a href="{{ path('renseignementclinique_show', { 'id': renseignementClinique.id }) }}">{{ renseignementClinique.id }}</a></td>
+                <td>{{ renseignementClinique.valeurRC }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('renseignementclinique_show', { 'id': renseignementClinique.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('renseignementclinique_edit', { 'id': renseignementClinique.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('renseignementclinique_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

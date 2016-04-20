@@ -1,0 +1,24 @@
+naturematrice_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:NatureMatrice:index" }
+    methods:  GET
+
+naturematrice_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:NatureMatrice:show" }
+    methods:  GET
+
+naturematrice_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:NatureMatrice:new" }
+    methods:  [GET, POST]
+
+naturematrice_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:NatureMatrice:edit" }
+    methods:  [GET, POST]
+
+naturematrice_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:NatureMatrice:delete" }
+    methods:  DELETE

@@ -1,0 +1,24 @@
+ficheprescription_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:FichePrescription:index" }
+    methods:  GET
+
+ficheprescription_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:FichePrescription:show" }
+    methods:  GET
+
+ficheprescription_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:FichePrescription:new" }
+    methods:  [GET, POST]
+
+ficheprescription_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:FichePrescription:edit" }
+    methods:  [GET, POST]
+
+ficheprescription_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:FichePrescription:delete" }
+    methods:  DELETE

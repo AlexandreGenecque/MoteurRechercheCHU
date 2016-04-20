@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Analyse</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ analyse.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomanalyse</th>
+                <td>{{ analyse.nomAnalyse }}</td>
+            </tr>
+            <tr>
+                <th>Analyte</th>
+                <td>{{ analyse.analyte }}</td>
+            </tr>
+            <tr>
+                <th>Natureanalyse</th>
+                <td>{{ analyse.natureAnalyse }}</td>
+            </tr>
+            <tr>
+                <th>Volumeanalyse</th>
+                <td>{{ analyse.volumeAnalyse }}</td>
+            </tr>
+            <tr>
+                <th>Contenantanalyse</th>
+                <td>{{ analyse.contenantAnalyse }}</td>
+            </tr>
+            <tr>
+                <th>Volumecontenantanalyse</th>
+                <td>{{ analyse.volumeContenantAnalyse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('analyse_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('analyse_edit', { 'id': analyse.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

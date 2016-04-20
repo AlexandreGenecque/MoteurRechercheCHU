@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>NaturePrelevement</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ naturePrelevement.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomnatureprelevement</th>
+                <td>{{ naturePrelevement.nomNaturePrelevement }}</td>
+            </tr>
+            <tr>
+                <th>Precisionprelevement</th>
+                <td>{{ naturePrelevement.precisionPrelevement }}</td>
+            </tr>
+            <tr>
+                <th>Conservation</th>
+                <td>{{ naturePrelevement.conservation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('natureprelevement_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('natureprelevement_edit', { 'id': naturePrelevement.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

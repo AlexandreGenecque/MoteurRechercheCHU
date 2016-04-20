@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Laboratoire list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomlaboratoire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for laboratoire in laboratoires %}
+            <tr>
+                <td><a href="{{ path('laboratoire_show', { 'id': laboratoire.id }) }}">{{ laboratoire.id }}</a></td>
+                <td>{{ laboratoire.nomLaboratoire }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('laboratoire_show', { 'id': laboratoire.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('laboratoire_edit', { 'id': laboratoire.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('laboratoire_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

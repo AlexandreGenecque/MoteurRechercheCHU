@@ -1,0 +1,19 @@
+MoteurRechercheBundle\Entity\ConservationAvantTransport:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\ConservationAvantTransportRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        valeurConservation:
+            type: string
+            length: 255
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: conservationAvantTransport
+    lifecycleCallbacks: {  }

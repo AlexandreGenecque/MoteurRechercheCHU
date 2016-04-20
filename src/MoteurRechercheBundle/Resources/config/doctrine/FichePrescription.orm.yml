@@ -1,0 +1,23 @@
+MoteurRechercheBundle\Entity\FichePrescription:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\FichePrescriptionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomFichePrescription:
+            type: string
+            length: 255
+        url:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: fichePrescription
+    lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>PrincipeMethode list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomprincipemethode</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for principeMethode in principeMethodes %}
+            <tr>
+                <td><a href="{{ path('principemethode_show', { 'id': principeMethode.id }) }}">{{ principeMethode.id }}</a></td>
+                <td>{{ principeMethode.nomPrincipeMethode }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('principemethode_show', { 'id': principeMethode.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('principemethode_edit', { 'id': principeMethode.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('principemethode_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

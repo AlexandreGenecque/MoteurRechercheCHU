@@ -1,0 +1,24 @@
+MoteurRechercheBundle\Entity\Transport:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\TransportRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        temperatureTransport:
+            type: string
+            length: 255
+            nullable: true
+        delaiTransport:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany:
+        analyses:
+            targetEntity: Analyse
+            mappedBy: transport
+    lifecycleCallbacks: {  }

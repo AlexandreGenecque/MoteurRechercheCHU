@@ -1,0 +1,82 @@
+MoteurRechercheBundle\Entity\Analyse:
+    type: entity
+    table: null
+    repositoryClass: MoteurRechercheBundle\Repository\AnalyseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomAnalyse:
+            type: string
+            length: 255
+            unique: true
+        analyte:
+            type: string
+            length: 255
+            nullable: true
+        natureAnalyse:
+            type: string
+            length: 255
+            nullable: true
+        volumeAnalyse:
+            type: string
+            length: 255
+            nullable: true
+        contenantAnalyse:
+            type: string
+            length: 255
+            nullable: true
+        volumeContenantAnalyse:
+            type: string
+            length: 255
+            nullable: true
+    manyToMany:
+        microOrganisme_analyse:
+            targetEntity: MicroOrganisme
+            mappedBy : analyse_microOrganisme
+    manyToOne:
+        fichePrescription:
+            targetEntity: FichePrescription
+            inversedBy: analyses
+            cascade: [ persist ]
+        principeMethode:
+            targetEntity: PrincipeMethode
+            inversedBy: analyses
+            cascade: [ persist ]
+        naturePrelevement:
+            targetEntity: NaturePrelevement
+            inversedBy: analyses
+            cascade: [ persist ]
+        renseignementClinique:
+            targetEntity: RenseignementClinique
+            inversedBy: analyses
+            cascade: [ persist ]
+        delaiResultat:
+            targetEntity: DelaiResultat
+            inversedBy: analyses
+            cascade: [ persist ]
+        conservationAvantTransport:
+            targetEntity: ConservationAvantTransport
+            inversedBy: analyses
+            cascade: [ persist ]
+        natureMatrice:
+            targetEntity: NatureMatrice
+            inversedBy: analyses
+            cascade: [ persist ]
+        transport:
+            targetEntity: Transport
+            inversedBy: analyses
+            cascade: [ persist ]
+        conditionPrelevement:
+            targetEntity: ConditionPrelevement
+            inversedBy: analyses
+            cascade: [ persist ]
+        laboratoire:
+            targetEntity: Laboratoire
+            inversedBy: analyses
+            cascade: [ persist ]
+    lifecycleCallbacks: {  }
+

@@ -1,0 +1,24 @@
+conservationavanttransport_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:ConservationAvantTransport:index" }
+    methods:  GET
+
+conservationavanttransport_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:ConservationAvantTransport:show" }
+    methods:  GET
+
+conservationavanttransport_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:ConservationAvantTransport:new" }
+    methods:  [GET, POST]
+
+conservationavanttransport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:ConservationAvantTransport:edit" }
+    methods:  [GET, POST]
+
+conservationavanttransport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:ConservationAvantTransport:delete" }
+    methods:  DELETE

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>NaturePrelevement list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomnatureprelevement</th>
+                <th>Precisionprelevement</th>
+                <th>Conservation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for naturePrelevement in naturePrelevements %}
+            <tr>
+                <td><a href="{{ path('natureprelevement_show', { 'id': naturePrelevement.id }) }}">{{ naturePrelevement.id }}</a></td>
+                <td>{{ naturePrelevement.nomNaturePrelevement }}</td>
+                <td>{{ naturePrelevement.precisionPrelevement }}</td>
+                <td>{{ naturePrelevement.conservation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('natureprelevement_show', { 'id': naturePrelevement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('natureprelevement_edit', { 'id': naturePrelevement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('natureprelevement_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
