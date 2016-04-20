@@ -97,5 +97,10 @@ class RenseignementClinique
     {
         return $this->analyses;
     }
+
+        public function __toString()
+    {
+        return $this->valeurRC;
+    }
 }
 

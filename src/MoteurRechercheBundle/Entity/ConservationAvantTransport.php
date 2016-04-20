@@ -97,5 +97,10 @@ class ConservationAvantTransport
     {
         return $this->analyses;
     }
+
+        public function __toString()
+    {
+        return $this->valeurConservation;
+    }
 }
 

@@ -126,5 +126,10 @@ class Laboratoire
     {
         return $this->analyse;
     }
+
+        public function __toString()
+    {
+        return $this->nomLaboratoire;
+    }
 }
 

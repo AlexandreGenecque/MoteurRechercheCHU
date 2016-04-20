@@ -126,5 +126,10 @@ class NatureMatrice
     {
         return $this->analyses;
     }
+
+        public function __toString()
+    {
+        return $this->valeurMatrice;
+    }
 }
 

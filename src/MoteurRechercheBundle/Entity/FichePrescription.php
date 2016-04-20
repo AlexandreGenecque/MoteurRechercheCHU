@@ -126,5 +126,10 @@ class FichePrescription
     {
         return $this->analyses;
     }
+
+    public function __toString()
+    {
+        return $this->nomFichePrescription;
+    }
 }
 

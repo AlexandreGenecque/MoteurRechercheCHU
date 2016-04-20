@@ -97,5 +97,10 @@ class MicroOrganisme
     {
         return $this->analyse_microOrganisme;
     }
+
+    public function __toString()
+    {
+        return $this->nomMicroOrganisme;
+    }
 }
 

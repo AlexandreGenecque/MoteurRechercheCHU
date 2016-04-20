@@ -80,5 +80,10 @@ class Secteur
     {
         return $this->laboratoire;
     }
+
+    public function __toString()
+    {
+        return $this->nomSecteur;
+    }
 }
 

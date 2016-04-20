@@ -2,13 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+        <H1> Interface d'administration </H1>
+        
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+
+
         {% block footer %}{% endblock %}
     </body>
 </html>

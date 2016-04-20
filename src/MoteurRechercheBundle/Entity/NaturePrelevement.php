@@ -126,5 +126,10 @@ class NaturePrelevement
     {
         return $this->analyses;
     }
+
+    public function __toString()
+    {
+        return $this->nomNaturePrelevement;
+    }
 }
 

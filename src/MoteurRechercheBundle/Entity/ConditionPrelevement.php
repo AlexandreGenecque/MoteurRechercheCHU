@@ -126,5 +126,10 @@ class ConditionPrelevement
     {
         return $this->analyses;
     }
+
+    public function __toString()
+    {
+        return $this->valeurCP;
+    }
 }
 

@@ -126,5 +126,10 @@ class Transport
     {
         return $this->analyses;
     }
+
+        public function __toString()
+    {
+        return $this->temperatureTransport;
+    }
 }
 

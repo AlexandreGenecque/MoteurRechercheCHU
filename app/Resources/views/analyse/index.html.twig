@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
     <h1>Analyse list</h1>
@@ -7,13 +7,23 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nomanalyse</th>
+                <th>Nom analyse</th>
                 <th>Analyte</th>
-                <th>Natureanalyse</th>
-                <th>Volumeanalyse</th>
-                <th>Contenantanalyse</th>
-                <th>Volumecontenantanalyse</th>
+                <th>Nature analyse</th>
+                <th>Volume analyse</th>
+                <th>Contenant analyse</th>
+                <th>Volume contenant analyse</th>
+                <th>Laboratoire</th>
+                <th>Fiche prescription</th>
+                <th>Principe méthode</th>
+                <th>Nature prelevement</th>
+                <th>Renseignement clinique</th>
+                <th>Condition prelevement</th>
+                <th>Transport</th>
+                <th>Conservation</th>
+                <th>Delai résultat</th>
                 <th>Actions</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -26,6 +36,15 @@
                 <td>{{ analyse.volumeAnalyse }}</td>
                 <td>{{ analyse.contenantAnalyse }}</td>
                 <td>{{ analyse.volumeContenantAnalyse }}</td>
+                <td>{{ analyse.laboratoire }}</td>
+                <td>{{ analyse.fichePrescription }}</td>
+                <td>{{ analyse.principeMethode }}</td>
+                <td>{{ analyse.naturePrelevement }}</td>
+                <td>{{ analyse.renseignementClinique }}</td>
+                <td>{{ analyse.conditionPrelevement }}</td>
+                <td>{{ analyse.transport }}</td>
+                <td>{{ analyse.conservationAvantTransport }}</td>
+                <td>{{ analyse.delaiResultat }}</td>
                 <td>
                     <ul>
                         <li>
