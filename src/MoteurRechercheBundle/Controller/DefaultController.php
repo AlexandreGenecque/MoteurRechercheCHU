@@ -46,6 +46,10 @@ class DefaultController extends Controller
 
 
 			$conditionPrelevement1->setvaleurCP('Effectuer 2 ou 3 retournements doux du tube EDTA immédiatement après le prélèvement pour éviter la formation de coagulum');
+			$conditionPrelevement2->setvaleurCP('');
+			$conditionPrelevement3->setvaleurCP('');
+			$conditionPrelevement4->setvaleurCP('');
+			$conditionPrelevement1->setprecisionCP('');
 			$conditionPrelevement2->setprecisionCP('En cas de prélèvement sur Virocult : laisser l"écouvillon dans le milieu de transport.');
 			$conditionPrelevement3->setprecisionCP('Couper stérilement 2 fragments distaux de 2.5 cm');
 			$conditionPrelevement4->setprecisionCP('Les milieux de transport Chlamydia sont disponibles au laboratoire de Virologie. Ecouvillon : Le bâtonnet doit rester dans le tube de transport après le prélèvement de l"échantillon. Urine : Verser l"urine dans le tube de transport jusqu"à ce que le niveau de liquide atteigne la fenêtre de remplissage située sur l"étiquette du tube');
@@ -79,7 +83,15 @@ class DefaultController extends Controller
 			$natureMatrice2->setvaleurMatrice('Sérum');
 			$natureMatrice3->setvaleurMatrice('Urines');
 			$natureMatrice4->setvaleurMatrice('Liquide céphalo rachidien');
+			$natureMatrice5->setvaleurMatrice('');
+			$natureMatrice6->setvaleurMatrice('');
+			$natureMatrice7->setvaleurMatrice('');
+			$natureMatrice8->setvaleurMatrice('');
 
+			$natureMatrice1->setprecisionMatrice('');
+			$natureMatrice2->setprecisionMatrice('');
+			$natureMatrice3->setprecisionMatrice('');
+			$natureMatrice4->setprecisionMatrice('');
 			$natureMatrice5->setprecisionMatrice('Liquides divers : LCR, amniotique, LBA, Pleural, Péricarde, humeur acqueuse');
 			$natureMatrice6->setprecisionMatrice('Sécrétions naso pharyngées, Lavage broncho alvéolaire');
 			$natureMatrice7->setprecisionMatrice('Matériel');
@@ -137,7 +149,14 @@ class DefaultController extends Controller
 			$naturePrelevement2->setNomNaturePrelevement('Urines');
 			$naturePrelevement3->setNomNaturePrelevement('Matériel');
 			$naturePrelevement4->setNomNaturePrelevement('Liquide céphalo rachidien');
+			$naturePrelevement5->setNomNaturePrelevement('');
+			$naturePrelevement6->setNomNaturePrelevement('');
+			$naturePrelevement7->setNomNaturePrelevement('');
 
+			$naturePrelevement1->setPrecisionPrelevement('');
+			$naturePrelevement2->setPrecisionPrelevement('');
+			$naturePrelevement3->setPrecisionPrelevement('');
+			$naturePrelevement4->setPrecisionPrelevement('');
 			$naturePrelevement5->setPrecisionPrelevement('Biopsies et Liquides divers : LCR, amniotique, LBA, Pleural, Péricarde, humeur acqueuse');
 			$naturePrelevement6->setPrecisionPrelevement('Sécrétions naso pharyngées, Lavage broncho alvéolaire');
 			$naturePrelevement7->setPrecisionPrelevement('Prélevements endocervicaux et vaginaux, urétraux, urine, sperme, liquide divers');
