@@ -59,22 +59,22 @@ class RechercheIndexController extends Controller
         ));
         
         }
-
-    }
-
     public function ouvrirAnalyseSimpleAction($id)
     {
         $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
         $analyse = $em->find($id);
 
         if(! $analyse){
-            throw $this->createNotFoundException('Erreur : impossible de trouver l''analyse');
+            throw $this->createNotFoundException("Erreur : impossible de trouver l'analyse");
         }
 
         return $this->render('MoteurRechercheBundle:rechercheIndex:analyse_simple.html.twig', $analyse);
 
     }
 
-
-
 }
+
+
+
+
+
