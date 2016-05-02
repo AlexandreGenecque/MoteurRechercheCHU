@@ -7,10 +7,8 @@
 
         {% block stylesheets %}  
         {% endblock %}
-       <link rel="stylesheet" type="text/css" href="{{ asset('public/css/style.css') }}" media="all"/> 
-         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-
-   
+     <!--  <link href="{{ asset('bundles/acmedemo/css/contact.css') }}" type="script/javascript"  /> -->
+        <link href="{{ asset('MoteurRechercheBundle/Resources/public/css/style.css') }}" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <div id="content">
@@ -46,20 +44,21 @@
 </div>
 <div id="search_bar">
     <form action="{{ path('RechercheAction') }}" method="POST" >
-        <input type="text" name="test" placeholder="Recherche...">
+        <input id="btnRecherche" type="text" name="recherche" placeholder="Recherche...">
         <input type="submit" class="boutonval" value="Rechercher">
-        <button class="boutonval" value="RAZ">RAZ</button>
     </form>
+
+    <button class="boutonval" name="recherche" onclick="RAZvalue()">RAZ</button>
 </div>
 <div id="recherche_list">
-      <select>
+    <select id="selectLabo">
 	<option value="defaut">Laboratoire</option>
         <option value="a">Type a</option>
         <option value="b">Type b</option>
         <option value="c">Type c</option>
     </select>
-    <select>
-        <option value="a">Type a</option>
+    <select id="selectMicroOrg">
+        <option value="defaut">Micro Organisme</option>
         <option value="b">Type b</option>
         <option value="c">Type c</option>
     </select>

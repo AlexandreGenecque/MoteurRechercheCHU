@@ -38,25 +38,19 @@ class RechercheIndexController extends Controller
     {
         $recherche = new Analyse();
 
-        $saisie = $request->get('test');
+        $saisie = $request->get('recherche');
 
-            $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
+        $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
+        $resultat = $em->rechercheAnalyse($saisie);
 
-            // ajouter le param
-            $resultat = $em->rechercheAnalyse($saisie);
-
-            if(! $resultat){
-                return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
-            }
-           // return new Response('<html><body>ya des résultats</body></html>');
-             return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
-       // }
-            
-        return $this->render('MoteurRechercheBundle:Analyse:form_recherche.html.twig', array(
-            'form' => $form->createView(),
-        ));
-        
+        if(! $resultat)
+        {
+            return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
         }
+
+        return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+        
+    }
 
     public function ouvrirAnalyseSimpleAction($id)
     {
@@ -67,7 +61,7 @@ class RechercheIndexController extends Controller
             throw $this->createNotFoundException("Erreur : impossible de trouver l'analyse");
         }
 
-        return $this->render('MoteurRechercheBundle:rechercheIndex:analyse_simple.html.twig', $analyse);
+        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse));
 
     }
 
