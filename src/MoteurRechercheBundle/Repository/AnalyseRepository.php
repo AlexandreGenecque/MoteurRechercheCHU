@@ -10,4 +10,12 @@ namespace MoteurRechercheBundle\Repository;
  */
 class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function rechercheAnalyse($nomAnalyse){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')
+			->setParameter('nomAnalyse','%'.$nomAnalyse.'%');
+			
+		return $queryBuider->getQuery()->getResult();	
+	}
 }
