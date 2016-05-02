@@ -55,5 +55,5 @@ moteur_recherche_insertion:
     defaults: { _controller: MoteurRechercheBundle:Default:jeuxInsertion }
 
 moteur_recherche_homepage:
-    path:     /
-    defaults: { _controller: MoteurRechercheBundle:Default:index }
+        resource: "@MoteurRechercheBundle/Resources/config/routing/recherche.yml"
+        prefix:   /rechercheIndex

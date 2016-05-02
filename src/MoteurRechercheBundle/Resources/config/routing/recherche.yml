@@ -1,0 +1,4 @@
+rechercheIndex:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:index" }
+    methods:  GET
