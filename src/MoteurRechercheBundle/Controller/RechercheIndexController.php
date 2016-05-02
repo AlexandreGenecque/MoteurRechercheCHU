@@ -20,6 +20,7 @@ use MoteurRechercheBundle\Entity\Secteur;
 use MoteurRechercheBundle\Entity\Transport;
 
 
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Analyse controller.
@@ -33,25 +34,22 @@ class RechercheIndexController extends Controller
         return $this->render('rechercheIndex/index.html.twig');
     }
 
-    public function rechercheAction($saisie)
+    public function rechercheAction(Request $request)
     {
         $recherche = new Analyse();
 
-        //$form = $this->createFormeBuilder($recherche);
+        $saisie = $request->get('test');
 
-       // $form = handleRequest($request);
-
-       // if($form->isValid())
-       // {
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
 
             // ajouter le param
-            $resultat = $em->rechercheAnalyse(saisie);
+            $resultat = $em->rechercheAnalyse($saisie);
 
             if(! $resultat){
                 return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
             }
-             return $this->render('MoteurRechercheBundle:RechercheIndex:liste.html.twig', array('entities' => $resultat));
+           // return new Response('<html><body>ya des résultats</body></html>');
+             return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
        // }
             
         return $this->render('MoteurRechercheBundle:Analyse:form_recherche.html.twig', array(

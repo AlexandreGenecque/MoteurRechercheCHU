@@ -2,18 +2,17 @@
 
 {% block body %}
 
-
 <table class="records_list">
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>Prenom</th>
+                <th>Analyse</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for entity in resultat %}
             <tr>
-                <td> <a href="{{ path ('ouvrir_analyse_simple'), { 'id': entity.id }) }}" target="_blank" > {{ entity.nomAnalyse }} </a></td>
+                <td> <a href="{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}" target="_blank" > {{ entity.nomAnalyse }} </a></td>
                 <td>{{ entity.natureAnalyse }}</td>
             </tr>
         {% endfor %}

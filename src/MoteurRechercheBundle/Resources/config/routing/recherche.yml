@@ -3,6 +3,9 @@ rechercheIndex:
     defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:index" }
     methods:  GET
 RechercheAction:
-    path:     /{saisie}
+    path:     /
     defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:recherche" }
-    methods:  GET
+    methods:  POST
+ouvrir_analyse_simple:
+    path:     /affichageSimple/{id}
+    defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:ouvrirAnalyseSimple" }
