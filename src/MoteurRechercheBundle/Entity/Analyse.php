@@ -40,6 +40,11 @@ class Analyse
     /**
      * @var string
      */
+    private $urlTube;
+
+    /**
+     * @var string
+     */
     private $volumeContenantAnalyse;
 
     /**
@@ -532,6 +537,20 @@ class Analyse
     public function getMicroOrganismeAnalyse()
     {
         return $this->microOrganisme_analyse;
+    }
+
+
+    public function getUrlTube()
+    {
+        return $this->urlTube;
+    }
+
+
+    public function setUrlTube($url)
+    {
+        $this->urlTube = $url;
+
+        return $this;
     }
 
     // Test d'ajout

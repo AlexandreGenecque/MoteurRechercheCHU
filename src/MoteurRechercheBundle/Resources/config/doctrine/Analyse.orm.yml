@@ -33,6 +33,10 @@ MoteurRechercheBundle\Entity\Analyse:
             type: string
             length: 255
             nullable: true
+        urlTube:
+            type: string
+            length: 255
+            nullable: true
     manyToMany:
         microOrganisme_analyse:
             targetEntity: MicroOrganisme
