@@ -2,3 +2,7 @@ rechercheIndex:
     path:     /
     defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:index" }
     methods:  GET
+RechercheAction:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:recherche" }
+    methods:  GET
