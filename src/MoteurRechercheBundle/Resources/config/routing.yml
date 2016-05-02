@@ -57,3 +57,7 @@ moteur_recherche_insertion:
 moteur_recherche_homepage:
         resource: "@MoteurRechercheBundle/Resources/config/routing/recherche.yml"
         prefix:   /rechercheIndex
+
+ouvrir_recherche_simple:
+    path:     /affichageSimple/{id}
+    defaults: { _controller: MoteurRechercheBundle:RechercheIndex:ouvrirAnalyseSimple }

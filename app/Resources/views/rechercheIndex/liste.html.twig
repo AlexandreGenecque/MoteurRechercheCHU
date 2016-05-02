@@ -1,0 +1,23 @@
+{% extends '::index.html.twig' %}
+
+{% block body %}
+
+
+<table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td> <a href="{{ path ('ouvrir_analyse_simple'), { 'id': entity.id }) }}" target="_blank" > {{ entity.nomAnalyse }} </a></td>
+                <td>{{ entity.natureAnalyse }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}
