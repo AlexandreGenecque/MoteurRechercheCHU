@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8" />
+        <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
+
+        {% block stylesheets %}  
+        {% endblock %}
+       <link rel="stylesheet" type="text/css" href="{{ asset('public/css/style.css') }}" media="all"/> 
+         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+   
+</head>
+<body>
+<div id="content">
+    <img id="banner" src="./public/images/logo.png"height="100" width="100%">
+<div id="alpha">
+<input class="bouton" type="button"value="A">
+    <input class="bouton" type="button"value="B">
+    <input class="bouton" type="button"value="C">
+    <input class="bouton" type="button"value="D">
+    <input class="bouton" type="button"value="E">
+    <input class="bouton" type="button"value="F">
+    <input class="bouton" type="button"value="G">
+    <input class="bouton" type="button"value="H">
+    <input class="bouton" type="button"value="I">
+    <input class="bouton" type="button"value="J">
+    <input class="bouton" type="button"value="K">
+    <input class="bouton" type="button"value="L">
+    <input class="bouton" type="button"value="M">
+    <input class="bouton" type="button"value="N">
+    <input class="bouton" type="button"value="O">
+    <input class="bouton" type="button"value="P">
+    <input class="bouton" type="button"value="Q">
+    <input class="bouton" type="button"value="R">
+    <input class="bouton" type="button"value="S">
+    <input class="bouton" type="button"value="T">
+    <input class="bouton" type="button"value="U">
+    <input class="bouton" type="button"value="V">
+    <input class="bouton" type="button"value="W">
+    <input class="bouton" type="button"value="X">
+    <input class="bouton" type="button"value="Y">
+    <input class="bouton" type="button"value="Z">
+    <input class="bouton" type="button"value="0..9">
+</div>
+<div id="search_bar">
+    <input type="text" placeholder="Recherche..."> <button class="boutonval" value="Rechercher">Rechercher</button> <button class="boutonval" value="RAZ">RAZ</button>
+</div>
+<div id="recherche_list">
+      <select>
+	<option value="defaut">Laboratoire</option>
+        <option value="a">Type a</option>
+        <option value="b">Type b</option>
+        <option value="c">Type c</option>
+    </select>
+    <select>
+        <option value="a">Type a</option>
+        <option value="b">Type b</option>
+        <option value="c">Type c</option>
+    </select>
+    <input class="boutonval" type="button" value="Rechercher">
+</div>
+</div>
+<div id="resultat">
+    <p>Analyse de ouf --- Premier test de témort de ouf --- <a href="http://www.google.com" target="_blank">Fiche</a></p>
+</div>
+</body>
+<footer id="foot">
+    <a href="javascript:window.print()"><img src="public/images/imprimer.png" width="36"></a>
+</footer>
+</html>

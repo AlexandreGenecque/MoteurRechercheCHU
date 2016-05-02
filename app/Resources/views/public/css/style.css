@@ -1,0 +1,59 @@
+body {
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white,white,deepskyblue,blue); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white,white,deepskyblue,blue); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white,white,deepskyblue,blue); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white,white,deepskyblue,blue); /* Standard syntax (must be last) */
+}
+#alpha{
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 30%;
+    width: 100%;
+}
+.bouton{
+    border-color: darkblue;
+    font-size: large;
+    font-style: italic;
+    border-radius: 30%;
+    background-color: gold;
+    width: auto;
+    font-family: Calibri;
+}
+#search_bar{
+    margin-top: 10px;
+    text-align: center;
+}
+#recherche_list{
+    text-align: center;
+}
+.boutonval{
+    background-color: gold;
+}
+#foot{
+    margin-top: 30%;
+    text-align: center;
+}
+#banner{
+    text-align: center;
+}
+#resultat{
+    width: 100%;
+    margin-top: 5px;
+    background-color: white;
+    border-color: darkgoldenrod;
+    border: double 3px;
+    text-align: center;
+}
+select{
+    margin-top: 10px;
+    left:4px;
+    top:215px;
+    width:218px;
+    height:30px;
+    z-index:1;
+}
+#content{
+    border: double 2px gold;
+
+}
