@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="content">
-    <img id="banner" src="./public/images/logo.png"height="100" width="100%">
+    <img id="banner" src="./public/images/logo.png"height="100" width="100%" alt="Banner">
 <div id="alpha">
     <input class="bouton" type="button"value="A">
     <input class="bouton" type="button"value="B">
@@ -47,9 +47,9 @@
 <div id="search_bar">
     <form action="{{ path('RechercheAction') }}" method="GET" >
         <input type="text" placeholder="Recherche...">
-        <input type="submit" class="boutonval" value="Rechercher">Rechercher</input>
+        <input type="submit" class="boutonval" value="Rechercher">
         <button class="boutonval" value="RAZ">RAZ</button>
-        </form>
+    </form>
 </div>
 <div id="recherche_list">
       <select>
@@ -67,10 +67,9 @@
 </div>
 </div>
 <div id="resultat">
-    <p>Analyse de ouf --- Premier test de témort de ouf --- <a href="http://www.google.com" target="_blank">Fiche</a></p>
 </div>
 </body>
 <footer id="foot">
-    <a href="javascript:window.print()"><img src="public/images/imprimer.png" width="36"></a>
+    <a href="javascript:window.print()"><img src="public/images/imprimer.png" alt="Imprimer" width="36"></a>
 </footer>
 </html>
