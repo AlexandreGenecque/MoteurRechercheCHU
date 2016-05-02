@@ -33,26 +33,26 @@ class RechercheIndexController extends Controller
         return $this->render('rechercheIndex/index.html.twig');
     }
 
-    public function rechercheAction(Request $request)
+    public function rechercheAction($saisie)
     {
         $recherche = new Analyse();
 
         //$form = $this->createFormeBuilder($recherche);
 
-        $form = handleRequest($request);
+       // $form = handleRequest($request);
 
-        if($form->isValid())
-        {
+       // if($form->isValid())
+       // {
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
 
             // ajouter le param
-            $resultat = $em->rechercheAnalyse();
+            $resultat = $em->rechercheAnalyse(saisie);
 
             if(! $resultat){
                 return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
             }
              return $this->render('MoteurRechercheBundle:RechercheIndex:liste.html.twig', array('entities' => $resultat));
-        }
+       // }
             
         return $this->render('MoteurRechercheBundle:Analyse:form_recherche.html.twig', array(
             'form' => $form->createView(),
