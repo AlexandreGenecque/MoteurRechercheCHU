@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+
+<table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom Analyse</th>
+                <th>Description Analyse</th>
+                <th>Laboratoire</th>
+                <th>Acheminement au laboratoire</th>
+                <th>Température transport</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{ analyse.nomAnalyse }}</td>
+                <td>{{ analyse.natureAnalyse }}</td>
+                <td> {{ analyse.getLaboratoire().nomLaboratoire }}</td>
+                <!--<td> {{ analyse.urltube }}</td> -->
+                <td>{{ analyse.getTransport().delaiTransport }}</td>
+                <td>{{ analyse.getTransport().temperatureTransport }}</td>
+            </tr>
+
+        </tbody>
+</table>
+
+{% endblock %}
