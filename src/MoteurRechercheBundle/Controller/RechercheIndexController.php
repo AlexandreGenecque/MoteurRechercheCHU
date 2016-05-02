@@ -67,16 +67,11 @@ class RechercheIndexController extends Controller
 
         if(! $analyse){
             throw $this->createNotFoundException("Erreur : impossible de trouver l'analyse");
-
-            throw $this->createNotFoundException('Erreur : impossible de trouver analyse');
-
         }
 
         return $this->render('MoteurRechercheBundle:rechercheIndex:analyse_simple.html.twig', $analyse);
 
     }
-
-}
 
 }
 
