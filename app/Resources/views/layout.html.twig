@@ -3,8 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+       {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/*' %}
+
+       {% image '@MoteurRechercheBundle/Resources/public/images/logo.png' %}
+            <img src="{{ asset_url }}" alt="Example" />
+        {% endimage %}
+
+       {% endstylesheets %}
+
+
+
+        <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
     </head>
     <body>
 
