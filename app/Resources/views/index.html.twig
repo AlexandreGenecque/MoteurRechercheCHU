@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
+    {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/style.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% image '@MoteurRechercheBundle/Resources/public/images/logo.png' %}
+    <img src="{{ asset_url }}" alt="Example" height="100" width="100%" />
+    {% endimage %}
 
-<meta charset="UTF-8" />
-        <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
+    {% endstylesheets %}
 
 
-{% block stylesheets %}
-    <link href="{{ asset('MoteurRechercheBundle/Resources/public/css/style.css') }}" type="text/css" rel="stylesheet"/>
-{% endblock %}
-     <!--  <link href="{{ asset('bundles/acmedemo/css/contact.css') }}" type="script/javascript"  /> -->
 
+    <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
 </head>
 <body>
 <div id="content">
-    <img id="banner" src="{{ asset('MoteurRechercheBundle/Resources/public/images/logo.png') }}" height="100" width="100%" alt="Banner">
 <div id="alpha">
     <input class="bouton" type="button"value="A">
     <input class="bouton" type="button"value="B">
