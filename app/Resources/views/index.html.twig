@@ -3,78 +3,81 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
-    {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/style.css' %}
+    {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/bootstrap.css''@MoteurRechercheBundle/Resources/public/css/style.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
     {% image '@MoteurRechercheBundle/Resources/public/images/logo.png' %}
     <img src="{{ asset_url }}" alt="Example" height="100" width="100%" />
     {% endimage %}
-
-    {% endstylesheets %}
-
-
-
-    <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
 </head>
 <body>
-<div id="content">
-<div id="alpha">
-    <input class="bouton" type="button"value="A">
-    <input class="bouton" type="button"value="B">
-    <input class="bouton" type="button"value="C">
-    <input class="bouton" type="button"value="D">
-    <input class="bouton" type="button"value="E">
-    <input class="bouton" type="button"value="F">
-    <input class="bouton" type="button"value="G">
-    <input class="bouton" type="button"value="H">
-    <input class="bouton" type="button"value="I">
-    <input class="bouton" type="button"value="J">
-    <input class="bouton" type="button"value="K">
-    <input class="bouton" type="button"value="L">
-    <input class="bouton" type="button"value="M">
-    <input class="bouton" type="button"value="N">
-    <input class="bouton" type="button"value="O">
-    <input class="bouton" type="button"value="P">
-    <input class="bouton" type="button"value="Q">
-    <input class="bouton" type="button"value="R">
-    <input class="bouton" type="button"value="S">
-    <input class="bouton" type="button"value="T">
-    <input class="bouton" type="button"value="U">
-    <input class="bouton" type="button"value="V">
-    <input class="bouton" type="button"value="W">
-    <input class="bouton" type="button"value="X">
-    <input class="bouton" type="button"value="Y">
-    <input class="bouton" type="button"value="Z">
-    <input class="bouton" type="button"value="0..9">
+<div id="alpha" class="btn-group btn-group-justified" >
+    <input class="btn btn-primary " type="button"value="A">
+    <input class="btn btn-primary" type="button"value="B">
+    <input class="btn btn-primary" type="button"value="C">
+    <input class="btn btn-primary" type="button"value="D">
+    <input class="btn btn-primary" type="button"value="E">
+    <input class="btn btn-primary" type="button"value="F">
+    <input class="btn btn-primary" type="button"value="G">
+    <input class="btn btn-primary" type="button"value="H">
+    <input class="btn btn-primary" type="button"value="I">
+    <input class="btn btn-primary" type="button"value="J">
+    <input class="btn btn-primary" type="button"value="K">
+    <input class="btn btn-primary" type="button"value="L">
+    <input class="btn btn-primary" type="button"value="M">
+    <input class="btn btn-primary" type="button"value="N">
+    <input class="btn btn-primary" type="button"value="O">
+    <input class="btn btn-primary" type="button"value="P">
+    <input class="btn btn-primary" type="button"value="Q">
+    <input class="btn btn-primary" type="button"value="R">
+    <input class="btn btn-primary" type="button"value="S">
+    <input class="btn btn-primary" type="button"value="T">
+    <input class="btn btn-primary" type="button"value="U">
+    <input class="btn btn-primary" type="button"value="V">
+    <input class="btn btn-primary" type="button"value="W">
+    <input class="btn btn-primary" type="button"value="X">
+    <input class="btn btn-primary" type="button"value="Y">
+    <input class="btn btn-primary" type="button"value="Z">
+    <input class="btn btn-warning " type="button"value="0">
+    <input class="btn btn-warning" type="button"value="1">
+    <input class="btn btn-warning" type="button"value="2">
+    <input class="btn btn-warning" type="button"value="3">
+    <input class="btn btn-warning" type="button"value="4">
+    <input class="btn btn-warning" type="button"value="5">
+    <input class="btn btn-warning" type="button"value="6">
+    <input class="btn btn-warning" type="button"value="7">
+    <input class="btn btn-warning" type="button"value="8">
+    <input class="btn btn-warning" type="button"value="9">
 </div>
-<div id="search_bar">
-    <form action="{{ path('RechercheAction') }}" method="POST" >
-        <input id="btnRecherche" type="text" name="recherche" placeholder="Recherche...">
-        <input type="submit" class="boutonval" value="Rechercher">
+<div id="search_bar" class="form-inline">
+    <form action="{{ path('RechercheAction')}}" method="POST">
+        <input class="form-control" id="select"type="text" name="recherche" placeholder="Recherche...">
+        <input type="submit" class="btn btn-primary" value="Rechercher">
+        <button class="btn btn-primary" name="recherche" onclick="RAZvalue()">RAZ</button>
     </form>
-
-    <button class="boutonval" name="recherche" onclick="RAZvalue()">RAZ</button>
 </div>
-<div id="recherche_list">
-    <select id="selectLabo">
+<div id="recherche_list" class="form-inline">
+    <select id="selectLabo" class="form-control">
 	<option value="defaut">Laboratoire</option>
         <option value="a">Type a</option>
         <option value="b">Type b</option>
         <option value="c">Type c</option>
     </select>
-    <select id="selectMicroOrg">
+    <select id="selectMicroOrg" class="form-control">
         <option value="defaut">Micro Organisme</option>
         <option value="b">Type b</option>
         <option value="c">Type c</option>
     </select>
-    <input class="boutonval" type="button" value="Rechercher">
-</div>
-</div>
-<div id="resultat">
+    <input class="btn btn-primary" type="button" value="Rechercher">
 </div>
 {% block body %}
 {% endblock %}
 </body>
 <footer id="foot">
-    <a href="javascript:window.print()"><img src="public/images/imprimer.png" alt="Imprimer" width="36"></a>
+    <a href="javascript:window.print()">
+        {% image '@MoteurRechercheBundle/Resources/public/images/imprimer.png' %}
+        <img src="{{ asset_url }}" alt="Imprimer" width="36" />
+        {% endimage %}
+    </a>
 </footer>
 </html>
