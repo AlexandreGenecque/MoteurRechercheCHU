@@ -40,16 +40,20 @@ class RechercheIndexController extends Controller
 
         $saisie = $request->get('recherche');
 
-        $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
-        $resultat = $em->rechercheAnalyse($saisie);
-
-        if(! $resultat)
+        if ($saisie != "")
         {
-            return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
-        }
+            $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
+            $resultat = $em->rechercheAnalyse($saisie);
 
-        return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+            if(! $resultat)
+            {
+                return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
+            }
+
+            return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+        }
         
+        return $this->render('rechercheIndex/index.html.twig');
     }
 
     public function ouvrirAnalyseSimpleAction($id)
