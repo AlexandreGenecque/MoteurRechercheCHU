@@ -23,6 +23,8 @@ body {
 #search_bar{
     margin-top: 10px;
     text-align: center;
+    width: 50%;
+    margin-left: 25%;
 }
 #recherche_list{
     text-align: center;
@@ -58,5 +60,14 @@ select{
 
 }
 #esp{
- margin-top: 10px;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
+}
+#Rsize{
+    width: 50%;
+    margin-left: 25%;
+}
+#champs{
+    margin-bottom: 10px;
 }
