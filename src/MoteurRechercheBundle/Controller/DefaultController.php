@@ -768,4 +768,10 @@ class DefaultController extends Controller
 		
 		}
 
+		public function administrationAction()
+    {
+        return $this->render('default/administration.html.twig');
+    }
+
+
 }
