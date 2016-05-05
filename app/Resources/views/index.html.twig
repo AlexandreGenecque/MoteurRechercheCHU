@@ -6,13 +6,17 @@
     {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/bootstrap.css''@MoteurRechercheBundle/Resources/public/css/style.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
-    {% image '@MoteurRechercheBundle/Resources/public/images/logo.png' %}
-    <img src="{{ asset_url }}" alt="Example" height="100" width="100%" />
-    {% endimage %}
+
 </head>
 <body>
-<div id="alpha" class="btn-group " >
-    <input class="btn btn-primary " type="button"value="A">
+<div id="mainContainer">
+
+        {% image '@MoteurRechercheBundle/Resources/public/images/logo.png' %}
+    <img id="logoCHU" src="{{ asset_url }}" alt="Example" height="100" width="100%" />
+    {% endimage %}
+
+<div id="clavier" class="btn-group " >
+    <input class="btn btn-primary" type="button"value="A">
     <input class="btn btn-primary" type="button"value="B">
     <input class="btn btn-primary" type="button"value="C">
     <input class="btn btn-primary" type="button"value="D">
@@ -49,28 +53,32 @@
     <input class="btn btn-warning" type="button"value="8">
     <input class="btn btn-warning" type="button"value="9">
 </div>
-<div id="search_bar">
-    <div  id="champs" class="form-inline ">
-        <select id="selectLabo" class="form-control" style="width:100%">
+
+<div id="zoneRecherche">
+    <form  class="form-horizontal" action="{{ path('RechercheAction')}}" method="POST">
+        <input class="form-control" id="zoneLibre"type="text" name="recherche" placeholder="Recherche...">
+
+        <select id="selectLabo" class="form-control">
             <option value="defaut">Laboratoire</option>
             <option value="a">Type a</option>
             <option value="b">Type b</option>
             <option value="c">Type c</option>
         </select>
-        <select id="selectMicroOrg" class="form-control" style="width:100%" >
+        <select id="selectMicroOrg" class="form-control">
             <option value="defaut">Micro Organisme</option>
             <option value="b">Type b</option>
             <option value="c">Type c</option>
         </select>
-    </div>
-    <form  class="form-horizontal" action="{{ path('RechercheAction')}}" method="POST">
-        <input class="form-control" id="select"type="text" name="recherche" placeholder="Recherche...">
-        <input type="submit" class="btn btn-success" style="margin-top: 5px" value="Rechercher">
-        <button class="btn btn-danger " style="margin-top: 5px" name="recherche" onclick="RAZvalue()">RAZ</button>
-    </form>
+        <br />
+        <input type="submit" class="btn btn-success" value="Rechercher">
+        <button class="btn btn-danger" name="recherche" onclick="RAZvalue()">RAZ</button>
+    </form> 
 </div>
+
 {% block body %}
 {% endblock %}
+
+</div>
 </body>
 <footer id="foot">
     <a href="javascript:window.print()">

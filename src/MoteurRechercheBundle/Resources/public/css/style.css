@@ -1,37 +1,68 @@
 body {
-    background: white; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white,white,deepskyblue,blue); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white,white,deepskyblue,blue); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white,white,deepskyblue,blue); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white,white,deepskyblue,blue); /* Standard syntax (must be last) */
+background-image:
+    linear-gradient(
+      to right, 
+      #d9edf7,
+      white 12.5%,
+      white 87.5%,
+      #d9edf7 96%
+    );
 }
-#alpha{
-    margin-top: 25px;
+
+#mainContainer
+{
+    width:70%;
+    margin:auto;
+    background-color: white;
+}
+
+#clavier{
+    margin-top: 50px;
     text-align: center;
     border-radius: 30%;
     width: 100%;
 }
-.bouton{
-    border-color: darkblue;
-    font-size: large;
-    font-style: italic;
-    border-radius: 30%;
-    background-color: gold;
-    width: auto;
-    font-family: Calibri;
+#clavier .btn{
+    border-radius: 15%;
+    width: 35px;
+    margin:10px;
+    text-align:center;
+    font-size:12px;
 }
-#search_bar{
-    margin-top: 10px;
+#zoneRecherche{
+    margin-top: 25px;
     text-align: center;
     width: 50%;
     margin-left: 25%;
 }
-#recherche_list{
-    text-align: center;
+
+#zoneRecherche select{
+    display: inline-block;
+    width:150px;
+    margin:10px;
 }
-.boutonval{
-    background-color: gold;
+
+#zoneRecherche .btn{
+    width:100px;
+    margin:5px;
 }
+
+#zoneResultat{
+    margin-top:50px;
+}
+
+.resultat{
+    margin-bottom:15px;
+}
+
+.titreResultat{
+    font-size: 16px;
+}
+
+.descriptionResultat{
+    font-size: 14px;
+}
+
 #foot{
     margin-top: 30%;
     text-align: center;
@@ -47,27 +78,4 @@ body {
     border: double 3px;
     text-align: center;
 }
-select{
-    margin-top: 10px;
-    left:4px;
-    top:215px;
-    width:218px;
-    height:30px;
-    z-index:1;
-}
-#content{
-    border: double 2px gold;
 
-}
-#esp{
-    margin-top: 10px;
-    width: 80%;
-    margin-left: 10%;
-}
-#Rsize{
-    width: 50%;
-    margin-left: 25%;
-}
-#champs{
-    margin-bottom: 10px;
-}
