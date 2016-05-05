@@ -12,13 +12,14 @@ background-image:
 #mainContainer
 {
     width:70%;
+    min-width: 800px;
     margin:auto;
     background-color: white;
 }
 
 #clavier{
     margin-top: 50px;
-    margin-left:12.5%;
+    margin-left:120px;
     text-align: center;
     border-radius: 30%;
     width: 700px;
