@@ -40,7 +40,7 @@ class RechercheIndexController extends Controller
 
         $saisie = $request->get('recherche');
 
-        if ($saisie != "")
+        if ($saisie != "" && ! ctype_space($saisie))
         {
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
             $resultat = $em->rechercheAnalyse($saisie);
