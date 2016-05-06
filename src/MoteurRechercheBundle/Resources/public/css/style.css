@@ -27,7 +27,7 @@ background-image:
     margin-top:5%;
 }
 #clavier .btn-primary{
-    border-radius: 15%;
+    border-radius: 5px;
     width: 35px;
     margin:1%;
     text-align:center;
@@ -35,7 +35,7 @@ background-image:
 }
 
 #bouttonChiffre{
-    border-radius: 35%;
+    border-radius: 10px;
     width: 50px;
     margin:1%;
     text-align:center;
