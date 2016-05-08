@@ -1,13 +1,15 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+    <div style="text-align: center">
+        <h2 style="color: #0088CC">{{ analyse.nomAnalyse }}</h2>
+        <p><i>{{ analyse.natureAnalyse }}</i></p>
+
+    </div>
 
     <table id="fiche">
     <tr>
     <td style="width: 70%"><div>
-            <h4><u>Nom Analyse</u> : {{ analyse.nomAnalyse }}</h4>
-            <br><h4><u>Description Analyse</u> :</h4>
-            <p>{{ analyse.natureAnalyse }}</p>
             <br><h4><u>Laboratoire</u>: {{analyse.getLaboratoire().nomLaboratoire }}</h4>
             <br><h4><u>Acheminement au laboratoire</u> : {{ analyse.getTransport().delaiTransport }}</h4>
             <br><h4><u>Température de transport</u> : {{ analyse.getTransport().temperatureTransport }}</h4>
