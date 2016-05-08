@@ -2,13 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
+        {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/bootstrap.css''@MoteurRechercheBundle/Resources/public/css/style.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% image '@MoteurRechercheBundle/Resources/public/images/banner.png' %}
+        <img id="logoCHU" src="{{ asset_url }}" alt="Example" height="100" width="100%" />
+        {% endimage %}
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-        {% block footer %}{% endblock %}
+        {% block footer %}
+            <footer id="foot">
+            <a href="javascript:window.print()">
+                {% image '@MoteurRechercheBundle/Resources/public/images/imprimer.png' %}
+                <img src="{{ asset_url }}" alt="Imprimer" width="36" />
+                {% endimage %}
+            </a>
+            </footer>{% endblock %}
     </body>
 </html>

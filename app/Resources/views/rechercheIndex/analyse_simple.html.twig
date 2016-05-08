@@ -2,28 +2,20 @@
 
 {% block body %}
 
-
-<table class="records_list">
-        <thead>
-            <tr>
-                <th>Nom Analyse</th>
-                <th>Description Analyse</th>
-                <th>Laboratoire</th>
-                <th>Acheminement au laboratoire</th>
-                <th>Température transport</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> {{ analyse.nomAnalyse }}</td>
-                <td>{{ analyse.natureAnalyse }}</td>
-                <td> {{ analyse.getLaboratoire().nomLaboratoire }}</td>
-                <!--<td> {{ analyse.urltube }}</td> -->
-                <td>{{ analyse.getTransport().delaiTransport }}</td>
-                <td>{{ analyse.getTransport().temperatureTransport }}</td>
-            </tr>
-
-        </tbody>
-</table>
+    <table id="fiche">
+    <tr>
+    <td style="width: 70%"><div>
+            <h4><u>Nom Analyse</u> : {{ analyse.nomAnalyse }}</h4>
+            <br><h4><u>Description Analyse</u> :</h4>
+            <p>{{ analyse.natureAnalyse }}</p>
+            <br><h4><u>Laboratoire</u>: {{analyse.getLaboratoire().nomLaboratoire }}</h4>
+            <br><h4><u>Acheminement au laboratoire</u> : {{ analyse.getTransport().delaiTransport }}</h4>
+            <br><h4><u>Température de transport</u> : {{ analyse.getTransport().temperatureTransport }}</h4>
+        </div></td>
+    <td>  {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
+        <img id="fiole" src="{{ asset_url }}" alt="Example"/>
+        {% endimage %}</td>
+    </tr>
+    </table>
 
 {% endblock %}
