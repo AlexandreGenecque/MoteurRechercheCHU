@@ -87,4 +87,11 @@
         {% endimage %}
     </a>
 </footer>
+{% block javascripts %}
+<SCRIPT langage="Javascript">
+    function ouvre(fichier) {
+    ff=window.open(fichier,"popup",
+    "width=700,height=600,left=150,top=85") }
+</script>
+{% endblock %}
 </html>

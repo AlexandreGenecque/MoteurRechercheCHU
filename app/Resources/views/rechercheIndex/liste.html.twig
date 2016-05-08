@@ -5,7 +5,7 @@
         {% for entity in resultat %}
                 <div class="resultat">
                     <div class="titreResultat">
-                <a href="{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}" target="_blank" > {{ entity.nomAnalyse }} </a>
+                <a onclick="ouvre('{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}')" target="_blank" > {{ entity.nomAnalyse }} </a>
                     </div>
                     <div class="descriptionResultat">
                 {{ entity.natureAnalyse }}
