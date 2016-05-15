@@ -17,7 +17,7 @@ class TransportType extends AbstractType
         $builder
             ->add('temperatureTransport')
             ->add('delaiTransport')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>NaturePrelevement</h1>
+    <h1>Nature Prélévement</h1>
 
     <table>
         <tbody>
@@ -10,30 +10,26 @@
                 <td>{{ naturePrelevement.id }}</td>
             </tr>
             <tr>
-                <th>Nomnatureprelevement</th>
+                <th>Nom nature prélévement</th>
                 <td>{{ naturePrelevement.nomNaturePrelevement }}</td>
             </tr>
             <tr>
-                <th>Precisionprelevement</th>
+                <th>Precision prélévement</th>
                 <td>{{ naturePrelevement.precisionPrelevement }}</td>
-            </tr>
-            <tr>
-                <th>Conservation</th>
-                <td>{{ naturePrelevement.conservation }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('natureprelevement_index') }}">Back to the list</a>
+            <a href="{{ path('natureprelevement_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('natureprelevement_edit', { 'id': naturePrelevement.id }) }}">Edit</a>
+            <a href="{{ path('natureprelevement_edit', { 'id': naturePrelevement.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

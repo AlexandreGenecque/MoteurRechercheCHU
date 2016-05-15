@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>NatureMatrice list</h1>
+    <h1>Liste Nature Matrice</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Valeurmatrice</th>
-                <th>Precisionmatrice</th>
+                <th>Valeur matrice</th>
+                <th>Precision matrice</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('naturematrice_show', { 'id': natureMatrice.id }) }}">show</a>
+                            <a href="{{ path('naturematrice_show', { 'id': natureMatrice.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('naturematrice_edit', { 'id': natureMatrice.id }) }}">edit</a>
+                            <a href="{{ path('naturematrice_edit', { 'id': natureMatrice.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('naturematrice_new') }}">Create a new entry</a>
+            <a href="{{ path('naturematrice_new') }}">Créer une nouvelle entrée</a>
+        </li>
+        <li>
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
         </li>
     </ul>
 {% endblock %}

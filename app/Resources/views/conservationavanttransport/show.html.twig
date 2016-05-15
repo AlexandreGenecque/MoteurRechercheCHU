@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>ConservationAvantTransport</h1>
+    <h1>Conservation Avant Transport</h1>
 
     <table>
         <tbody>
@@ -18,14 +18,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('conservationavanttransport_index') }}">Back to the list</a>
+            <a href="{{ path('conservationavanttransport_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('conservationavanttransport_edit', { 'id': conservationAvantTransport.id }) }}">Edit</a>
+            <a href="{{ path('conservationavanttransport_edit', { 'id': conservationAvantTransport.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

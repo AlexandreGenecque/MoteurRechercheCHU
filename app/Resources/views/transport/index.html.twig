@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Transport list</h1>
+    <h1>Liste Transport</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Temperaturetransport</th>
-                <th>Delaitransport</th>
+                <th>Temperature transport</th>
+                <th>Delai transport</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('transport_show', { 'id': transport.id }) }}">show</a>
+                            <a href="{{ path('transport_show', { 'id': transport.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('transport_edit', { 'id': transport.id }) }}">edit</a>
+                            <a href="{{ path('transport_edit', { 'id': transport.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('transport_new') }}">Create a new entry</a>
+            <a href="{{ path('transport_new') }}">Créer une nouvelle entrée</a>
+        </li>
+        <li>
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
         </li>
     </ul>
 {% endblock %}

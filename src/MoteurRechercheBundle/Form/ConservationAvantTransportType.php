@@ -16,7 +16,7 @@ class ConservationAvantTransportType extends AbstractType
     {
         $builder
             ->add('valeurConservation')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>PrincipeMethode</h1>
+    <h1>Principe Méthode</h1>
 
     <table>
         <tbody>
@@ -10,7 +10,7 @@
                 <td>{{ principeMethode.id }}</td>
             </tr>
             <tr>
-                <th>Nomprincipemethode</th>
+                <th>Nom de la Principe Méthode</th>
                 <td>{{ principeMethode.nomPrincipeMethode }}</td>
             </tr>
         </tbody>
@@ -18,14 +18,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('principemethode_index') }}">Back to the list</a>
+            <a href="{{ path('principemethode_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('principemethode_edit', { 'id': principeMethode.id }) }}">Edit</a>
+            <a href="{{ path('principemethode_edit', { 'id': principeMethode.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

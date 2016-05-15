@@ -17,7 +17,7 @@ class ConditionPrelevementType extends AbstractType
         $builder
             ->add('valeurCP')
             ->add('precisionCP')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

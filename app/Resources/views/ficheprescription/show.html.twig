@@ -10,11 +10,11 @@
                 <td>{{ fichePrescription.id }}</td>
             </tr>
             <tr>
-                <th>Nomficheprescription</th>
+                <th>Nom de la fiche de prescription</th>
                 <td>{{ fichePrescription.nomFichePrescription }}</td>
             </tr>
             <tr>
-                <th>Url</th>
+                <th>Url de la fiche</th>
                 <td>{{ fichePrescription.url }}</td>
             </tr>
         </tbody>
@@ -22,14 +22,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('ficheprescription_index') }}">Back to the list</a>
+            <a href="{{ path('ficheprescription_index') }}">Retour sur la liste des fiches</a>
         </li>
         <li>
-            <a href="{{ path('ficheprescription_edit', { 'id': fichePrescription.id }) }}">Edit</a>
+            <a href="{{ path('ficheprescription_edit', { 'id': fichePrescription.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

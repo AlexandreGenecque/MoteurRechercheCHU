@@ -16,7 +16,7 @@ class PrincipeMethodeType extends AbstractType
     {
         $builder
             ->add('nomPrincipeMethode')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

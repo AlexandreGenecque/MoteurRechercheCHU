@@ -17,7 +17,7 @@ class DelaiResultatType extends AbstractType
         $builder
             ->add('valeurResultat')
             ->add('frequenceRealisation')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

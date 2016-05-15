@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>NatureMatrice</h1>
+    <h1>Nature Matrice</h1>
 
     <table>
         <tbody>
@@ -10,11 +10,11 @@
                 <td>{{ natureMatrice.id }}</td>
             </tr>
             <tr>
-                <th>Valeurmatrice</th>
+                <th>Valeur matrice</th>
                 <td>{{ natureMatrice.valeurMatrice }}</td>
             </tr>
             <tr>
-                <th>Precisionmatrice</th>
+                <th>Precision matrice</th>
                 <td>{{ natureMatrice.precisionMatrice }}</td>
             </tr>
         </tbody>
@@ -22,14 +22,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('naturematrice_index') }}">Back to the list</a>
+            <a href="{{ path('naturematrice_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('naturematrice_edit', { 'id': natureMatrice.id }) }}">Edit</a>
+            <a href="{{ path('naturematrice_edit', { 'id': natureMatrice.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

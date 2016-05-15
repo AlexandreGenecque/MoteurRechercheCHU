@@ -17,7 +17,7 @@ class NatureMatriceType extends AbstractType
         $builder
             ->add('valeurMatrice')
             ->add('precisionMatrice')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

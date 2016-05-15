@@ -16,7 +16,7 @@ class RenseignementCliniqueType extends AbstractType
     {
         $builder
             ->add('valeurRC')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

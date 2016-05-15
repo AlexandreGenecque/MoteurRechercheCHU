@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>FichePrescription list</h1>
+    <h1>Liste des fiches de prescription</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nomficheprescription</th>
+                <th>    Nom fiche prescription</th>
                 <th>Url</th>
                 <th>Actions</th>
             </tr>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('ficheprescription_show', { 'id': fichePrescription.id }) }}">show</a>
+                            <a href="{{ path('ficheprescription_show', { 'id': fichePrescription.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('ficheprescription_edit', { 'id': fichePrescription.id }) }}">edit</a>
+                            <a href="{{ path('ficheprescription_edit', { 'id': fichePrescription.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('ficheprescription_new') }}">Create a new entry</a>
+            <a href="{{ path('ficheprescription_new') }}">Créer une nouvelle entrée</a> 
+        </li>
+        <li>
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
         </li>
     </ul>
 {% endblock %}

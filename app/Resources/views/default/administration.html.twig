@@ -1,11 +1,23 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
 
-   <h2><center>Hello Durty</center></h2>
+   <h2><center>Interface d'administration</center></h2>
 	<br/><br/>
    
     <p><a href="{{ path('moteur_recherche_administration_analyse') }}">Gestion des analyses</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_FichePrescription') }}">Gestion des fiches de prescription</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_PrincipeMethode') }}">Gestion principe méthode</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_NaturePrelevement') }}">Gestion nature prélévement</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_RenseignementClinique') }}">Gestion renseignement clinique</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_ConditionPrelevement') }}">Gestion condition de prélévement</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_Transport') }}">Gestion transport</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_NatureMatrice') }}">Gestion Nature Matrice</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_ConservationAvantTransport') }}">Gestion conservation avant transport</a></p>
+    <p><a href="{{ path('moteur_recherche_administration_DelaiResultat') }}">Gestion délai résultat</a></p>
+
+    
+   
 
   
 {% endblock %}

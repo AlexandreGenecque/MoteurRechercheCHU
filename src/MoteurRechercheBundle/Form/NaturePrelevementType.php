@@ -17,8 +17,7 @@ class NaturePrelevementType extends AbstractType
         $builder
             ->add('nomNaturePrelevement')
             ->add('precisionPrelevement')
-            ->add('conservation')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

@@ -17,7 +17,7 @@ class FichePrescriptionType extends AbstractType
         $builder
             ->add('nomFichePrescription')
             ->add('url')
-            ->add('analyse')
+            ->add('analyses')
         ;
     }
     

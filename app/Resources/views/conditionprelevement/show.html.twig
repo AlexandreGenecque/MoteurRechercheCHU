@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>ConditionPrelevement</h1>
+    <h1>Condition Prélévement</h1>
 
     <table>
         <tbody>
@@ -10,11 +10,11 @@
                 <td>{{ conditionPrelevement.id }}</td>
             </tr>
             <tr>
-                <th>Valeurcp</th>
+                <th>Valeur cp</th>
                 <td>{{ conditionPrelevement.valeurCP }}</td>
             </tr>
             <tr>
-                <th>Precisioncp</th>
+                <th>Precision cp</th>
                 <td>{{ conditionPrelevement.precisionCP }}</td>
             </tr>
         </tbody>
@@ -22,14 +22,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('conditionprelevement_index') }}">Back to the list</a>
+            <a href="{{ path('conditionprelevement_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('conditionprelevement_edit', { 'id': conditionPrelevement.id }) }}">Edit</a>
+            <a href="{{ path('conditionprelevement_edit', { 'id': conditionPrelevement.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
