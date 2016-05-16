@@ -63,41 +63,53 @@ moteur_recherche_administration:
     defaults: { _controller: MoteurRechercheBundle:Default:administration }
 
 moteur_recherche_administration_analyse:
-    path:     /analyse
+    path:     /administration/analyse
     defaults: { _controller: MoteurRechercheBundle:Analyse:index }
 
 moteur_recherche_administration_FichePrescription:
-    path:     /ficheprescription
+    path:     /administration/ficheprescription
     defaults: { _controller: MoteurRechercheBundle:FichePrescription:index }
 
 moteur_recherche_administration_PrincipeMethode:
-    path:     /fichemethode
+    path:     /administration/fichemethode
     defaults: { _controller: MoteurRechercheBundle:PrincipeMethode:index }
 
 moteur_recherche_administration_NaturePrelevement:
-    path:     /natureprelevement
+    path:     /administration/natureprelevement
     defaults: { _controller: MoteurRechercheBundle:NaturePrelevement:index }
 
 moteur_recherche_administration_RenseignementClinique:
-    path:     /renseignementclinique
+    path:     /administration/renseignementclinique
     defaults: { _controller: MoteurRechercheBundle:RenseignementClinique:index }
 
 moteur_recherche_administration_ConditionPrelevement:
-    path:     /conditionprelevement
+    path:     /administration/conditionprelevement
     defaults: { _controller: MoteurRechercheBundle:ConditionPrelevement:index }
 
 moteur_recherche_administration_Transport:
-    path:     /transport
+    path:     /administration/transport
     defaults: { _controller: MoteurRechercheBundle:Transport:index }
 
 moteur_recherche_administration_NatureMatrice:
-    path:     /naturematrice
+    path:     /administration/naturematrice
     defaults: { _controller: MoteurRechercheBundle:NatureMatrice:index }
 
 moteur_recherche_administration_ConservationAvantTransport:
-    path:     /conservationavanttransport
+    path:     /administration/conservationavanttransport
     defaults: { _controller: MoteurRechercheBundle:ConsersationAvantTransport:index }
 
 moteur_recherche_administration_DelaiResultat:
-    path:     /delairesultat
+    path:     /administration/delairesultat
     defaults: { _controller: MoteurRechercheBundle:DelaiResultat:index }
+
+moteur_recherche_administration_MicroOrganisme:
+    path:     /administration/microorganisme
+    defaults: { _controller: MoteurRechercheBundle:MicroOrganisme:index }
+
+moteur_recherche_administration_Laboratoire:
+    path:     /administration/laboratoire
+    defaults: { _controller: MoteurRechercheBundle:Laboratoire:index }
+
+moteur_recherche_administration_Secteur:
+    path:     /administration/secteur
+    defaults: { _controller: MoteurRechercheBundle:Secteur:index }

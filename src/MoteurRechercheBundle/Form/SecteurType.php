@@ -16,6 +16,7 @@ class SecteurType extends AbstractType
     {
         $builder
             ->add('nomSecteur')
+            ->add('laboratoire')
         ;
     }
     

@@ -10,22 +10,27 @@
                 <td>{{ secteur.id }}</td>
             </tr>
             <tr>
-                <th>Nomsecteur</th>
+                <th>Nom secteur</th>
                 <td>{{ secteur.nomSecteur }}</td>
             </tr>
+            <tr>
+                <th>Nom du laboratoire</th>
+                <td>{{ secteur.laboratoire }}</td>
+            </tr>
+
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('secteur_index') }}">Back to the list</a>
+            <a href="{{ path('secteur_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('secteur_edit', { 'id': secteur.id }) }}">Edit</a>
+            <a href="{{ path('secteur_edit', { 'id': secteur.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

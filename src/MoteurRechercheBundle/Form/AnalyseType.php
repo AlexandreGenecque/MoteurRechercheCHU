@@ -22,6 +22,21 @@ class AnalyseType extends AbstractType
             ->add('contenantAnalyse')
             ->add('volumeContenantAnalyse')
             ->add('microOrganisme_analyse')
+            ->add('laboratoire')
+            ->add('fichePrescription')
+            ->add('principeMethode')
+            ->add('naturePrelevement')
+            ->add('renseignementClinique')
+            ->add('conditionPrelevement')
+            ->add('transport')
+            ->add('conservationAvantTransport')
+            ->add('delaiResultat')
+
+
+
+
+
+
         ;
     }
     

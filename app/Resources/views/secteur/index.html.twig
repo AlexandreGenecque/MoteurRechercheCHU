@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Secteur list</h1>
+    <h1>Liste Secteur</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nomsecteur</th>
+                <th>Nom secteur</th>
+                <th>Nom laboratoire </th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,13 +17,14 @@
             <tr>
                 <td><a href="{{ path('secteur_show', { 'id': secteur.id }) }}">{{ secteur.id }}</a></td>
                 <td>{{ secteur.nomSecteur }}</td>
+                <td>{{ secteur.laboratoire}}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('secteur_show', { 'id': secteur.id }) }}">show</a>
+                            <a href="{{ path('secteur_show', { 'id': secteur.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('secteur_edit', { 'id': secteur.id }) }}">edit</a>
+                            <a href="{{ path('secteur_edit', { 'id': secteur.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -33,7 +35,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('secteur_new') }}">Create a new entry</a>
+            <a href="{{ path('secteur_new') }}">Créer une nouvelle entrée</a>
+        </li>
+        <li>
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
         </li>
     </ul>
 {% endblock %}

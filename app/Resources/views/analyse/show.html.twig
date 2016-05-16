@@ -10,7 +10,7 @@
                 <td>{{ analyse.id }}</td>
             </tr>
             <tr>
-                <th>Nomanalyse</th>
+                <th>Nom analyse</th>
                 <td>{{ analyse.nomAnalyse }}</td>
             </tr>
             <tr>
@@ -18,34 +18,71 @@
                 <td>{{ analyse.analyte }}</td>
             </tr>
             <tr>
-                <th>Natureanalyse</th>
+                <th>Nature analyse</th>
                 <td>{{ analyse.natureAnalyse }}</td>
             </tr>
             <tr>
-                <th>Volumeanalyse</th>
+                <th>Volume analyse</th>
                 <td>{{ analyse.volumeAnalyse }}</td>
             </tr>
             <tr>
-                <th>Contenantanalyse</th>
+                <th>Contenant analyse</th>
                 <td>{{ analyse.contenantAnalyse }}</td>
             </tr>
             <tr>
-                <th>Volumecontenantanalyse</th>
+                <th>Volume contenant analyse</th>
                 <td>{{ analyse.volumeContenantAnalyse }}</td>
             </tr>
+            <tr>
+                <th>Nom laboratoire</th>
+                <td>{{ analyse.laboratoire }}</td>
+            </tr>
+            <tr>
+                <th>Fiche prescription</th>
+                <td>{{ analyse.fichePrescription }}</td>
+            </tr>
+            <tr>
+                <th>Principe méthode</th>
+                <td>{{ analyse.principeMethode }}</td>
+            </tr>
+            <tr>
+                <th>Nature prélévement</th>
+                <td>{{ analyse.naturePrelevement }}</td>
+            </tr>
+            <tr>
+                <th>Renseignement clinique</th>
+                <td>{{ analyse.renseignementClinique }}</td>
+            </tr>
+            <tr>
+                <th>Condition prélévement</th>
+                <td>{{ analyse.conditionPrelevement }}</td>
+            </tr>
+            <tr>
+                <th>Transport</th>
+                <td>{{ analyse.transport }}</td>
+            </tr>
+            <tr>
+                <th>Conservation avant transport</th>
+                <td>{{ analyse.conservationAvantTransport }}</td>
+            </tr>
+            <tr>
+                <th>Délai de résultat</th>
+                <td>{{ analyse.delaiResultat }}</td>
+            </tr>
+
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('analyse_index') }}">Back to the list</a>
+            <a href="{{ path('analyse_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('analyse_edit', { 'id': analyse.id }) }}">Edit</a>
+            <a href="{{ path('analyse_edit', { 'id': analyse.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
