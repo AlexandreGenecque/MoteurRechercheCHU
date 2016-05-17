@@ -9,15 +9,36 @@
 
     <table id="fiche">
     <tr>
-    <td style="width: 70%"><div>
+    <td style="width:65%"><div>
             <br><h4><u>Laboratoire</u>: {{analyse.getLaboratoire().nomLaboratoire }}</h4>
             <br><h4><u>Acheminement au laboratoire</u> : {{ analyse.getTransport().delaiTransport }}</h4>
             <br><h4><u>Température de transport</u> : {{ analyse.getTransport().temperatureTransport }}</h4>
+            <input id="bouton_d" type="button" class="btn" value="Details" onclick="resize()">
         </div></td>
-    <td>  {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
-        <img id="fiole" src="{{ asset_url }}" alt="Example"/>
-        {% endimage %}</td>
+    <td>
+        {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
+        <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" style="border: double darkblue 2px"/>
+        {% endimage %}
+    </td>
     </tr>
     </table>
+    <ul style="display:none; width: auto;margin-left:5%;text-align: center" id="cache" class="media-list">
+        <br><li>Champs a definir n°1</li>
+        <li>Champs a definir n°2</li>
+        <li>Champs a definir n°3</li>
+        <li>Champs a definir n°4</li>
+        <li>{% image '@MoteurRechercheBundle/Resources/public/images/Plan_temporaire.png' %}
+            <img id="fiole" src="{{ asset_url }}" alt="Example"/>
+            {% endimage %}</li>
+    </ul>
 
+    {% block javascripts %}
+        <SCRIPT langage="Javascript">
+            function resize(){
+                ff=window.resizeTo(900,800);
+                document.getElementById('cache').style.display="block";
+                document.getElementById('bouton_d').style.display="none";
+            }
+        </script>
+    {% endblock %}
 {% endblock %}

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
+        <title>{% block title %}Fiche : {{ analyse.nomAnalyse }}{% endblock %}</title>
         {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/bootstrap.css''@MoteurRechercheBundle/Resources/public/css/style.css' %}
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
