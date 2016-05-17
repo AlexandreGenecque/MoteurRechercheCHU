@@ -9,3 +9,7 @@ RechercheAction:
 ouvrir_analyse_simple:
     path:     /affichageSimple/{id}
     defaults: { _controller: "MoteurRechercheBundle:RechercheIndex:ouvrirAnalyseSimple" }
+recherche:
+    path: /recherche
+    defaults: { _controller: MoteurRechercheBundle:RechercheIndex:rechercheAjax }
+    methods: POST

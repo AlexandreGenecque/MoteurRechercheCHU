@@ -13,9 +13,10 @@ class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 
 	public function rechercheAnalyse($nomAnalyse){
 		$queryBuider = $this->createQueryBuilder('a');
-		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
+			->orderBy('a.nomAnalyse', 'ASC')
 			->setParameter('nomAnalyse','%'.$nomAnalyse.'%');
-			
+
 		return $queryBuider->getQuery()->getResult();	
 	}
 }

@@ -1,17 +1,23 @@
-{% extends '::index.html.twig' %}
+{# {% extends '::index.html.twig' %} #}
 
 {% block body %}
 <div id="zoneResultat">
-        {% for entity in resultat %}
-                <div class="resultat">
-                    <div class="titreResultat">
-                <a onclick="ouvre('{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}')" target="_blank" > {{ entity.nomAnalyse }} </a>
+
+        
+
+        {% if resultat is defined %}
+            <p> {{ resultat|length }} résultat(s) ont été trouvé(s) pour votre recherche </p>
+            {% for entity in resultat %}
+                    <div class="resultat">
+                        <div class="titreResultat">
+                    <a onclick="ouvre('{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}')" target="_blank" > {{ entity.nomAnalyse }} </a>
+                        </div>
+                        <div class="descriptionResultat">
+                    {{ entity.natureAnalyse }}
+                        </div>
                     </div>
-                    <div class="descriptionResultat">
-                {{ entity.natureAnalyse }}
-                    </div>
-                </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
 </div>
 
 {% endblock %}

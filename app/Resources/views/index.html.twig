@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
 
+    {% block javascripts %}
+        {% javascripts '@MoteurRechercheBundle/Resources/public/js/script.js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script> 
+
 </head>
 <body>
 <div id="mainContainer">
@@ -42,39 +50,59 @@
         <input class="btn btn-primary" type="button"value="X">
         <input class="btn btn-primary" type="button"value="Y">
         <input class="btn btn-primary" type="button"value="Z">
-       <!--
-        <input class="btn btn-warning" type="button"value="0"> 
-        <input class="btn btn-warning" type="button"value="1">
-        <input class="btn btn-warning" type="button"value="2">
-        <input class="btn btn-warning" type="button"value="3">
-        <input class="btn btn-warning" type="button"value="4">
-        <input class="btn btn-warning" type="button"value="5">
-        <input class="btn btn-warning" type="button"value="6">
-        <input class="btn btn-warning" type="button"value="7">
-        <input class="btn btn-warning" type="button"value="8"> -->
         <input id="bouttonChiffre" class="btn btn-warning" type="button"value="0...9">
     </div>
 
-        <form id="zoneRecherche" class="form-horizontal" action="{{ path('RechercheAction')}}" method="POST">
+        <form id="zoneRecherche" class="form-horizontal" action="{{ path('recherche')}}" method="POST">
             <input class="form-control" id="zoneLibre"type="text" name="recherche" placeholder="Recherche...">
 
             <select id="selectLabo" class="form-control">
                 <option value="defaut">Laboratoire</option>
-                <option value="a">Type a</option>
-                <option value="b">Type b</option>
-                <option value="c">Type c</option>
+                {% for entity in rechercheLaboratoire %}     
+                    <option value="{{entity.nomLaboratoire}}">{{entity.nomLaboratoire}}</option>
+                {% endfor %}
             </select>
+
+
             <select id="selectMicroOrg" class="form-control">
                 <option value="defaut">Micro Organisme</option>
-                <option value="b">Type b</option>
-                <option value="c">Type c</option>
+                {% for entity in rechercheMicroOrganisme %}  
+                    <option value="{{entity.nomMicroOrganisme}}">{{entity.nomMicroOrganisme}}</option>
+                {% endfor %} 
+            </select>
             </select>
             <br />
             <input type="submit" class="btn btn-primary" value="Rechercher">
-            <button class="btn btn-info" name="recherche" onclick="RAZvalue()">RAZ</button>
+            
         </form> 
-
+        <button class="btn btn-info" name="recherche" onclick="RAZvalue()">RAZ</button>
 </div>
+
+<div id="zoneResultat">
+{% include 'rechercheIndex/liste.html.twig'  %}
+</div>
+
+<script>
+//$(".loading").hide();
+$("#zoneRecherche").submit(function(){ 
+    //$(".loading").show();
+    var motcle = $("#zoneLibre").val();
+
+    var DATA = 'zonelibre=' + motcle;
+    $.ajax({
+        type: "POST",
+        url: "{{ path('recherche')}}",
+        data: DATA,
+        cache: false,
+        success: function(data){
+           $('#zoneResultat').html(data);
+          // $(".loading").hide();
+        }
+    });    
+    return false;
+});
+</script>
+
 {% block body %}
 {% endblock %}
 
@@ -87,11 +115,5 @@
         {% endimage %}
     </a>
 </footer>
-{% block javascripts %}
-<SCRIPT langage="Javascript">
-    function ouvre(fichier) {
-    ff=window.open(fichier,"popup",
-    "width=900,height=600,left=200,top=40") }
-</script>
-{% endblock %}
+
 </html>

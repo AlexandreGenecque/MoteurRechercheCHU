@@ -31,10 +31,24 @@ class RechercheIndexController extends Controller
 
     public function indexAction()
     {
-        return $this->render('rechercheIndex/index.html.twig');
+
+         $laboratoire = new Laboratoire();
+
+        $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Laboratoire');
+        $rechercheLaboratoire = $em->findAll();
+
+
+        $microOrganisme = new MicroOrganisme();
+
+        $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme');
+        $rechercheMicroOrganisme = $em->findAll();
+
+        return $this->render('rechercheIndex/index.html.twig', array('rechercheLaboratoire' => $rechercheLaboratoire, 'rechercheMicroOrganisme' => $rechercheMicroOrganisme)); 
+
+        //return $this->render('rechercheIndex/index.html.twig');
     }
 
-    public function rechercheAction(Request $request)
+   /* public function rechercheAction(Request $request)
     {
         $recherche = new Analyse();
 
@@ -54,6 +68,31 @@ class RechercheIndexController extends Controller
         }
         
         return $this->render('rechercheIndex/index.html.twig');
+    } */
+
+    public function rechercheAjaxAction(Request $request)
+    {
+        if($request->isXmlHttpRequest())
+        {
+            $recherche = new Analyse();
+
+            $saisie = $request->get('zonelibre');
+
+            if ($saisie != "" && ! ctype_space($saisie))
+            {
+                $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
+                $resultat = $em->rechercheAnalyse($saisie);
+
+                if(! $resultat)
+                {
+                    return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
+                }
+
+                return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+            }
+        }
+        
+        return $this->render('rechercheIndex/index.html.twig');
     }
 
     public function ouvrirAnalyseSimpleAction($id)
@@ -68,6 +107,5 @@ class RechercheIndexController extends Controller
         return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse));
 
     }
-
 }
 
