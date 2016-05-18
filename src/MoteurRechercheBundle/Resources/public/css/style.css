@@ -70,6 +70,10 @@ background-image:
     margin-top:5%;
 }
 
+#zoneResultat a:hover{
+    cursor: pointer;
+}
+
 .resultat{
     margin-bottom:15px;
 }
