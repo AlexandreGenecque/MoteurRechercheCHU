@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * Transport
  */
-class FichePrescription
+class Transport
 {
     /**
      * @var integer
@@ -15,12 +15,12 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
+    private $temperatureTransport;
 
     /**
      * @var string
      */
-    private $url;
+    private $delaiTransport;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +46,51 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set temperatureTransport
      *
-     * @param string $nomFichePrescription
+     * @param string $temperatureTransport
      *
-     * @return FichePrescription
+     * @return Transport
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setTemperatureTransport($temperatureTransport)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->temperatureTransport = $temperatureTransport;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get temperatureTransport
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getTemperatureTransport()
     {
-        return $this->nomFichePrescription;
+        return $this->temperatureTransport;
     }
 
     /**
-     * Set url
+     * Set delaiTransport
      *
-     * @param string $url
+     * @param string $delaiTransport
      *
-     * @return FichePrescription
+     * @return Transport
      */
-    public function setUrl($url)
+    public function setDelaiTransport($delaiTransport)
     {
-        $this->url = $url;
+        $this->delaiTransport = $delaiTransport;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get delaiTransport
      *
      * @return string
      */
-    public function getUrl()
+    public function getDelaiTransport()
     {
-        return $this->url;
+        return $this->delaiTransport;
     }
 
     /**
@@ -98,7 +98,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return Transport
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -127,10 +127,9 @@ class FichePrescription
         return $this->analyses;
     }
 
-    public function __toString()
+        public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->temperatureTransport;
     }
-
-
 }
+

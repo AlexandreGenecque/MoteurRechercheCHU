@@ -132,4 +132,3 @@ class DelaiResultat
         return $this->valeurResultat;
     }
 }
-

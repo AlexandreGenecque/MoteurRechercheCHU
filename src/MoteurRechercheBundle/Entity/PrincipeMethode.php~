@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * PrincipeMethode
  */
-class FichePrescription
+class PrincipeMethode
 {
     /**
      * @var integer
@@ -15,12 +15,7 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
-
-    /**
-     * @var string
-     */
-    private $url;
+    private $nomPrincipeMethode;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +41,27 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set nomPrincipeMethode
      *
-     * @param string $nomFichePrescription
+     * @param string $nomPrincipeMethode
      *
-     * @return FichePrescription
+     * @return PrincipeMethode
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setNomPrincipeMethode($nomPrincipeMethode)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->nomPrincipeMethode = $nomPrincipeMethode;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get nomPrincipeMethode
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getNomPrincipeMethode()
     {
-        return $this->nomFichePrescription;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return FichePrescription
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
+        return $this->nomPrincipeMethode;
     }
 
     /**
@@ -98,7 +69,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return PrincipeMethode
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -129,8 +100,7 @@ class FichePrescription
 
     public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->nomPrincipeMethode;
     }
-
-
 }
+

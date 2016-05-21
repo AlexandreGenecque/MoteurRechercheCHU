@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * RenseignementClinique
  */
-class FichePrescription
+class RenseignementClinique
 {
     /**
      * @var integer
@@ -15,12 +15,7 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
-
-    /**
-     * @var string
-     */
-    private $url;
+    private $valeurRC;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +41,27 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set valeurRC
      *
-     * @param string $nomFichePrescription
+     * @param string $valeurRC
      *
-     * @return FichePrescription
+     * @return RenseignementClinique
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setValeurRC($valeurRC)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->valeurRC = $valeurRC;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get valeurRC
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getValeurRC()
     {
-        return $this->nomFichePrescription;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return FichePrescription
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
+        return $this->valeurRC;
     }
 
     /**
@@ -98,7 +69,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return RenseignementClinique
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -127,10 +98,9 @@ class FichePrescription
         return $this->analyses;
     }
 
-    public function __toString()
+        public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurRC;
     }
-
-
 }
+

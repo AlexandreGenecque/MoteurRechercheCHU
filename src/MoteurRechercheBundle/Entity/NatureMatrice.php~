@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * NatureMatrice
  */
-class FichePrescription
+class NatureMatrice
 {
     /**
      * @var integer
@@ -15,12 +15,12 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
+    private $valeurMatrice;
 
     /**
      * @var string
      */
-    private $url;
+    private $precisionMatrice;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +46,51 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set valeurMatrice
      *
-     * @param string $nomFichePrescription
+     * @param string $valeurMatrice
      *
-     * @return FichePrescription
+     * @return NatureMatrice
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setValeurMatrice($valeurMatrice)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->valeurMatrice = $valeurMatrice;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get valeurMatrice
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getValeurMatrice()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurMatrice;
     }
 
     /**
-     * Set url
+     * Set precisionMatrice
      *
-     * @param string $url
+     * @param string $precisionMatrice
      *
-     * @return FichePrescription
+     * @return NatureMatrice
      */
-    public function setUrl($url)
+    public function setPrecisionMatrice($precisionMatrice)
     {
-        $this->url = $url;
+        $this->precisionMatrice = $precisionMatrice;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get precisionMatrice
      *
      * @return string
      */
-    public function getUrl()
+    public function getPrecisionMatrice()
     {
-        return $this->url;
+        return $this->precisionMatrice;
     }
 
     /**
@@ -98,7 +98,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return NatureMatrice
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -127,10 +127,9 @@ class FichePrescription
         return $this->analyses;
     }
 
-    public function __toString()
+        public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurMatrice;
     }
-
-
 }
+

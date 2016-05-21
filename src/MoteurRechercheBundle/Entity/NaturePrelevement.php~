@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * NaturePrelevement
  */
-class FichePrescription
+class NaturePrelevement
 {
     /**
      * @var integer
@@ -15,12 +15,12 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
+    private $nomNaturePrelevement;
 
     /**
      * @var string
      */
-    private $url;
+    private $precisionPrelevement;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +46,51 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set nomNaturePrelevement
      *
-     * @param string $nomFichePrescription
+     * @param string $nomNaturePrelevement
      *
-     * @return FichePrescription
+     * @return NaturePrelevement
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setNomNaturePrelevement($nomNaturePrelevement)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->nomNaturePrelevement = $nomNaturePrelevement;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get nomNaturePrelevement
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getNomNaturePrelevement()
     {
-        return $this->nomFichePrescription;
+        return $this->nomNaturePrelevement;
     }
 
     /**
-     * Set url
+     * Set precisionPrelevement
      *
-     * @param string $url
+     * @param string $precisionPrelevement
      *
-     * @return FichePrescription
+     * @return NaturePrelevement
      */
-    public function setUrl($url)
+    public function setPrecisionPrelevement($precisionPrelevement)
     {
-        $this->url = $url;
+        $this->precisionPrelevement = $precisionPrelevement;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get precisionPrelevement
      *
      * @return string
      */
-    public function getUrl()
+    public function getPrecisionPrelevement()
     {
-        return $this->url;
+        return $this->precisionPrelevement;
     }
 
     /**
@@ -98,7 +98,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return NaturePrelevement
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -129,8 +129,7 @@ class FichePrescription
 
     public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->nomNaturePrelevement;
     }
-
-
 }
+
