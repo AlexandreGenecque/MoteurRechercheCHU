@@ -4,48 +4,41 @@
     <div style="text-align: center">
         <h2 style="color: #0088CC">{{ analyse.nomAnalyse }}</h2>
         <p style="font-size: x-large"><i>{{ analyse.natureAnalyse }}</i></p>
+
     </div>
+
+    <table id="fiche">
+    <tr>
+    <td style="width:65%"><div>
+            <br><h4><u>Laboratoire</u>: {{analyse.getLaboratoire().nomLaboratoire }}</h4>
+            <br><h4><u>Acheminement au laboratoire</u> : {{ analyse.getTransport().delaiTransport }}</h4>
+            <br><h4><u>Température de transport</u> : {{ analyse.getTransport().temperatureTransport }}</h4>
+            <input id="bouton_d" type="button" class="btn" value="Details" onclick="resize()">
+        </div></td>
+    <td>
         {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
-        <img id="fiole" src="{{ asset_url }}" alt="Example"/>
+        <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" style="border: double darkblue 2px"/>
         {% endimage %}
-    <div>
-        <br><p id="champsfiche">Laboratoire: </p> <p id="champsresul">{{analyse.getLaboratoire().nomLaboratoire }}</p>
-        <br><p id="champsfiche">Acheminement au laboratoire: </p><p id="champsresul">{{ analyse.getTransport().delaiTransport }}</p>
-        <br><p id="champsfiche">Température de transport :</p><p id="champsresul"> {{ analyse.getTransport().temperatureTransport }}</p>
-    </div>
-        <input id="bouton_d" type="button" class="btn" value="Details" onclick="resize()">
-    <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
-        <p id="champsresul">Champs a definir n°1</p>
-        <p id="champsresul">Champs a definir n°2</p>
-        <p id="champsresul">Champs a definir n°3</p>
-        <p id="champsresul">Champs a definir n°4</p>
-        <div id="map_div" ></div>
-    </div>
+    </td>
+    </tr>
+    </table>
+    <ul style="display:none; width: auto;margin-left:5%;text-align: center" id="cache" class="media-list">
+        <br><li>Champs a definir n°1</li>
+        <li>Champs a definir n°2</li>
+        <li>Champs a definir n°3</li>
+        <li>Champs a definir n°4</li>
+        <li>{% image '@MoteurRechercheBundle/Resources/public/images/Plan_temporaire.png' %}
+            <img id="fiole" src="{{ asset_url }}" alt="Example"/>
+            {% endimage %}</li>
+    </ul>
+
     {% block javascripts %}
         <SCRIPT langage="Javascript">
             function resize(){
-                ff=window.resizeTo(800,800);
+                ff=window.resizeTo(900,800);
                 document.getElementById('cache').style.display="block";
                 document.getElementById('bouton_d').style.display="none";
             }
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Lat', 'Long', 'Name'],
-                    [49.441166, 1.111725, 'IBC'],
-                    [49.437929,1.109740,'IMUNOLOGIE'],
-                    [49.440036,1.106725,'ANAPATHOLOGIE'],
-                ]);
-                var map = new google.visualization.Map(document.getElementById('map_div'));
-                var options = {showTip: true,useMapTypeControl: true}
-                map.draw(data,options);
-            }
-            google.charts.load("current", {packages:["map"]});
-            google.charts.setOnLoadCallback(drawChart);
         </script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     {% endblock %}
 {% endblock %}
-
-
-
