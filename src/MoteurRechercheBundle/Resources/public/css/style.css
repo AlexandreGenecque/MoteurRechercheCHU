@@ -96,8 +96,30 @@ background-image:
 }
 #fiche{
     margin-left: 15%;
-    margin-top: 100px;
 }
 #fiole{
-    width: 50%;
+    height: 250px;
+    width: 250px;
+    margin-left: 30%;
+    border: double 5px darkblue;
+}
+.enligne{
+    display: inline-block;
+}
+#champsfiche{
+    margin-left: 15%;
+    text-decoration: underline;
+    font-size: large;
+}
+#bouton_d{
+    margin-left: 15%;
+}
+#champsresul{
+    font-size: large;
+    margin-left: 15%;
+}
+#map_div{
+    width: 400px;
+    height: 300px;
+    margin-left: 15%;
 }

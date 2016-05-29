@@ -10,7 +10,7 @@ function RAZvalue()
 function ouvre(fichier) 
  {
     ff=window.open(fichier,"popup",
-    "width=900,height=600,left=200,top=40") 
+    "width=800,height=800,left=200,top=40")
  }
 
  function rechercheAjax()
