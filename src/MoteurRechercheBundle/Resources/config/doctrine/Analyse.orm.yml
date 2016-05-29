@@ -37,6 +37,10 @@ MoteurRechercheBundle\Entity\Analyse:
             type: string
             length: 255
             nullable: true
+        nomenclature:
+            type: string
+            length: 255
+            nullable: true
     manyToMany:
         microOrganisme_analyse:
             targetEntity: MicroOrganisme
@@ -82,5 +86,8 @@ MoteurRechercheBundle\Entity\Analyse:
             targetEntity: Laboratoire
             inversedBy: analyses
             cascade: [ persist ]
+        nomenclatureBBhn:
+            targetEntity: NomenclatureBBhn
+            inversedBy: analyses
+            cascade: [ persist ]
     lifecycleCallbacks: {  }
-

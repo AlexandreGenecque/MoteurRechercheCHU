@@ -86,3 +86,4 @@ class Secteur
         return $this->nomSecteur;
     }
 }
+

@@ -132,4 +132,3 @@ class Laboratoire
         return $this->nomLaboratoire;
     }
 }
-

@@ -1,0 +1,55 @@
+<?php
+
+namespace MoteurRechercheBundle\Entity;
+
+/**
+ * NomenclatureBBhn
+ */
+class NomenclatureBBhn
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $valeurNomenclature;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set valeurNomenclature
+     *
+     * @param string $valeurNomenclature
+     *
+     * @return NomenclatureBBhn
+     */
+    public function setValeurNomenclature($valeurNomenclature)
+    {
+        $this->valeurNomenclature = $valeurNomenclature;
+
+        return $this;
+    }
+
+    /**
+     * Get valeurNomenclature
+     *
+     * @return string
+     */
+    public function getValeurNomenclature()
+    {
+        return $this->valeurNomenclature;
+    }
+}
+

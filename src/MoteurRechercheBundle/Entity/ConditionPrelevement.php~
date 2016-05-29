@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * ConditionPrelevement
  */
-class FichePrescription
+class ConditionPrelevement
 {
     /**
      * @var integer
@@ -15,12 +15,12 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
+    private $valeurCP;
 
     /**
      * @var string
      */
-    private $url;
+    private $precisionCP;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +46,51 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set valeurCP
      *
-     * @param string $nomFichePrescription
+     * @param string $valeurCP
      *
-     * @return FichePrescription
+     * @return ConditionPrelevement
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setValeurCP($valeurCP)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->valeurCP = $valeurCP;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get valeurCP
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getValeurCP()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurCP;
     }
 
     /**
-     * Set url
+     * Set precisionCP
      *
-     * @param string $url
+     * @param string $precisionCP
      *
-     * @return FichePrescription
+     * @return ConditionPrelevement
      */
-    public function setUrl($url)
+    public function setPrecisionCP($precisionCP)
     {
-        $this->url = $url;
+        $this->precisionCP = $precisionCP;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get precisionCP
      *
      * @return string
      */
-    public function getUrl()
+    public function getPrecisionCP()
     {
-        return $this->url;
+        return $this->precisionCP;
     }
 
     /**
@@ -98,7 +98,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return ConditionPrelevement
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -129,8 +129,7 @@ class FichePrescription
 
     public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurCP;
     }
-
-
 }
+

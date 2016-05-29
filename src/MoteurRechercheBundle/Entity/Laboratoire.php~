@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * Laboratoire
  */
-class FichePrescription
+class Laboratoire
 {
     /**
      * @var integer
@@ -15,17 +15,17 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
-
-    /**
-     * @var string
-     */
-    private $url;
+    private $nomLaboratoire;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $analyses;
+
+    /**
+     * @var \MoteurRechercheBundle\Entity\Analyse
+     */
+    private $analyse;
 
     /**
      * Constructor
@@ -46,51 +46,27 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set nomLaboratoire
      *
-     * @param string $nomFichePrescription
+     * @param string $nomLaboratoire
      *
-     * @return FichePrescription
+     * @return Laboratoire
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setNomLaboratoire($nomLaboratoire)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->nomLaboratoire = $nomLaboratoire;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get nomLaboratoire
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getNomLaboratoire()
     {
-        return $this->nomFichePrescription;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return FichePrescription
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
+        return $this->nomLaboratoire;
     }
 
     /**
@@ -98,7 +74,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return Laboratoire
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -127,10 +103,33 @@ class FichePrescription
         return $this->analyses;
     }
 
-    public function __toString()
+    /**
+     * Set analyse
+     *
+     * @param \MoteurRechercheBundle\Entity\Analyse $analyse
+     *
+     * @return Laboratoire
+     */
+    public function setAnalyse(\MoteurRechercheBundle\Entity\Analyse $analyse = null)
     {
-        return $this->nomFichePrescription;
+        $this->analyse = $analyse;
+
+        return $this;
     }
 
+    /**
+     * Get analyse
+     *
+     * @return \MoteurRechercheBundle\Entity\Analyse
+     */
+    public function getAnalyse()
+    {
+        return $this->analyse;
+    }
 
+        public function __toString()
+    {
+        return $this->nomLaboratoire;
+    }
 }
+

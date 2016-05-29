@@ -3,9 +3,9 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * DelaiResultat
  */
-class FichePrescription
+class DelaiResultat
 {
     /**
      * @var integer
@@ -15,12 +15,12 @@ class FichePrescription
     /**
      * @var string
      */
-    private $nomFichePrescription;
+    private $valeurResultat;
 
     /**
      * @var string
      */
-    private $url;
+    private $frequenceRealisation;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -46,51 +46,51 @@ class FichePrescription
     }
 
     /**
-     * Set nomFichePrescription
+     * Set valeurResultat
      *
-     * @param string $nomFichePrescription
+     * @param string $valeurResultat
      *
-     * @return FichePrescription
+     * @return DelaiResultat
      */
-    public function setNomFichePrescription($nomFichePrescription)
+    public function setValeurResultat($valeurResultat)
     {
-        $this->nomFichePrescription = $nomFichePrescription;
+        $this->valeurResultat = $valeurResultat;
 
         return $this;
     }
 
     /**
-     * Get nomFichePrescription
+     * Get valeurResultat
      *
      * @return string
      */
-    public function getNomFichePrescription()
+    public function getValeurResultat()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurResultat;
     }
 
     /**
-     * Set url
+     * Set frequenceRealisation
      *
-     * @param string $url
+     * @param string $frequenceRealisation
      *
-     * @return FichePrescription
+     * @return DelaiResultat
      */
-    public function setUrl($url)
+    public function setFrequenceRealisation($frequenceRealisation)
     {
-        $this->url = $url;
+        $this->frequenceRealisation = $frequenceRealisation;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get frequenceRealisation
      *
      * @return string
      */
-    public function getUrl()
+    public function getFrequenceRealisation()
     {
-        return $this->url;
+        return $this->frequenceRealisation;
     }
 
     /**
@@ -98,7 +98,7 @@ class FichePrescription
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return DelaiResultat
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -129,8 +129,7 @@ class FichePrescription
 
     public function __toString()
     {
-        return $this->nomFichePrescription;
+        return $this->valeurResultat;
     }
-
-
 }
+
