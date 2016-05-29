@@ -1,0 +1,52 @@
+﻿Revert "Merge branch 'master' of https://github.com/AlexandreGenecque/MoteurRechercheCHU"
+
+This reverts commit 149cfa2c75dfbe44d58a572e9fabd5d952b4a53a, reversing
+changes made to 29f905b85c7afcdefb61eb23d47cdab55f01a8ac.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   app/Resources/views/index.html.twig
+#	modified:   src/.DS_Store
+#	modified:   src/MoteurRechercheBundle/Controller/RechercheIndexController.php
+#	modified:   src/MoteurRechercheBundle/Entity/Analyse.php
+#	deleted:    src/MoteurRechercheBundle/Entity/Analyse.php~
+#	modified:   src/MoteurRechercheBundle/Entity/ConditionPrelevement.php
+#	deleted:    src/MoteurRechercheBundle/Entity/ConditionPrelevement.php~
+#	modified:   src/MoteurRechercheBundle/Entity/ConservationAvantTransport.php
+#	deleted:    src/MoteurRechercheBundle/Entity/ConservationAvantTransport.php~
+#	modified:   src/MoteurRechercheBundle/Entity/DelaiResultat.php
+#	deleted:    src/MoteurRechercheBundle/Entity/DelaiResultat.php~
+#	modified:   src/MoteurRechercheBundle/Entity/FichePrescription.php
+#	deleted:    src/MoteurRechercheBundle/Entity/FichePrescription.php~
+#	modified:   src/MoteurRechercheBundle/Entity/Laboratoire.php
+#	deleted:    src/MoteurRechercheBundle/Entity/Laboratoire.php~
+#	modified:   src/MoteurRechercheBundle/Entity/MicroOrganisme.php
+#	deleted:    src/MoteurRechercheBundle/Entity/MicroOrganisme.php~
+#	modified:   src/MoteurRechercheBundle/Entity/NatureMatrice.php
+#	deleted:    src/MoteurRechercheBundle/Entity/NatureMatrice.php~
+#	modified:   src/MoteurRechercheBundle/Entity/NaturePrelevement.php
+#	deleted:    src/MoteurRechercheBundle/Entity/NaturePrelevement.php~
+#	deleted:    src/MoteurRechercheBundle/Entity/NomenclatureBBhn.php
+#	deleted:    src/MoteurRechercheBundle/Entity/NomenclatureBBhn.php~
+#	modified:   src/MoteurRechercheBundle/Entity/PrincipeMethode.php
+#	deleted:    src/MoteurRechercheBundle/Entity/PrincipeMethode.php~
+#	modified:   src/MoteurRechercheBundle/Entity/RenseignementClinique.php
+#	deleted:    src/MoteurRechercheBundle/Entity/RenseignementClinique.php~
+#	modified:   src/MoteurRechercheBundle/Entity/Secteur.php
+#	deleted:    src/MoteurRechercheBundle/Entity/Secteur.php~
+#	modified:   src/MoteurRechercheBundle/Entity/Transport.php
+#	deleted:    src/MoteurRechercheBundle/Entity/Transport.php~
+#	modified:   src/MoteurRechercheBundle/Repository/AnalyseRepository.php
+#	deleted:    src/MoteurRechercheBundle/Repository/NomenclatureBBhnRepository.php
+#	modified:   src/MoteurRechercheBundle/Resources/config/doctrine/Analyse.orm.yml
+#	deleted:    src/MoteurRechercheBundle/Resources/config/doctrine/NomenclatureBBhn.orm.yml
+#	modified:   src/MoteurRechercheBundle/Resources/public/js/script.js
+#
+# Changes not staged for commit:
+#	modified:   "var\\logs/prod.log"
+#
+

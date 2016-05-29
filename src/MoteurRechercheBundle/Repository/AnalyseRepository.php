@@ -11,15 +11,11 @@ namespace MoteurRechercheBundle\Repository;
 class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 {
 
-	public function rechercheAnalyse($zoneLibre, $choixLabo, $choixMicroOrg){
-
+	public function rechercheAnalyse($nomAnalyse){
 		$queryBuider = $this->createQueryBuilder('a');
-		$queryBuider 
-			//->innerJoin('r.routegroup','rg')
-        	//->innerJoin('rg.profiles','p')
-			->where('a.nomAnalyse LIKE :zoneLibre OR a.natureAnalyse LIKE :zoneLibre')
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
 			->orderBy('a.nomAnalyse', 'ASC')
-			->setParameter('zoneLibre','%'.$zoneLibre.'%');
+			->setParameter('nomAnalyse','%'.$nomAnalyse.'%');
 
 		return $queryBuider->getQuery()->getResult();	
 	}

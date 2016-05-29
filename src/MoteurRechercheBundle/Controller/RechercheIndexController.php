@@ -44,6 +44,8 @@ class RechercheIndexController extends Controller
         $rechercheMicroOrganisme = $em->findAll();
 
         return $this->render('rechercheIndex/index.html.twig', array('rechercheLaboratoire' => $rechercheLaboratoire, 'rechercheMicroOrganisme' => $rechercheMicroOrganisme)); 
+
+        //return $this->render('rechercheIndex/index.html.twig');
     }
 
    /* public function rechercheAction(Request $request)
@@ -74,14 +76,12 @@ class RechercheIndexController extends Controller
         {
             $recherche = new Analyse();
 
-            $saisie= $request->get('zoneLibre');
-            $choixLabo = $request->get('choixLabo');
-            $choixMicroOrg = $request->get('choixMicroOrg');
+            $saisie = $request->get('zonelibre');
 
             if ($saisie != "" && ! ctype_space($saisie))
             {
                 $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
-                $resultat = $em->rechercheAnalyse($saisie, $choixLabo, $choixMicroOrg);
+                $resultat = $em->rechercheAnalyse($saisie);
 
                 if(! $resultat)
                 {

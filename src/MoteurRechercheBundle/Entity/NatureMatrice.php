@@ -132,3 +132,4 @@ class NatureMatrice
         return $this->valeurMatrice;
     }
 }
+

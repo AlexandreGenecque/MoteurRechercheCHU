@@ -132,3 +132,4 @@ class NaturePrelevement
         return $this->nomNaturePrelevement;
     }
 }
+

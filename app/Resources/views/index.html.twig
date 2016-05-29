@@ -53,7 +53,7 @@
         <input id="bouttonChiffre" class="btn btn-warning" type="button"value="0...9">
     </div>
 
-        <form id="zoneRecherche" class="form-horizontal" onsubmit="recherche()" action="{{ path('recherche')}}" method="POST">
+        <form id="zoneRecherche" class="form-horizontal" action="{{ path('recherche')}}" method="POST">
             <input class="form-control" id="zoneLibre"type="text" name="recherche" placeholder="Recherche...">
 
             <select id="selectLabo" class="form-control">
@@ -86,11 +86,9 @@
 //$(".loading").hide();
 $("#zoneRecherche").submit(function(){ 
     //$(".loading").show();
-    var zoneLibre = $("#zoneLibre").val();
-    var choixLabo = $("#selectLabo").val();
-    var choixMicroOrg = $("#selectMicroOrg").val();
+    var motcle = $("#zoneLibre").val();
 
-    var DATA = 'zoneLibre=' + zoneLibre + '&choixLabo=' + choixLabo + '&choixMicroOrg' + choixMicroOrg;
+    var DATA = 'zonelibre=' + motcle;
     $.ajax({
         type: "POST",
         url: "{{ path('recherche')}}",
@@ -111,7 +109,11 @@ $("#zoneRecherche").submit(function(){
 </div>
 </body>
 <footer id="foot">
-
+    <a href="javascript:window.print()">
+        {% image '@MoteurRechercheBundle/Resources/public/images/imprimer.png' %}
+        <img src="{{ asset_url }}" alt="Imprimer" width="36" />
+        {% endimage %}
+    </a>
 </footer>
 
 </html>

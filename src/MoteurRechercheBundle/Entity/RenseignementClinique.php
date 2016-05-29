@@ -103,3 +103,4 @@ class RenseignementClinique
         return $this->valeurRC;
     }
 }
+
