@@ -14,5 +14,5 @@ recherche:
     defaults: { _controller: MoteurRechercheBundle:RechercheIndex:rechercheAjax }
     methods: POST
 rechercheButton:
-    path: /recherche2
+    path: /rechercheLettre
     defaults: { _controller: MoteurRechercheBundle:RechercheIndex:rechercheButtonAjax }

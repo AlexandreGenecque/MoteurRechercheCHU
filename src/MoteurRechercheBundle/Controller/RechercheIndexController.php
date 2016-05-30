@@ -86,8 +86,6 @@ class RechercheIndexController extends Controller
 
             $saisie = $request->get('lettre');
 
-
-
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
             $resultat = $em->rechercheAnalyseButton($saisie);
 
@@ -97,8 +95,6 @@ class RechercheIndexController extends Controller
                 return new Response('<html><body>Pas de résultat pour la lettre '.$saisie.'</body></html>');
             }
 
-
-                
             return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
         }
         
