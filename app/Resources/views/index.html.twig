@@ -24,32 +24,32 @@
     {% endimage %}
 <div id="containerRecherche" class="text-center">
     <div id="clavier" class="btn-group" >
-        <input class="btn btn-primary" onclick="testbut()" type="button"value="A">
-        <input class="btn btn-primary" type="button"value="B">
-        <input class="btn btn-primary" type="button"value="C">
-        <input class="btn btn-primary" type="button"value="D">
-        <input class="btn btn-primary" type="button"value="E">
-        <input class="btn btn-primary" type="button"value="F">
-        <input class="btn btn-primary" type="button"value="G">
-        <input class="btn btn-primary" type="button"value="H">
-        <input class="btn btn-primary" type="button"value="I">
-        <input class="btn btn-primary" type="button"value="J">
-        <input class="btn btn-primary" type="button"value="K">
-        <input class="btn btn-primary" type="button"value="L">
-        <input class="btn btn-primary" type="button"value="M">
-        <input class="btn btn-primary" type="button"value="N">
-        <input class="btn btn-primary" type="button"value="O">
-        <input class="btn btn-primary" type="button"value="P">
-        <input class="btn btn-primary" type="button"value="Q">
-        <input class="btn btn-primary" type="button"value="R">
-        <input class="btn btn-primary" type="button"value="S">
-        <input class="btn btn-primary" type="button"value="T">
-        <input class="btn btn-primary" type="button"value="U">
-        <input class="btn btn-primary" type="button"value="V">
-        <input class="btn btn-primary" type="button"value="W">
-        <input class="btn btn-primary" type="button"value="X">
-        <input class="btn btn-primary" type="button"value="Y">
-        <input class="btn btn-primary" type="button"value="Z">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="A">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="B">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="C">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="D">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="E">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="F">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="G">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="H">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="I">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="J">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="K">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="L">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="M">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="N">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="O">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="P">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="Q">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="R">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="S">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="T">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="U">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="V">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="W">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="X">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="Y">
+        <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="Z">
         <input id="bouttonChiffre" class="btn btn-warning" type="button"value="0...9">
     </div>
 
@@ -101,6 +101,30 @@ $("#zoneRecherche").submit(function(){
     });    
     return false;
 });
+
+
+ function rechercheLettre(){
+
+    var lettre = event.currentTarget.value;
+
+
+    //if (lettre != undefined && lettre != "")
+    {
+        var DATA = 'lettre=' + lettre;
+
+        $.ajax({
+            type: "POST",
+            url: "{{ path('rechercheButton')}}",
+            data: DATA,
+            cache: false,
+            success: function(data){
+               $('#zoneResultat').html(data);
+            }
+        });
+    }
+    
+ }
+
 </script>
 
 {% block body %}

@@ -77,28 +77,32 @@ class RechercheIndexController extends Controller
 
     public function rechercheButtonAjaxAction(Request $request)
     {
-       // $saisie = $request->get('lettre');
-        return new Response('<html><body>Pas de résultat pour la lettre</body></html>');
+      //  $saisie = $request->get('lettre');
+    // return new Response('<html><body>Pas de résultat pour la lettre</body></html>');
 
-       /* if($request->isXmlHttpRequest())
+       if($request->isXmlHttpRequest())
         {
             $recherche = new Analyse();
 
             $saisie = $request->get('lettre');
 
+
+
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
             $resultat = $em->rechercheAnalyseButton($saisie);
 
+
             if(! $resultat)
             {
-                return new Response('<html><body>Pas de résultat pour la lettre '.$saise.'</body></html>');
+                return new Response('<html><body>Pas de résultat pour la lettre '.$saisie.'</body></html>');
             }
+
 
                 
             return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
         }
         
-        return $this->render('rechercheIndex/index.html.twig');*/
+        return $this->render('rechercheIndex/index.html.twig');
     }
 
     public function ouvrirAnalyseSimpleAction($id)

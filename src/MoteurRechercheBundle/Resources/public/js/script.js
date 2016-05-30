@@ -14,25 +14,3 @@ function ouvre(fichier)
  }
 
 
-
- function testbut(){
-
-    var lettre = event.currentTarget.value;
-
-
-    if (lettre != undefined && lettre != "")
-    {
-        var DATA = 'lettre=' + lettre;
-
-        $.ajax({
-            type: "POST",
-            url: "{{ path('rechercheButton')}}",
-            data: DATA,
-            cache: false,
-            success: function(data){
-               $('#zoneResultat').html(data);
-            }
-        });
-    }
-    
- }
