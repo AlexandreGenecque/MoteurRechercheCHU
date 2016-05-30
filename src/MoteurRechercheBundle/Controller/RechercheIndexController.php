@@ -48,27 +48,6 @@ class RechercheIndexController extends Controller
         //return $this->render('rechercheIndex/index.html.twig');
     }
 
-   /* public function rechercheAction(Request $request)
-    {
-        $recherche = new Analyse();
-
-        $saisie = $request->get('recherche');
-
-        if ($saisie != "" && ! ctype_space($saisie))
-        {
-            $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
-            $resultat = $em->rechercheAnalyse($saisie);
-
-            if(! $resultat)
-            {
-                return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
-            }
-
-            return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
-        }
-        
-        return $this->render('rechercheIndex/index.html.twig');
-    } */
 
     public function rechercheAjaxAction(Request $request)
     {
@@ -93,6 +72,33 @@ class RechercheIndexController extends Controller
         }
         
         return $this->render('rechercheIndex/index.html.twig');
+    }
+
+
+    public function rechercheButtonAjaxAction(Request $request)
+    {
+       // $saisie = $request->get('lettre');
+        return new Response('<html><body>Pas de résultat pour la lettre</body></html>');
+
+       /* if($request->isXmlHttpRequest())
+        {
+            $recherche = new Analyse();
+
+            $saisie = $request->get('lettre');
+
+            $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
+            $resultat = $em->rechercheAnalyseButton($saisie);
+
+            if(! $resultat)
+            {
+                return new Response('<html><body>Pas de résultat pour la lettre '.$saise.'</body></html>');
+            }
+
+                
+            return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+        }
+        
+        return $this->render('rechercheIndex/index.html.twig');*/
     }
 
     public function ouvrirAnalyseSimpleAction($id)

@@ -19,4 +19,13 @@ class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 
 		return $queryBuider->getQuery()->getResult();	
 	}
+
+		public function rechercheAnalyseButton($lettre){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')
+			->orderBy('a.nomAnalyse', 'ASC')
+			->setParameter('nomAnalyse','%'.$lettre);
+
+		return $queryBuider->getQuery()->getResult();	
+	}
 }

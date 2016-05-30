@@ -13,19 +13,26 @@ function ouvre(fichier)
     "width=800,height=800,left=200,top=40")
  }
 
- function rechercheAjax()
- {
-    var motcle = $("#zoneLibre").val();
-    var DATA = 'zonelibre=' + motcle;
-    $.ajax({
-        type: "POST",
-        url: "{{ path('recherche')}}",
-        data: DATA,
-        cache: false,
-        success: function(data){
-           $('#zoneResultat').html(data);
-          // $(".loading").hide();
-        }
-    });    
-    return false;
+
+
+ function testbut(){
+
+    var lettre = event.currentTarget.value;
+
+
+    if (lettre != undefined && lettre != "")
+    {
+        var DATA = 'lettre=' + lettre;
+
+        $.ajax({
+            type: "POST",
+            url: "{{ path('rechercheButton')}}",
+            data: DATA,
+            cache: false,
+            success: function(data){
+               $('#zoneResultat').html(data);
+            }
+        });
+    }
+    
  }
