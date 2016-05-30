@@ -16,6 +16,3 @@ recherche:
 rechercheButton:
     path: /recherche2
     defaults: { _controller: MoteurRechercheBundle:RechercheIndex:rechercheButtonAjax }
-rechercheButtonNombre:
-    path: /recherche3
-    defaults: { _controller: MoteurRechercheBundle:RechercheIndex:rechercheButtonNombreAjax }

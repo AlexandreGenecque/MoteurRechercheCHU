@@ -50,7 +50,7 @@
         <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="X">
         <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="Y">
         <input class="btn btn-primary" onclick="rechercheLettre()" type="button"value="Z">
-        <input id="bouttonChiffre" class="btn btn-warning" onclick="rechercheNombre()" type="button"value="0...9">
+        <input id="bouttonChiffre" class="btn btn-warning" type="button"value="0...9">
     </div>
 
         <form id="zoneRecherche" class="form-horizontal" action="{{ path('recherche')}}" method="POST">
@@ -122,23 +122,6 @@ $("#zoneRecherche").submit(function(){
             }
         });
     }
-    
- }
-
-  function rechercheNombre(){
-
-
-
-
-        $.ajax({
-            type: "POST",
-            url: "{{ path('rechercheButtonNombre')}}",
-            cache: false,
-            success: function(data){
-               $('#zoneResultat').html(data);
-            }
-        });
-
     
  }
 

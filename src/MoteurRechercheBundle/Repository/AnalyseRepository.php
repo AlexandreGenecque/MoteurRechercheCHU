@@ -21,24 +21,15 @@ class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 	}
 
 
-	public function rechercheAnalyseButton($lettre){
-	$queryBuider = $this->createQueryBuilder('a');
-	$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')
-		->orderBy('a.nomAnalyse', 'ASC')
-		->setParameter('nomAnalyse',$lettre.'%');
+		public function rechercheAnalyseButton($lettre){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')
+			->orderBy('a.nomAnalyse', 'ASC')
+			->setParameter('nomAnalyse',$lettre.'%');
 
-	return $queryBuider->getQuery()->getResult();	
+		return $queryBuider->getQuery()->getResult();	
 	}
 
-	public function rechercheAnalyseButtonNombre(){
-	$queryBuider = $this->createQueryBuilder('a');
-	$queryBuider ->where('a.nomAnalyse LIKE %2%')
-		->orderBy('a.nomAnalyse', 'ASC')
-		->setParameter('nomAnalyse',$lettre.'%');
-	
-
-	return $queryBuider->getQuery()->getResult();	
-	}
 
 
 

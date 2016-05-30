@@ -105,34 +105,6 @@ class RechercheIndexController extends Controller
         return $this->render('rechercheIndex/index.html.twig');
     }
 
-
-    public function rechercheButtonNombreAjaxAction(Request $request)
-    {
-
-
-
-       if($request->isXmlHttpRequest())
-        {
-            
-            $recherche = new Analyse();
-
-            $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
-            $resultat = $em->rechercheAnalyseButtonNombre();
-
-
-            if(! $resultat)
-            {
-                return new Response('<html><body>Pas de résultat pour la 0-9 </body></html>');
-            }
-
-
-                
-            return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
-        }
-        
-        return $this->render('rechercheIndex/index.html.twig');
-    }
-
     public function ouvrirAnalyseSimpleAction($id)
     {
         $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
