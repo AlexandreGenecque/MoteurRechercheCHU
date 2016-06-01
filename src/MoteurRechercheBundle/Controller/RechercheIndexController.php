@@ -58,8 +58,52 @@ class RechercheIndexController extends Controller
             $saisie = $request->get('zonelibre');
             $saisieLabo = $request->get('selectLabo');
             $saisieMicroOrg = $request->get('selectMicroOrg');
+            $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
 
-            if ($saisie != "" && ! ctype_space($saisie))
+//            return new Response('Saisie = '.$saisie.' / Labo:'.$saisieLabo.' / MicroOrganisme:'. $saisieMicroOrg. '');
+
+            if($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg == "defaut")
+            {
+                 $resultat = $em->rechercheAnalyse($saisie);
+            }
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") {
+                # code...
+                $resultat = $em->rechercheAnalyse($saisie,$saisieLabo);
+            }
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") {
+                # code...
+                $resultat = $em->rechercheAnalyse($saisie, $saisieMicroOrg );
+            }
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") {
+                # code...
+                $resultat = $em->rechercheAnalyse($saisie, $saisieLabo, $saisieMicroOrg);
+            }
+            elseif ($saisie == "" &&  ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") {
+                # code...
+                $resultat = $em->rechercheAnalyse($saisieLabo, $saisieMicroOrg);
+            }
+            else if ($saisie == "" &&  ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") {
+                # code...
+                $resultat = $em->rechercheAnalyse($saisieLabo);
+            }
+            else if ($saisie == "" &&  ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") {
+                # code...
+                $resultat = $em->rechercheAnalyse($saisieMicroOrg);
+            }
+            
+
+            if(! $resultat)
+                {
+                    return new Response('<html><body>Pas de résultat pour votre recherche </body></html>');
+                }
+            else
+                return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+        }
+
+        return $this->render('rechercheIndex/index.html.twig');
+
+               // return new Response('Pas dans la fonction Saisie = '.$saisie.' / Labo:'.$saisieLabo.' / MicroOrganisme:'. $saisieMicroOrg. '');
+        /*    if ($saisie != "" && ! ctype_space($saisie))
             {
                 $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
                 $resultat = $em->rechercheAnalyse($saisie);
@@ -73,7 +117,8 @@ class RechercheIndexController extends Controller
             }
         }
         
-        return $this->render('rechercheIndex/index.html.twig');
+        return $this->render('rechercheIndex/index.html.twig');*/
+    
     }
 
 
