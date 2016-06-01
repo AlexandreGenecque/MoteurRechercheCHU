@@ -56,6 +56,8 @@ class RechercheIndexController extends Controller
             $recherche = new Analyse();
 
             $saisie = $request->get('zonelibre');
+            $saisieLabo = $request->get('selectLabo');
+            $saisieMicroOrg = $request->get('selectMicroOrg');
 
             if ($saisie != "" && ! ctype_space($saisie))
             {
@@ -64,7 +66,7 @@ class RechercheIndexController extends Controller
 
                 if(! $resultat)
                 {
-                    return new Response('<html><body>Pas de résultat pour votre recherche</body></html>');
+                    return new Response('<html><body>Pas de résultat pour votre recherche </body></html>');
                 }
 
                 return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
