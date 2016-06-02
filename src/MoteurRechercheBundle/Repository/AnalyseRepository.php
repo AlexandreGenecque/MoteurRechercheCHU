@@ -20,6 +20,24 @@ class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 		return $queryBuider->getQuery()->getResult();	
 	}
 
+public function rechercheAnalyseAvecLabo($nomAnalyse,$nomLaboratoire){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
+			->setParameter('nomAnalyse','%'.$nomAnalyse.'%')
+			->andWhere('a.laboratoire = :laboratoire')
+			->setParameter('laboratoire', $nomLaboratoire)
+			->orderBy('a.nomAnalyse', 'ASC');
+			//->setParameter('nomLaboratoire', $nomLaboratoire);
+
+
+	/*		 $qb->where('a.author = :author')
+       ->setParameter('author', $author)
+     ->andWhere('a.date < :year')
+       ->setParameter('year', $year)
+     ->orderBy('a.date', 'DESC')*/
+
+		return $queryBuider->getQuery()->getResult();	
+	}
 
 		public function rechercheAnalyseButton($lettre){
 		$queryBuider = $this->createQueryBuilder('a');

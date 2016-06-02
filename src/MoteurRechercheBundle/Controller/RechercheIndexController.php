@@ -59,6 +59,8 @@ class RechercheIndexController extends Controller
             $saisieLabo = $request->get('selectLabo');
             $saisieMicroOrg = $request->get('selectMicroOrg');
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
+            $em2 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Laboratoire');
+            $em3 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme');
 
 //            return new Response('Saisie = '.$saisie.' / Labo:'.$saisieLabo.' / MicroOrganisme:'. $saisieMicroOrg. '');
 
@@ -67,8 +69,8 @@ class RechercheIndexController extends Controller
                  $resultat = $em->rechercheAnalyse($saisie);
             }
             else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") {
-                # code...
-                $resultat = $em->rechercheAnalyse($saisie,$saisieLabo);
+                $labo = $em2->findBynomLaboratoire($saisieLabo);
+                $resultat = $em->rechercheAnalyseAvecLabo($saisie,$labo);
             }
             else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") {
                 # code...
