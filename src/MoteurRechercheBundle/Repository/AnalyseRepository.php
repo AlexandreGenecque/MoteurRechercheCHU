@@ -20,35 +20,42 @@ class AnalyseRepository extends \Doctrine\ORM\EntityRepository
 		return $queryBuider->getQuery()->getResult();	
 	}
 
-public function rechercheAnalyseAvecLabo($nomAnalyse,$nomLaboratoire){
+public function rechercheAnalyseWithLabo($nomAnalyse,$nomLaboratoire){
 		$queryBuider = $this->createQueryBuilder('a');
 		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
 			->setParameter('nomAnalyse','%'.$nomAnalyse.'%')
 			->andWhere('a.laboratoire = :laboratoire')
 			->setParameter('laboratoire', $nomLaboratoire)
 			->orderBy('a.nomAnalyse', 'ASC');
-			//->setParameter('nomLaboratoire', $nomLaboratoire);
 
-
-	/*		 $qb->where('a.author = :author')
-       ->setParameter('author', $author)
-     ->andWhere('a.date < :year')
-       ->setParameter('year', $year)
-     ->orderBy('a.date', 'DESC')*/
 
 		return $queryBuider->getQuery()->getResult();	
 	}
 
-// Ne fonctionne pas
-	public function rechercheAnalyseAvecMicroOrg($nomAnalyse,$nomMicroOrganisme){
-		$queryBuider = $this->createQueryBuilder('a');
-		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
-			->setParameter('nomAnalyse','%'.$nomAnalyse.'%')
-			->andWhere('a.microOrganisme_analyse = :microOrganisme_analyse')
-			->setParameter('microOrganisme_analyse', $nomMicroOrganisme);
-			//->orderBy('a.nomAnalyse', 'ASC');
+	public function rechercheAnalyseWithMicroOrg($nomAnalyse,$nomMicroOrganisme){
 
-		return $queryBuider->getQuery()->getResult();	
+			$queryBuider = $this->createQueryBuilder('a');
+			$queryBuider->innerJoin('a.microOrganisme_analyse', 'm')
+			->where('m.id = :micro_organisme_id')
+			->setParameter('micro_organisme_id', $nomMicroOrganisme)
+			->andWhere('a.nomAnalyse LIKE :nomAnalyse ')
+			->setParameter('nomAnalyse', '%'.$nomAnalyse.'%')
+			->orderBy('a.nomAnalyse', 'ASC');
+
+		return $queryBuider->getQuery()->getResult();
+
+	}
+
+	public function rechercheAnalyseMicroOrg($nomMicroOrganisme){
+
+			$queryBuider = $this->createQueryBuilder('a');
+			$queryBuider->innerJoin('a.microOrganisme_analyse', 'm')
+			->where('m.id = :micro_organisme_id')
+			->setParameter('micro_organisme_id', $nomMicroOrganisme)
+			->orderBy('a.nomAnalyse', 'ASC');
+
+		return $queryBuider->getQuery()->getResult();
+
 	}
 
 	
@@ -63,11 +70,41 @@ public function rechercheAnalyseAvecLabo($nomAnalyse,$nomLaboratoire){
 
 	
 
-		public function rechercheAnalyseButton($lettre){
+	public function rechercheAnalyseButton($lettre){
 		$queryBuider = $this->createQueryBuilder('a');
 		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')
 			->orderBy('a.nomAnalyse', 'ASC')
 			->setParameter('nomAnalyse',$lettre.'%');
+
+		return $queryBuider->getQuery()->getResult();	
+	}
+
+	public function rechercheAnalyseWithAll($nomAnalyse,$nomLaboratoire,$nomMicroOrganisme){
+		
+		$queryBuider = $this->createQueryBuilder('a');
+			$queryBuider->innerJoin('a.microOrganisme_analyse', 'm')
+			->where('m.id = :micro_organisme_id')
+			->setParameter('micro_organisme_id', $nomMicroOrganisme)
+			->andWhere('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
+			->setParameter('nomAnalyse', '%'.$nomAnalyse.'%')
+			->andWhere('a.laboratoire = :laboratoire')
+			->setParameter('laboratoire', $nomLaboratoire)
+			->orderBy('a.nomAnalyse', 'ASC');
+
+
+		return $queryBuider->getQuery()->getResult();	
+	}
+
+	public function rechercheAnalyseWithLaboAndMicroOrg($nomLaboratoire,$nomMicroOrganisme){
+		
+		$queryBuider = $this->createQueryBuilder('a');
+			$queryBuider->innerJoin('a.microOrganisme_analyse', 'm')
+			->where('m.id = :micro_organisme_id')
+			->setParameter('micro_organisme_id', $nomMicroOrganisme)
+			->andWhere('a.laboratoire = :laboratoire')
+			->setParameter('laboratoire', $nomLaboratoire)
+			->orderBy('a.nomAnalyse', 'ASC');
+
 
 		return $queryBuider->getQuery()->getResult();	
 	}

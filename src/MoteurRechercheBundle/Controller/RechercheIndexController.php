@@ -73,29 +73,35 @@ class RechercheIndexController extends Controller
             // Recherche avec la saisie et le labo
             else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") { // Fonctionne
                 $labo = $em2->findBynomLaboratoire($saisieLabo);
-                $resultat = $em->rechercheAnalyseAvecLabo($saisie,$labo);
+                $resultat = $em->rechercheAnalyseWithLabo($saisie,$labo);
             }
             // Recherche avec la saisie et le microOrg
-            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") { // KO
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") { // Fonctionne
                 # code...
                 $microOrg = $em3->findOneBynomMicroOrganisme($saisieMicroOrg);
-                $resultat = $em->rechercheAnalyseAvecMicroOrg($saisie, $microOrg);
+                $resultat = $em->rechercheAnalyseWithMicroOrg($saisie, $microOrg->getId());
             }
-            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") { // KO
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") { // Fonctionne
                 # code...
-                $resultat = $em->rechercheAnalyse($saisie, $saisieLabo, $saisieMicroOrg);
+                $labo = $em2->findBynomLaboratoire($saisieLabo);
+                $microOrg = $em3->findOneBynomMicroOrganisme($saisieMicroOrg);
+                $resultat = $em->rechercheAnalyseWithAll($saisie, $labo, $microOrg->getId());
+                
             }
-            elseif ($saisie == "" &&  ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") { // KO
-                # code...
-                $resultat = $em->rechercheAnalyse($saisieLabo, $saisieMicroOrg);
+            elseif ($saisie == "" &&  ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") { // Fonctionne
+                $labo = $em2->findBynomLaboratoire($saisieLabo);
+                $microOrg = $em3->findOneBynomMicroOrganisme($saisieMicroOrg);
+                $resultat = $em->rechercheAnalyseWithLaboAndMicroOrg($labo, $microOrg->getId());
             }
             else if ($saisie == "" && !ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") { // Fonctionne
                 $labo = $em2->findBynomLaboratoire($saisieLabo);
                 $resultat = $em->rechercheAnalyseLabo($labo);
             }
-            else if ($saisie == "" &&  ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") { // KO
-                # code...
-                $resultat = $em->rechercheAnalyse($saisieMicroOrg);
+            else if ($saisie == "" &&  ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") { // Fonctionne
+
+                $microOrg = $em3->findOneBynomMicroOrganisme($saisieMicroOrg);
+                $resultat = $em->rechercheAnalyseMicroOrg($microOrg->getId());
+                
             }
 
             if(! $resultat)
