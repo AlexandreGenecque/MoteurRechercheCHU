@@ -64,35 +64,39 @@ class RechercheIndexController extends Controller
 
 //            return new Response('Saisie = '.$saisie.' / Labo:'.$saisieLabo.' / MicroOrganisme:'. $saisieMicroOrg. '');
 
-            if($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg == "defaut")
+
+            // Une saisie basique avec simplement le champ de recherche renseignée
+            if($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg == "defaut") // Fonctionne
             {
                  $resultat = $em->rechercheAnalyse($saisie);
             }
-            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") {
+            // Recherche avec la saisie et le labo
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") { // Fonctionne
                 $labo = $em2->findBynomLaboratoire($saisieLabo);
                 $resultat = $em->rechercheAnalyseAvecLabo($saisie,$labo);
             }
-            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") {
+            // Recherche avec la saisie et le microOrg
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") { // KO
                 # code...
-                $resultat = $em->rechercheAnalyse($saisie, $saisieMicroOrg );
+                $microOrg = $em3->findOneBynomMicroOrganisme($saisieMicroOrg);
+                $resultat = $em->rechercheAnalyseAvecMicroOrg($saisie, $microOrg);
             }
-            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") {
+            else if ($saisie != "" && ! ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") { // KO
                 # code...
                 $resultat = $em->rechercheAnalyse($saisie, $saisieLabo, $saisieMicroOrg);
             }
-            elseif ($saisie == "" &&  ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") {
+            elseif ($saisie == "" &&  ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg != "defaut") { // KO
                 # code...
                 $resultat = $em->rechercheAnalyse($saisieLabo, $saisieMicroOrg);
             }
-            else if ($saisie == "" &&  ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") {
-                # code...
-                $resultat = $em->rechercheAnalyse($saisieLabo);
+            else if ($saisie == "" && !ctype_space($saisie) && $saisieLabo != "defaut" && $saisieMicroOrg == "defaut") { // Fonctionne
+                $labo = $em2->findBynomLaboratoire($saisieLabo);
+                $resultat = $em->rechercheAnalyseLabo($labo);
             }
-            else if ($saisie == "" &&  ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") {
+            else if ($saisie == "" &&  ctype_space($saisie) && $saisieLabo == "defaut" && $saisieMicroOrg != "defaut") { // KO
                 # code...
                 $resultat = $em->rechercheAnalyse($saisieMicroOrg);
             }
-            
 
             if(! $resultat)
                 {
@@ -103,23 +107,6 @@ class RechercheIndexController extends Controller
         }
 
         return $this->render('rechercheIndex/index.html.twig');
-
-               // return new Response('Pas dans la fonction Saisie = '.$saisie.' / Labo:'.$saisieLabo.' / MicroOrganisme:'. $saisieMicroOrg. '');
-        /*    if ($saisie != "" && ! ctype_space($saisie))
-            {
-                $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
-                $resultat = $em->rechercheAnalyse($saisie);
-
-                if(! $resultat)
-                {
-                    return new Response('<html><body>Pas de résultat pour votre recherche </body></html>');
-                }
-
-                return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
-            }
-        }
-        
-        return $this->render('rechercheIndex/index.html.twig');*/
     
     }
 
@@ -158,12 +145,17 @@ class RechercheIndexController extends Controller
         $prelevement = $em2->find($id);
         $em3 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme');
         $microorganisme = $em3->find($id);
+        $em2 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:NaturePrelevement'); 
+        $prelevement = $em2->find($id); 
+        $em3 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme'); 
+        $microorganisme = $em3->find($id); 
 
         if(! $analyse){
             throw $this->createNotFoundException("Erreur : impossible de trouver l'analyse");
         }
 
-        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse,'prelevement' =>$prelevement,'microorganisme'=>$microorganisme));
+        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse,'prelevement' =>$prelevement,'microorganisme'=>$microorganisme)); 
+ 
 
     }
 }

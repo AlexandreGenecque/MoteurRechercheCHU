@@ -39,6 +39,30 @@ public function rechercheAnalyseAvecLabo($nomAnalyse,$nomLaboratoire){
 		return $queryBuider->getQuery()->getResult();	
 	}
 
+// Ne fonctionne pas
+	public function rechercheAnalyseAvecMicroOrg($nomAnalyse,$nomMicroOrganisme){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse OR a.natureAnalyse LIKE :nomAnalyse')
+			->setParameter('nomAnalyse','%'.$nomAnalyse.'%')
+			->andWhere('a.microOrganisme_analyse = :microOrganisme_analyse')
+			->setParameter('microOrganisme_analyse', $nomMicroOrganisme);
+			//->orderBy('a.nomAnalyse', 'ASC');
+
+		return $queryBuider->getQuery()->getResult();	
+	}
+
+	
+	public function rechercheAnalyseLabo($nomLaboratoire){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('a.laboratoire = :laboratoire')
+			->setParameter('laboratoire', $nomLaboratoire)
+			->orderBy('a.nomAnalyse', 'ASC');
+
+		return $queryBuider->getQuery()->getResult();	
+	}
+
+	
+
 		public function rechercheAnalyseButton($lettre){
 		$queryBuider = $this->createQueryBuilder('a');
 		$queryBuider ->where('a.nomAnalyse LIKE :nomAnalyse')

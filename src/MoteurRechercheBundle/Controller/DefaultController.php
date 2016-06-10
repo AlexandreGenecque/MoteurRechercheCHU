@@ -232,7 +232,7 @@ class DefaultController extends Controller
 			$analyse1->setTransport($transport1);
 			$analyse1->setConditionPrelevement($conditionPrelevement1);
 			$analyse1->setLaboratoire($laboratoire1);
-			$analyse1->addMicroOrganismeAnalyse($microOrganisme1);
+			//$analyse1->addMicroOrganismeAnalyse($microOrganisme1);
 
 			$analyse2->setNomAnalyse('Adénovirus PCR sur liquides divers ou biopsies');
 			$analyse2->setAnalyte('ADN');
@@ -250,7 +250,7 @@ class DefaultController extends Controller
 			$analyse2->setTransport($transport1);
 			//$analyse2->setConditionPrelevement('');
 			$analyse2->setLaboratoire($laboratoire1);
-			$analyse2->addMicroOrganismeAnalyse($microOrganisme1);
+			//$analyse2->addMicroOrganismeAnalyse($microOrganisme1);
 
 			$analyse3->setNomAnalyse('Adénovirus sur prélèvement respiratoire (Immunofluorescence)');
 			$analyse3->setAnalyte('Antigène');
@@ -268,7 +268,7 @@ class DefaultController extends Controller
 			$analyse3->setTransport($transport1);
 			$analyse3->setConditionPrelevement($conditionPrelevement2);
 			$analyse3->setLaboratoire($laboratoire1);
-			$analyse3->addMicroOrganismeAnalyse($microOrganisme1);
+			//$analyse3->addMicroOrganismeAnalyse($microOrganisme1);
 
 			$analyse4->setNomAnalyse('Anticorps antistreptodornase (ASD)');
 			$analyse4->setAnalyte('Anticorps');
@@ -286,7 +286,7 @@ class DefaultController extends Controller
 			$analyse4->setTransport($transport1);
 			//$analyse4->setConditionPrelevement('');
 			$analyse4->setLaboratoire($laboratoire2);
-			$analyse4->addMicroOrganismeAnalyse($microOrganisme2);
+			//$analyse4->addMicroOrganismeAnalyse($microOrganisme2);
 
 			$analyse5->setNomAnalyse('Antigenurie Legionelle ');
 			$analyse5->setAnalyte('Antigène urinaire ');
@@ -304,7 +304,7 @@ class DefaultController extends Controller
 			$analyse5->setTransport($transport1);
 			//$analyse5->setConditionPrelevement('');
 			$analyse5->setLaboratoire($laboratoire2);
-			$analyse5->addMicroOrganismeAnalyse($microOrganisme3);
+			//$analyse5->addMicroOrganismeAnalyse($microOrganisme3);
 
 			$analyse6->setNomAnalyse('Antigenurie Legionelle (Test rapide)');
 			$analyse6->setAnalyte('Antigène urinaire ');
@@ -322,7 +322,7 @@ class DefaultController extends Controller
 			$analyse6->setTransport($transport1);
 			//$analyse6->setConditionPrelevement('');
 			$analyse6->setLaboratoire($laboratoire2);
-			$analyse6->addMicroOrganismeAnalyse($microOrganisme3);
+			//$analyse6->addMicroOrganismeAnalyse($microOrganisme3);
 
 			$analyse7->setNomAnalyse('Antigenurie Pneumocoque');
 			$analyse7->setAnalyte('Antigène urinaire');
@@ -340,7 +340,7 @@ class DefaultController extends Controller
 			$analyse7->setTransport($transport1);
 			//$analyse7->setConditionPrelevement('');
 			$analyse7->setLaboratoire($laboratoire2);
-			$analyse7->addMicroOrganismeAnalyse($microOrganisme4);
+			//$analyse7->addMicroOrganismeAnalyse($microOrganisme4);
 
 			$analyse8->setNomAnalyse('BK Virus Charge virale sur sang');
 			$analyse8->setAnalyte('ADN');
@@ -358,7 +358,7 @@ class DefaultController extends Controller
 			$analyse8->setTransport($transport1);
 			//$analyse8->setConditionPrelevement('');
 			$analyse8->setLaboratoire($laboratoire1);
-			$analyse8->addMicroOrganismeAnalyse($microOrganisme5);
+			//$analyse8->addMicroOrganismeAnalyse($microOrganisme5);
 
 			$analyse9->setNomAnalyse('BK Virus Charge virale sur urines');
 			$analyse9->setAnalyte('ADN');
@@ -376,7 +376,7 @@ class DefaultController extends Controller
 			$analyse9->setTransport($transport1);
 			//$analyse9->setConditionPrelevement('');
 			$analyse9->setLaboratoire($laboratoire1);
-			$analyse9->addMicroOrganismeAnalyse($microOrganisme5);
+			//$analyse9->addMicroOrganismeAnalyse($microOrganisme5);
 
 			$analyse10->setNomAnalyse('Bactériologie : Cathéter');
 			//analyse10->setAnalyte('');
@@ -394,7 +394,7 @@ class DefaultController extends Controller
 			$analyse10->setTransport($transport1);
 			$analyse10->setConditionPrelevement($conditionPrelevement3);
 			$analyse10->setLaboratoire($laboratoire2);
-			$analyse10->addMicroOrganismeAnalyse($microOrganisme6);
+			//$analyse10->addMicroOrganismeAnalyse($microOrganisme6);
 
 			$analyse11->setNomAnalyse('Charge virale VIH 1 sur Liquide céphalo rachidien (LCR)');
 			$analyse11->setAnalyte('ARN');
@@ -412,7 +412,7 @@ class DefaultController extends Controller
 			$analyse11->setTransport($transport1);
 			//$analyse11->setConditionPrelevement('');
 			$analyse11->setLaboratoire($laboratoire1);
-			$analyse11->addMicroOrganismeAnalyse($microOrganisme7);
+			//$analyse11->addMicroOrganismeAnalyse($microOrganisme7);
 
 			$analyse12->setNomAnalyse('Chlamydia trachomatis PCR sur écouvillons génitaux, urines, sperme et liquides divers');
 			$analyse12->setAnalyte('ADN');
@@ -430,7 +430,7 @@ class DefaultController extends Controller
 			$analyse12->setTransport($transport1);
 			$analyse12->setConditionPrelevement($conditionPrelevement4);
 			$analyse12->setLaboratoire($laboratoire1);
-			$analyse12->addMicroOrganismeAnalyse($microOrganisme8);
+			//$analyse12->addMicroOrganismeAnalyse($microOrganisme8);
 
 			$analyse13->setNomAnalyse('CMV Charge virale sur sang');
 			$analyse13->setAnalyte('ADN');
@@ -448,7 +448,9 @@ class DefaultController extends Controller
 			$analyse13->setTransport($transport1);
 			$analyse13->setConditionPrelevement($conditionPrelevement1);
 			$analyse13->setLaboratoire($laboratoire1);
-			$analyse13->addMicroOrganismeAnalyse($microOrganisme9);
+			//$analyse13->addMicroOrganismeAnalyse($microOrganisme9);
+
+			$microOrganisme1->addAnalyseMicroOrganisme($analyse1);
 
 
 
@@ -500,15 +502,7 @@ class DefaultController extends Controller
 			$em->persist($fichePrescription1);
 			$em->persist($fichePrescription2);
 			$em->persist($fichePrescription3);
-			$em->persist($microOrganisme1);
-			$em->persist($microOrganisme2);
-			$em->persist($microOrganisme3);
-			$em->persist($microOrganisme4);
-			$em->persist($microOrganisme5);
-			$em->persist($microOrganisme6);
-			$em->persist($microOrganisme7);
-			$em->persist($microOrganisme8);
-			$em->persist($microOrganisme9);
+			
 			$em->persist($analyse1);
 			$em->persist($analyse2);
 			$em->persist($analyse3);
@@ -522,6 +516,16 @@ class DefaultController extends Controller
 			$em->persist($analyse11);
 			$em->persist($analyse12);
 			$em->persist($analyse13);
+
+			$em->persist($microOrganisme1);
+			$em->persist($microOrganisme2);
+			$em->persist($microOrganisme3);
+			$em->persist($microOrganisme4);
+			$em->persist($microOrganisme5);
+			$em->persist($microOrganisme6);
+			$em->persist($microOrganisme7);
+			$em->persist($microOrganisme8);
+			$em->persist($microOrganisme9);
 
 			$em->flush();
 		/*
