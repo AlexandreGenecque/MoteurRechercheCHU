@@ -3,20 +3,54 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * ConservationAvantTransport
+ * NomenclatureBBhn
  */
-class ConservationAvantTransport
+class NomenclatureBBhn
 {
     /**
-     * @var integer
+     * @var int
      */
     private $id;
 
     /**
      * @var string
      */
-    private $valeurConservation;
+    private $valeurNomenclature;
 
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set valeurNomenclature
+     *
+     * @param string $valeurNomenclature
+     *
+     * @return NomenclatureBBhn
+     */
+    public function setValeurNomenclature($valeurNomenclature)
+    {
+        $this->valeurNomenclature = $valeurNomenclature;
+
+        return $this;
+    }
+
+    /**
+     * Get valeurNomenclature
+     *
+     * @return string
+     */
+    public function getValeurNomenclature()
+    {
+        return $this->valeurNomenclature;
+    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -31,45 +65,11 @@ class ConservationAvantTransport
     }
 
     /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set valeurConservation
-     *
-     * @param string $valeurConservation
-     *
-     * @return ConservationAvantTransport
-     */
-    public function setValeurConservation($valeurConservation)
-    {
-        $this->valeurConservation = $valeurConservation;
-
-        return $this;
-    }
-
-    /**
-     * Get valeurConservation
-     *
-     * @return string
-     */
-    public function getValeurConservation()
-    {
-        return $this->valeurConservation;
-    }
-
-    /**
      * Add analysis
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return ConservationAvantTransport
+     * @return NomenclatureBBhn
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -96,10 +96,5 @@ class ConservationAvantTransport
     public function getAnalyses()
     {
         return $this->analyses;
-    }
-
-        public function __toString()
-    {
-        return $this->valeurConservation;
     }
 }

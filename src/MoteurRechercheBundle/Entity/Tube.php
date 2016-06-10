@@ -3,25 +3,83 @@
 namespace MoteurRechercheBundle\Entity;
 
 /**
- * FichePrescription
+ * Tube
  */
-class FichePrescription
+class Tube
 {
     /**
-     * @var integer
+     * @var int
      */
     private $id;
 
     /**
      * @var string
      */
-    private $nomFichePrescription;
+    private $nomImageTube;
 
     /**
      * @var string
      */
-    private $url;
+    private $contenantAnalyse;
 
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomImageTube
+     *
+     * @param string $nomImageTube
+     *
+     * @return Tube
+     */
+    public function setNomImageTube($nomImageTube)
+    {
+        $this->nomImageTube = $nomImageTube;
+
+        return $this;
+    }
+
+    /**
+     * Get nomImageTube
+     *
+     * @return string
+     */
+    public function getNomImageTube()
+    {
+        return $this->nomImageTube;
+    }
+
+    /**
+     * Set contenantAnalyse
+     *
+     * @param string $contenantAnalyse
+     *
+     * @return Tube
+     */
+    public function setContenantAnalyse($contenantAnalyse)
+    {
+        $this->contenantAnalyse = $contenantAnalyse;
+
+        return $this;
+    }
+
+    /**
+     * Get contenantAnalyse
+     *
+     * @return string
+     */
+    public function getContenantAnalyse()
+    {
+        return $this->contenantAnalyse;
+    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -36,69 +94,11 @@ class FichePrescription
     }
 
     /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set nomFichePrescription
-     *
-     * @param string $nomFichePrescription
-     *
-     * @return FichePrescription
-     */
-    public function setNomFichePrescription($nomFichePrescription)
-    {
-        $this->nomFichePrescription = $nomFichePrescription;
-
-        return $this;
-    }
-
-    /**
-     * Get nomFichePrescription
-     *
-     * @return string
-     */
-    public function getNomFichePrescription()
-    {
-        return $this->nomFichePrescription;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return FichePrescription
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
      * Add analysis
      *
      * @param \MoteurRechercheBundle\Entity\Analyse $analysis
      *
-     * @return FichePrescription
+     * @return Tube
      */
     public function addAnalysis(\MoteurRechercheBundle\Entity\Analyse $analysis)
     {
@@ -126,11 +126,4 @@ class FichePrescription
     {
         return $this->analyses;
     }
-
-    public function __toString()
-    {
-        return $this->nomFichePrescription;
-    }
-
-
 }

@@ -33,7 +33,15 @@ MoteurRechercheBundle\Entity\Analyse:
             type: string
             length: 255
             nullable: true
-        urlTube:
+        matriceConservationAvantTransport:
+            type: string
+            length: 255
+            nullable: true
+        matriceDelaiAcheminement:
+            type: string
+            length: 255
+            nullable: true
+        matriceTemperatureTransport:
             type: string
             length: 255
             nullable: true
@@ -82,5 +90,13 @@ MoteurRechercheBundle\Entity\Analyse:
             targetEntity: Laboratoire
             inversedBy: analyses
             cascade: [ persist ]
+        nomenclatureBBhn: 
+            targetEntity: NomenclatureBBhn 
+            inversedBy: analyses 
+            cascade: [ persist ] 
+        tube: 
+            targetEntity: Tube 
+            inversedBy: analyses 
+            cascade: [ persist ] 
     lifecycleCallbacks: {  }
 

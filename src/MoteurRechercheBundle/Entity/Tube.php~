@@ -1,0 +1,84 @@
+<?php
+
+namespace MoteurRechercheBundle\Entity;
+
+/**
+ * Tube
+ */
+class Tube
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $nomImageTube;
+
+    /**
+     * @var string
+     */
+    private $contenantAnalyse;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomImageTube
+     *
+     * @param string $nomImageTube
+     *
+     * @return Tube
+     */
+    public function setNomImageTube($nomImageTube)
+    {
+        $this->nomImageTube = $nomImageTube;
+
+        return $this;
+    }
+
+    /**
+     * Get nomImageTube
+     *
+     * @return string
+     */
+    public function getNomImageTube()
+    {
+        return $this->nomImageTube;
+    }
+
+    /**
+     * Set contenantAnalyse
+     *
+     * @param string $contenantAnalyse
+     *
+     * @return Tube
+     */
+    public function setContenantAnalyse($contenantAnalyse)
+    {
+        $this->contenantAnalyse = $contenantAnalyse;
+
+        return $this;
+    }
+
+    /**
+     * Get contenantAnalyse
+     *
+     * @return string
+     */
+    public function getContenantAnalyse()
+    {
+        return $this->contenantAnalyse;
+    }
+}
+
