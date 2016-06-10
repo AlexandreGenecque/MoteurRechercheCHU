@@ -10,7 +10,9 @@
         <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" style="border: double darkblue 2px"/>
         {% endimage %}
         <div>
-        <br><p id="champsfiche">Laboratoire: </p> <p id="champsresul">{{analyse.getLaboratoire().nomLaboratoire }}</p>
+         <br><p id="champsfiche">Nature du prélévement: </p> <p id="champsresul">{{prelevement.getNomNaturePrelevement() }}</p>
+         <br><p id="champsfiche">Micro-Organisme: </p> <p id="champsresul">{{microorganisme.getNomMicroOrganisme() }}</p>
+            <br><p id="champsfiche">Laboratoire: </p> <p id="champsresul">{{analyse.getLaboratoire().nomLaboratoire }}</p>
         <br><p id="champsfiche">Acheminement au laboratoire: </p><p id="champsresul">{{ analyse.getTransport().delaiTransport }}</p>
         <br><p id="champsfiche">Température de transport :</p><p id="champsresul"> {{ analyse.getTransport().temperatureTransport }}</p>
     </div>

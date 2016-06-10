@@ -154,12 +154,16 @@ class RechercheIndexController extends Controller
     {
         $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
         $analyse = $em->find($id);
+        $em2 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:NaturePrelevement');
+        $prelevement = $em2->find($id);
+        $em3 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme');
+        $microorganisme = $em3->find($id);
 
         if(! $analyse){
             throw $this->createNotFoundException("Erreur : impossible de trouver l'analyse");
         }
 
-        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse));
+        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse,'prelevement' =>$prelevement,'microorganisme'=>$microorganisme));
 
     }
 }
