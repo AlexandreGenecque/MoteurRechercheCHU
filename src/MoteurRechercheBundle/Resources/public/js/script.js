@@ -10,7 +10,6 @@ function RAZvalue()
 function ouvre(fichier) 
  {
     ff=window.open(fichier,"popup",
-    "width=800,height=800,left=200,top=40")
  }
 
 

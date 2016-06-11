@@ -5,18 +5,24 @@
         <h2 style="color: #0088CC">{{ analyse.nomAnalyse }}</h2>
         <p style="font-size: x-large"><i>{{ analyse.natureAnalyse }}</i></p>
     </div>
-
-        {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
-        <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" style="border: double darkblue 2px"/>
-        {% endimage %}
         <div>
-         <br><p id="champsfiche">Nature du prélévement: </p> <p id="champsresul">{{prelevement.getNomNaturePrelevement() }}</p>
-         <br><p id="champsfiche">Micro-Organisme: </p> <p id="champsresul">{{microorganisme.getNomMicroOrganisme() }}</p>
-            <br><p id="champsfiche">Laboratoire: </p> <p id="champsresul">{{analyse.getLaboratoire().nomLaboratoire }}</p>
-        <br><p id="champsfiche">Acheminement au laboratoire: </p><p id="champsresul">{{ analyse.getTransport().delaiTransport }}</p>
-        <br><p id="champsfiche">Température de transport :</p><p id="champsresul"> {{ analyse.getTransport().temperatureTransport }}</p>
-    </div>
-        <input id="bouton_d" type="button" class="btn" value="Details" onclick="resize()">
+        <br><p id="champsfiche">Nature du prélévement: {{prelevement.getNomNaturePrelevement() }}</p>
+        <br><p id="champsfiche">Micro-Organisme: {{microorganisme.getNomMicroOrganisme() }}</p>
+        <br><p id="champsfiche">L'analyse se trouve sur la fiche : {{analyse.getFichePrescription().nomFichePrescription }}</p>
+            <div id="cadrefiole">
+                {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
+                <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" />
+                {% endimage %}
+            </div>
+            <br><p id="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
+        <br><p id="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
+        <br><p id="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }} à {{ analyse.getTransport().temperatureTransport }}</p>
+        <br><p id="champsfiche2">Autres renseignements utiles: {{analyse.getConditionPrelevement().valeurCP }} {{analyse.getConditionPrelevement().precisionCP }}</p>
+        </div>
+        <input id="bouton_d" type="button" class="btn btn-primary" value="Bouton << Plus de détails >>" onclick="resize()">
+    {% image '@MoteurRechercheBundle/Resources/public/images/IBC_provisoir.png' %}
+    <img id="carte" src="{{ asset_url }}" alt="Example"  />
+    {% endimage %}
     <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
         <p id="champsresul">Champs a definir n°1</p>
         <p id="champsresul">Champs a definir n°2</p>
@@ -32,21 +38,5 @@
                 document.getElementById('cache').style.display="block";
                 document.getElementById('bouton_d').style.display="none";
             }
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Lat', 'Long', 'Name'],
-                    [49.441166, 1.111725, 'IBC'],
-                    [49.437929,1.109740,'IMUNOLOGIE'],
-                    [49.440036,1.106725,'ANAPATHOLOGIE'],
-                ]);
-                var map = new google.visualization.Map(document.getElementById('map_div'));
-                var options = {showTip: true,useMapTypeControl: true}
-                map.draw(data,options);
-            }
-            google.charts.load("current", {packages:["map"]});
-            google.charts.setOnLoadCallback(drawChart);
-        </script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     {% endblock %}
 {% endblock %}
