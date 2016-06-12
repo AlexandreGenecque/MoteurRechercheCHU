@@ -54,6 +54,10 @@ moteur_recherche_insertion:
     path:     /insertion
     defaults: { _controller: MoteurRechercheBundle:Default:jeuxInsertion }
 
+moteur_recherche_vidage:
+    path:     /vidageBDD
+    defaults: { _controller: MoteurRechercheBundle:Default:vidageTable }
+
 moteur_recherche_homepage:
         resource: "@MoteurRechercheBundle/Resources/config/routing/recherche.yml"
         prefix:   /rechercheIndex

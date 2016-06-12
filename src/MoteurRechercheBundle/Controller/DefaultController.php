@@ -29,6 +29,52 @@ class DefaultController extends Controller
         return $this->render('MoteurRechercheBundle:Default:index.html.twig');
     }
 
+    public function vidageTableAction(){
+
+    	$entityManager = $this->getDoctrine()->getManager();
+    	$connection = $entityManager->getConnection();
+		$platform   = $connection->getDatabasePlatform();
+  
+  		//$connection->executeUpdate($platform->getTruncateTableSQL('micro_organisme', true /* whether to cascade */));
+
+  	$connection->executeQuery('SET FOREIGN_KEY_CHECKS = 0;');
+	$truncateSql = $platform->getTruncateTableSQL('analyse');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('condition_prelevement');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('conservation_avant_transport');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('delai_resultat');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('fiche_prescription');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('laboratoire');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('micro_organisme');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('micro_organisme_analyse');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('nature_matrice');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('nature_prelevement');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('nomenclature_bbhn');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('principe_methode');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('renseignement_clinique');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('secteur');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('transport');
+	$connection->executeUpdate($truncateSql);
+	$truncateSql = $platform->getTruncateTableSQL('tube');
+	$connection->executeUpdate($truncateSql);
+	$connection->executeQuery('SET FOREIGN_KEY_CHECKS = 1;');
+
+	return new Response("<html><body>La BDD est vide</body></html>");
+    }
+
 	public function jeuxInsertionAction(){
 
 			$laboratoire1 = new Laboratoire();
