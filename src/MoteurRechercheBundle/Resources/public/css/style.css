@@ -138,3 +138,17 @@ div#cadrefiole {
     text-align: center;
     margin-bottom: 5%;
 }
+
+#zonePresentation {
+    //width:80%;
+    margin:0;
+}
+
+#zonePresentation h4{
+    color : #337ab7;
+    text-decoration: strong;
+}
+
+#zonePresentation p, li{
+    text-align:justify;
+}
