@@ -58,7 +58,7 @@
     </div>
 
         <form id="zoneRecherche" class="form-horizontal" action="{{ path('recherche')}}" method="POST">
-            <input class="form-control" id="zoneLibre"type="text" name="recherche" placeholder="Recherche...">
+            <input class="form-control" id="zoneLibre" type="text" name="recherche" placeholder="Recherche...">
 
             <select id="selectLabo" class="form-control">
                 <option value="defaut">Laboratoire</option>
@@ -90,23 +90,30 @@
 //$(".loading").hide();
 $("#zoneRecherche").submit(function(){ 
     //$(".loading").show();
+
+
+
     var motcle = $("#zoneLibre").val();
     var labo = $("#selectLabo").val();
     var microOrg = $("#selectMicroOrg").val();
 
-    var DATA = 'zonelibre=' + motcle + '&selectLabo=' + labo + '&selectMicroOrg=' + microOrg ;
-    
 
-    $.ajax({
-        type: "POST",
-        url: "{{ path('recherche')}}",
-        data: DATA,
-        cache: false,
-        success: function(data){
-           $('#zoneResultat').html(data);
-          // $(".loading").hide();
-        }
-    });    
+    if (motcle != "" || labo != "defaut" || microOrg != "defaut")
+    {
+        var DATA = 'zonelibre=' + motcle + '&selectLabo=' + labo + '&selectMicroOrg=' + microOrg ; 
+
+        $.ajax({
+            type: "POST",
+            url: "{{ path('recherche')}}",
+            data: DATA,
+            cache: false,
+            success: function(data){
+               $('#zoneResultat').html(data);
+              // $(".loading").hide();
+            }
+        });    
+
+    }
     return false;
 });
 
