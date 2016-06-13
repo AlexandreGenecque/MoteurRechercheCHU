@@ -13,6 +13,10 @@ MoteurRechercheBundle\Entity\Laboratoire:
             type: string
             length: 255
             nullable: true
+        plan:
+            type: string
+            length: 255
+            nullable: true
     oneToMany:
         analyses:
             targetEntity: Analyse

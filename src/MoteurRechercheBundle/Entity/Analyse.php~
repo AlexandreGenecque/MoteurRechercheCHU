@@ -703,4 +703,33 @@ class Analyse
     {
         return $this->tube;
     }
+    /**
+     * @var string
+     */
+    private $refGedi;
+
+
+    /**
+     * Set refGedi
+     *
+     * @param string $refGedi
+     *
+     * @return Analyse
+     */
+    public function setRefGedi($refGedi)
+    {
+        $this->refGedi = $refGedi;
+
+        return $this;
+    }
+
+    /**
+     * Get refGedi
+     *
+     * @return string
+     */
+    public function getRefGedi()
+    {
+        return $this->refGedi;
+    }
 }
