@@ -110,6 +110,15 @@ public function rechercheAnalyseWithLabo($nomAnalyse,$nomLaboratoire){
 	}
 
 
+	public function rechercheNumerique(){
+		$queryBuider = $this->createQueryBuilder('a');
+		$queryBuider ->where('REGEXP(a.nomAnalyse,:regexNum) =true OR REGEXP(a.natureAnalyse,:regexNum) =true')
+			->setParameter('regexNum','[a-zA-Z]*[0-9]{1}[a-zA-Z]*')
+			->orderBy('a.nomAnalyse', 'ASC');
+
+		return $queryBuider->getQuery()->getResult();	
+	}
+
 
 
 }

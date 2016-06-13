@@ -129,7 +129,11 @@ class RechercheIndexController extends Controller
             $saisie = $request->get('lettre');
 
             $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
-            $resultat = $em->rechercheAnalyseButton($saisie);
+
+            if ($saisie == "0...9")
+              $resultat = $em->rechercheNumerique();
+            else
+              $resultat = $em->rechercheAnalyseButton($saisie);
 
 
             if(! $resultat)
