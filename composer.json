@@ -23,7 +23,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "symfony/assetic-bundle": "^2.8",
         "twbs/bootstrap": "^3.3",
-        "beberlei/DoctrineExtensions": "^1.0"
+        "beberlei/DoctrineExtensions": "^1.0",
+        "ensepar/html2pdf-bundle": "^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

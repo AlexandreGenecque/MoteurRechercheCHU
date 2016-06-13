@@ -58,6 +58,10 @@ moteur_recherche_vidage:
     path:     /vidageBDD
     defaults: { _controller: MoteurRechercheBundle:Default:vidageTable }
 
+moteur_recherche_PDF:
+    path:     /PDF
+    defaults: { _controller: MoteurRechercheBundle:Default:generatePDF }
+
 moteur_recherche_homepage:
         resource: "@MoteurRechercheBundle/Resources/config/routing/recherche.yml"
         prefix:   /rechercheIndex

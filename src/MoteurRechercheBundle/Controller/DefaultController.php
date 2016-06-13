@@ -29,6 +29,29 @@ class DefaultController extends Controller
         return $this->render('MoteurRechercheBundle:Default:index.html.twig');
     }
 
+    public function generatePDFAction(){
+
+	$em = $this->getDoctrine()->getManager();
+
+       $analyse = $em->getRepository('MoteurRechercheBundle:Analyse')->find(4);
+
+
+
+
+    	//on stocke la vue à convertir en PDF, en n'oubliant pas les paramètres twig si la vue comporte des données dynamiques
+	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig',array('analyse' => $analyse));
+	//on appelle le service html2pdf
+	$html2pdf = $this->get('html2pdf_factory')->create();
+	//real : utilise la taille réelle
+	$html2pdf->pdf->SetDisplayMode('real');
+	//writeHTML va tout simplement prendre la vue stocker dans la variable $html pour la convertir en format PDF
+	$html2pdf->writeHTML($html);
+
+	//Output envoit le document PDF au navigateur internet
+	return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
+
+    }
+
     public function vidageTableAction(){
 
     	$entityManager = $this->getDoctrine()->getManager();
@@ -574,245 +597,7 @@ class DefaultController extends Controller
 			$em->persist($microOrganisme9);
 
 			$em->flush();
-		/*
-			$lecteur1 = new Lecteur();
-			$lecteur2 = new Lecteur();
-			$lecteur3 = new Lecteur();
-			$lecteur4 = new Lecteur();
-			$lecteur5 = new Lecteur();
-			
-			$lecteur1->setInformation('Genecque','Alexandre');
-			$lecteur2->setInformation('Ledoux','Nicolas');
-			$lecteur3->setInformation('Bouteleux','Alison');
-			$lecteur4->setInformation('Debrue','Florian');
-			$lecteur5->setInformation('Lapujade','Anne');
-			
-			
-			$regle1->addRegleLecteur($lecteur1);
-			$regle2->addRegleLecteur($lecteur2);
-			$regle2->addRegleLecteur($lecteur3);
-			$regle2->addRegleLecteur($lecteur4);
-			$regle3->addRegleLecteur($lecteur5);
-			
-			$faculte1 = new Faculte();
-			$faculte2 = new Faculte();
-			$faculte3 = new Faculte();
-			$faculte4 = new Faculte();
-			
-			$faculte1->setDesignation('UPJV - pôle science');
-			$faculte2->setDesignation('UPJV - pôle medecine');
-			$faculte3->setDesignation('Université Paris');
-			$faculte4->setDesignation('UPJV - pôle prof');
-			
-			$faculte1->addFaculteLecteur($lecteur1);
-			$faculte1->addFaculteLecteur($lecteur2);
-			$faculte1->addFaculteLecteur($lecteur3);
-			$faculte1->addFaculteLecteur($lecteur4);
-			$faculte4->addFaculteLecteur($lecteur5);
-			
-			/////////////////////////////////////////////////////////
-			
-			
-			$theme1 = new Theme();
-			$theme2 = new Theme();
-			$theme3 = new Theme();
-			$theme4 = new Theme();
-			
-			$theme1->setNom('fantastique');
-			$theme2->setNom('horreur');
-			$theme3->setNom('voyage');
-			$theme4->setNom('littérature');
-			$theme1->setDescription('epic!');
-			$theme2->setDescription('ça fait peur !');
-			$theme3->setDescription('magnifique');
-			$theme4->setDescription('intellect');
-			
-			$livre1 = new Livre();
-			$livre2 = new Livre();
-			$livre3 = new Livre();
-			$livre4 = new Livre();
-			
-			$livre1->setTitre('Histoire sans fin');
-			$livre2->setTitre('Chair de poule');
-			$livre3->setTitre('Barcelone');
-			$livre4->setTitre('les fleurs du mal');
-			
-			$livre1->setNotice('génial');
-			$livre2->setNotice('peur');
-			$livre3->setNotice('top');
-			$livre4->setNotice('cool');
-			
-			$livre1->addLivreTheme($theme1);
-			$livre2->addLivreTheme($theme2);
-			$livre3->addLivreTheme($theme3);
-			$livre4->addLivreTheme($theme4);
-			
-			
-		    $auteur1 = new Auteur();
-			$auteur2 = new Auteur();
-			$auteur3 = new Auteur();
-			$auteur4 = new Auteur();
-			
-			$auteur1->setNom('Toto');
-			$auteur1->setPrenom('Elvis');
-			$auteur2->setNom('Hallyday');
-			$auteur2->setPrenom('Johnny');
-			$auteur3->setNom('Sarco');
-			$auteur3->setPrenom('Nicoco');
-			$auteur4->setNom('Chazal');
-			$auteur4->setPrenom('Clair');
-			
-			$livre1->addLivreAuteur($auteur1);
-			$livre2->addLivreAuteur($auteur2);
-			$livre3->addLivreAuteur($auteur3);
-			$livre4->addLivreAuteur($auteur4);
-			
-			
-			$rayon1 = new Rayon();
-			$rayon2 = new Rayon();
-			
-			$rayon1->setDesignation('A1');
-			$rayon2->setDesignation('B2');
-			
-			$rayon1->setRayonTheme($theme1);
-			$rayon2->setRayonTheme($theme2);
-			
-			$etagere1 = new Etagere();
-			$etagere2 = new Etagere();
-			$etagere3 = new Etagere();
-			$etagere4 = new Etagere();
-			
-			$etagere1->setNumero('1');
-			$etagere2->setNumero('2');
-			$etagere3->setNumero('3');
-			$etagere4->setNumero('4');
-			
-			$etagere1->setNbExemplaire('10');
-			$etagere2->setNbExemplaire('5');
-			$etagere3->setNbExemplaire('8');
-			$etagere4->setNbExemplaire('6');
-			
-			$rayon1->addRayonEtagere($etagere1);
-			$rayon1->addRayonEtagere($etagere2);
-			$rayon1->addRayonEtagere($etagere3);
-			$rayon2->addRayonEtagere($etagere4);
-			
-			$exemplaire1=new Exemplaire();
-			$exemplaire2=new Exemplaire();
-			$exemplaire3=new Exemplaire();
-			$exemplaire4=new Exemplaire();
-			$exemplaire5=new Exemplaire();
-			$exemplaire6=new Exemplaire();
-			$exemplaire7=new Exemplaire();
-			$exemplaire8=new Exemplaire();
-			
-			
-			$livre1->addLivreExemplaire($exemplaire1);
-			$livre1->addLivreExemplaire($exemplaire2);
-			$livre1->addLivreExemplaire($exemplaire3);
-			$livre2->addLivreExemplaire($exemplaire4);
-			$livre3->addLivreExemplaire($exemplaire5);
-			$livre3->addLivreExemplaire($exemplaire6);
-			$livre4->addLivreExemplaire($exemplaire7);
-			$livre4->addLivreExemplaire($exemplaire8);
-		
-			
-			$exemplaire1->setExemplaireEtagere($etagere1);
-			$exemplaire2->setExemplaireEtagere($etagere2);
-			$exemplaire3->setExemplaireEtagere($etagere2);
-			$exemplaire4->setExemplaireEtagere($etagere2);
-			$exemplaire5->setExemplaireEtagere($etagere2);
-			$exemplaire6->setExemplaireEtagere($etagere2);
-			$exemplaire7->setExemplaireEtagere($etagere3);
-			$exemplaire8->setExemplaireEtagere($etagere3);
-			
-			//////////////////////////////////////////////////////
-			
-			$emprunt1 = new Emprunt();
-			$emprunt2 = new Emprunt();
-			$emprunt3 = new Emprunt();
-			$emprunt4 = new Emprunt();
-			
-			$emprunt1->setDateDebut(20150609);
-			$emprunt2->setDateDebut(20150530);
-			$emprunt3->setDateDebut(20150515);
-			$emprunt4->setDateDebut(20150602);
-			
-			$emprunt1->setEmpruntExemplaire($exemplaire1);
-			$emprunt2->setEmpruntExemplaire($exemplaire4);
-			$emprunt3->setEmpruntExemplaire($exemplaire7);
-			$emprunt4->setEmpruntExemplaire($exemplaire8);
-			
-			$emprunt1->setEmpruntLecteur($lecteur1);
-			$emprunt2->setEmpruntLecteur($lecteur1);
-			$emprunt3->setEmpruntLecteur($lecteur2);
-			$emprunt4->setEmpruntLecteur($lecteur4);
-			
-			$reservation = new Reservation();
-			$reservation->setDateDebut(20150615);
-			$reservation->setReservationLecteur($lecteur1);
-			$reservation->setReservationLivre($livre4);
-			
-			//////////////////////////////////////////////////////
-			
-			
-			$em = $this->getDoctrine()->getManager();
-			$em->persist($regle1);
-			$em->persist($regle2);
-			$em->persist($regle3);
-			
-			$em->persist($lecteur1);
-			$em->persist($lecteur2);
-			$em->persist($lecteur3);
-			$em->persist($lecteur4);
-			$em->persist($lecteur5);
-	        
-			$em->persist($faculte1);
-			$em->persist($lecteur2);
-			$em->persist($lecteur3);
-			$em->persist($lecteur4);
-			
-			$em->persist($theme1);
-			$em->persist($theme2);
-			$em->persist($theme3);
-			$em->persist($theme4);
-			
-			$em->persist($livre1);
-			$em->persist($livre2);
-			$em->persist($livre3);
-			$em->persist($livre4);
-			
-			$em->persist($auteur1);
-			$em->persist($auteur2);
-			$em->persist($auteur3);
-			$em->persist($auteur4);
-			
-			$em->persist($rayon1);
-			$em->persist($rayon2);
-			
-			$em->persist($etagere1);
-			$em->persist($etagere2);
-			$em->persist($etagere3);
-			$em->persist($etagere4);
-			
-			$em->persist($exemplaire1);
-			$em->persist($exemplaire2);
-			$em->persist($exemplaire3);
-			$em->persist($exemplaire4);
-			$em->persist($exemplaire5);
-			$em->persist($exemplaire6);
-			$em->persist($exemplaire7);
-			$em->persist($exemplaire8);
-			
-			$em->persist($emprunt1);
-			$em->persist($emprunt2);
-			$em->persist($emprunt3);
-			$em->persist($emprunt4);
-			
-			$em->persist($reservation);
-				
-			$em->flush();*/
-			
+
 			
 			return new Response("<html><body>Insertion : OK</body></html>");
 		

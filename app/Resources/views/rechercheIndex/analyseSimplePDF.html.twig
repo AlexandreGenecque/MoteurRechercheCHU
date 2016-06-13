@@ -1,0 +1,28 @@
+
+{% block body %}
+    <div style="text-align: center">
+        <h2 style="color: #0088CC">{{ analyse.nomAnalyse }}</h2>
+        <p style="font-size: x-large"><i>{{ analyse.natureAnalyse }}</i></p>
+    </div>
+        <div>
+           
+        <br><p id="champsfiche">L'analyse se trouve sur la fiche : {{analyse.getFichePrescription().nomFichePrescription }}</p>
+
+            <br><p id="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
+        <br><p id="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
+        <br><p id="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }} à {{ analyse.getTransport().temperatureTransport }}</p>
+            {% if analyse.getConditionPrelevement() is not null %}
+        <br><p id="champsfiche2">Autres renseignements utiles: {{analyse.getConditionPrelevement().valeurCP }} {{analyse.getConditionPrelevement().precisionCP }}</p>
+        {% endif %}
+        </div>
+        <input id="bouton_d" type="button" class="btn btn-primary" value="Bouton << Plus de détails >>" onclick="resize()">
+    
+    <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
+        <p id="champsresul">Champs a definir n°1</p>
+        <p id="champsresul">Champs a definir n°2</p>
+        <p id="champsresul">Champs a definir n°3</p>
+        <p id="champsresul">Champs a definir n°4</p>
+        <div id="map_div" ></div>
+    </div>
+
+{% endblock %}
