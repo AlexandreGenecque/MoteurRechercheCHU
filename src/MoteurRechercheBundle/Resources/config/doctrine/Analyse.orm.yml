@@ -45,6 +45,10 @@ MoteurRechercheBundle\Entity\Analyse:
             type: string
             length: 255
             nullable: true
+        refGedi:
+            type: string
+            length: 255
+            nullable: true
     manyToMany:
         microOrganisme_analyse:
             targetEntity: MicroOrganisme

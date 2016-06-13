@@ -587,4 +587,120 @@ class Analyse
     {
         return $this->nomenclatureBBhn;
     }
+    /**
+     * @var string
+     */
+    private $matriceConservationAvantTransport;
+
+    /**
+     * @var string
+     */
+    private $matriceDelaiAcheminement;
+
+    /**
+     * @var string
+     */
+    private $matriceTemperatureTransport;
+
+    /**
+     * @var \MoteurRechercheBundle\Entity\Tube
+     */
+    private $tube;
+
+
+    /**
+     * Set matriceConservationAvantTransport
+     *
+     * @param string $matriceConservationAvantTransport
+     *
+     * @return Analyse
+     */
+    public function setMatriceConservationAvantTransport($matriceConservationAvantTransport)
+    {
+        $this->matriceConservationAvantTransport = $matriceConservationAvantTransport;
+
+        return $this;
+    }
+
+    /**
+     * Get matriceConservationAvantTransport
+     *
+     * @return string
+     */
+    public function getMatriceConservationAvantTransport()
+    {
+        return $this->matriceConservationAvantTransport;
+    }
+
+    /**
+     * Set matriceDelaiAcheminement
+     *
+     * @param string $matriceDelaiAcheminement
+     *
+     * @return Analyse
+     */
+    public function setMatriceDelaiAcheminement($matriceDelaiAcheminement)
+    {
+        $this->matriceDelaiAcheminement = $matriceDelaiAcheminement;
+
+        return $this;
+    }
+
+    /**
+     * Get matriceDelaiAcheminement
+     *
+     * @return string
+     */
+    public function getMatriceDelaiAcheminement()
+    {
+        return $this->matriceDelaiAcheminement;
+    }
+
+    /**
+     * Set matriceTemperatureTransport
+     *
+     * @param string $matriceTemperatureTransport
+     *
+     * @return Analyse
+     */
+    public function setMatriceTemperatureTransport($matriceTemperatureTransport)
+    {
+        $this->matriceTemperatureTransport = $matriceTemperatureTransport;
+
+        return $this;
+    }
+
+    /**
+     * Get matriceTemperatureTransport
+     *
+     * @return string
+     */
+    public function getMatriceTemperatureTransport()
+    {
+        return $this->matriceTemperatureTransport;
+    }
+
+    /**
+     * Set tube
+     *
+     * @param \MoteurRechercheBundle\Entity\Tube $tube
+     *
+     * @return Analyse
+     */
+    public function setTube(\MoteurRechercheBundle\Entity\Tube $tube = null)
+    {
+        $this->tube = $tube;
+
+        return $this;
+    }
+
+    /**
+     * Get tube
+     *
+     * @return \MoteurRechercheBundle\Entity\Tube
+     */
+    public function getTube()
+    {
+        return $this->tube;
+    }
 }
