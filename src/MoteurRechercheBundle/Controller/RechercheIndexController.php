@@ -35,13 +35,13 @@ class RechercheIndexController extends Controller
          $laboratoire = new Laboratoire();
 
         $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Laboratoire');
-        $rechercheLaboratoire = $em->findAll();
-
+        $rechercheLaboratoire = $em->getListeLaboratoire();
+        
 
         $microOrganisme = new MicroOrganisme();
 
         $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme');
-        $rechercheMicroOrganisme = $em->findAll();
+        $rechercheMicroOrganisme = $em->getListeMicroOrganisme();
 
         return $this->render('rechercheIndex/index.html.twig', array('rechercheLaboratoire' => $rechercheLaboratoire, 'rechercheMicroOrganisme' => $rechercheMicroOrganisme)); 
 

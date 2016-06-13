@@ -10,4 +10,12 @@ namespace MoteurRechercheBundle\Repository;
  */
 class MicroOrganismeRepository extends \Doctrine\ORM\EntityRepository
 {
+	
+	public function getListeMicroOrganisme()
+	{
+		$queryBuider = $this->createQueryBuilder('m');
+		$queryBuider ->where("m.nomMicroOrganisme != '' ")
+			->orderBy('m.nomMicroOrganisme', 'ASC');
+		return $queryBuider->getQuery()->getResult();	
+	}
 }
