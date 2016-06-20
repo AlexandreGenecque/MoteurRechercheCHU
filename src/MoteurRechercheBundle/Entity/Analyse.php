@@ -732,4 +732,33 @@ class Analyse
     {
         return $this->refGedi;
     }
+    /**
+     * @var string
+     */
+    private $codeNomenclature;
+
+
+    /**
+     * Set codeNomenclature
+     *
+     * @param string $codeNomenclature
+     *
+     * @return Analyse
+     */
+    public function setCodeNomenclature($codeNomenclature)
+    {
+        $this->codeNomenclature = $codeNomenclature;
+
+        return $this;
+    }
+
+    /**
+     * Get codeNomenclature
+     *
+     * @return string
+     */
+    public function getCodeNomenclature()
+    {
+        return $this->codeNomenclature;
+    }
 }
