@@ -33,3 +33,7 @@ function ouvre(fichier)
         });
     }
  }
+function resize(){
+    document.getElementById('cache').style.display="block";
+    document.getElementById('bouton_d').style.display="none";
+}

@@ -10,7 +10,16 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts '@MoteurRechercheBundle/Resources/public/js/script.js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            {% javascripts 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
         {% block footer %}
             <footer id="foot">
             <a href="javascript:window.print()">

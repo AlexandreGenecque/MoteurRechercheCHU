@@ -6,12 +6,8 @@
         <p style="font-size: x-large"><i>{{ analyse.natureAnalyse }}</i></p>
     </div>
         <div>
-            {% if prelevement is not null %}
-               <br><p id="champsfiche">Nature du prélévement: {{prelevement.getNomNaturePrelevement() }}</p>
-            {% endif %}
-            {% if microorganisme is not null %}
-                <br><p id="champsfiche">Micro-Organisme: {{microorganisme.getNomMicroOrganisme() }}</p>
-            {% endif %}
+               <br><p id="champsfiche">Nature du prélévement: {{analyse.getNaturePrelevement().nomNaturePrelevement }}</p>
+                <br><p id="champsfiche">Micro-Organisme: {{analyse.getMicroOrganismeAnalyse().analyse_microOrganisme}}</p>
         <br><p id="champsfiche">L'analyse se trouve sur la fiche : {{analyse.getFichePrescription().nomFichePrescription }}</p>
             <div id="cadrefiole">
                 {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
@@ -25,24 +21,13 @@
         <br><p id="champsfiche2">Autres renseignements utiles: {{analyse.getConditionPrelevement().valeurCP }} {{analyse.getConditionPrelevement().precisionCP }}</p>
         {% endif %}
         </div>
-        <input id="bouton_d" type="button" class="btn btn-primary" value="Bouton << Plus de détails >>" onclick="resize()">
+        <input id="bouton_d" type="button" class="btn btn-primary" value="Plus de détails" onclick="resize()">
     {% image '@MoteurRechercheBundle/Resources/public/images/IBC_provisoir.png' %}
     <img id="carte" src="{{ asset_url }}" alt="Example"  />
     {% endimage %}
     <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
-        <p id="champsresul">Champs a definir n°1</p>
-        <p id="champsresul">Champs a definir n°2</p>
-        <p id="champsresul">Champs a definir n°3</p>
-        <p id="champsresul">Champs a definir n°4</p>
-        <div id="map_div" ></div>
+        <p id="champsfiche">Tarification : {{analyse.getRefGedi() }}</p>
+        <p id="champsfiche">Code : {{analyse.getRefGedi() }}</p>
     </div>
 
-  {% block javascripts %}
-        <SCRIPT langage="Javascript">
-            function resize(){
-                ff=window.resizeTo(800,800);
-                document.getElementById('cache').style.display="block";
-                document.getElementById('bouton_d').style.display="none";
-            }
-    {% endblock %}
 {% endblock %}
