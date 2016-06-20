@@ -28,7 +28,7 @@
     <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
         <span class="champsfiche" id="tarif">..............Tarification : {{analyse.getNomenclatureBBhn().getValeurNomenclature()}} .............. Code : {{ analyse.getRefGedi()}}..............</span>
         <p class="champsfiche">Analyte : {{ analyse.getAnalyte() }} </p>
-        <p class="champsfiche">Volume du contenant :{{ analyse.getContenantAnalyse() }}</p>
+        <p class="champsfiche">Volume du contenant :{{ analyse.getVolumeContenantAnalyse() }}</p>
         <p class="champsfiche">Secteur Réalisant l’analyse : Standby</p>
         <p class="champsfiche">Principe : {{ analyse.getPrincipeMethode().getNomPrincipeMethode() }}</p>
         <p class="champsfiche">Délai minimum de réalisation :{{ analyse.getDelaiResultat().getValeurResultat() }} Fréquence : {{ analyse.getDelaiResultat().getFrequenceRealisation() }}</p>
