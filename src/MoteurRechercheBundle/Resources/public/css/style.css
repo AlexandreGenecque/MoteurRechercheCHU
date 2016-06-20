@@ -104,7 +104,7 @@ background-image:
 .enligne{
     display: inline-block;
 }
-#champsfiche{
+.champsfiche{
     margin-left: 15%;
     font-size: large;
 }
@@ -149,4 +149,15 @@ div#cadrefiole {
 
 #zonePresentation p, li{
     text-align:justify;
+}
+#ext{
+    background-color: lightgoldenrodyellow;
+    border: double darkorange 2px;
+    border-radius:15%;
+margin-left: 12.5%;
+    width:70%;
+}
+#tarif
+{
+    background-color:lightblue;
 }

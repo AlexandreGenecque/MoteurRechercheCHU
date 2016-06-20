@@ -6,17 +6,17 @@
         <p style="font-size: x-large"><i>{{ analyse.natureAnalyse }}</i></p>
     </div>
         <div>
-               <br><p id="champsfiche">Nature du prélévement: {{analyse.getNaturePrelevement().nomNaturePrelevement }}</p>
-                <br><p id="champsfiche">Micro-Organisme: Standby </p>
-        <br><p id="champsfiche">L'analyse se trouve sur la fiche : {{analyse.getFichePrescription().nomFichePrescription }}</p>
+               <br><p class="champsfiche">Nature du prélévement: {{analyse.getNaturePrelevement().nomNaturePrelevement }}</p>
+                <br><p class="champsfiche">Micro-Organisme: Standby </p>
+        <br><p class="champsfiche">L'analyse se trouve sur la fiche : {{analyse.getFichePrescription().nomFichePrescription }}</p>
             <div id="cadrefiole">
                 {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
                 <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" />
                 {% endimage %}
             </div>
-            <br><p id="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
-        <br><p id="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
-        <br><p id="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }} à {{ analyse.getTransport().temperatureTransport }}</p>
+            <br><p class="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
+        <br><p class="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
+        <br><p class="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }} à {{ analyse.getTransport().temperatureTransport }}</p>
             {% if analyse.getConditionPrelevement() is not null %}
         <br><p id="champsfiche2">Autres renseignements utiles: {{analyse.getConditionPrelevement().valeurCP }} {{analyse.getConditionPrelevement().precisionCP }}</p>
         {% endif %}
@@ -26,8 +26,18 @@
     <img id="carte" src="{{ asset_url }}" alt="Example"  />
     {% endimage %}
     <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
-        <p id="champsfiche">Tarification : {{analyse.getRefGedi() }}</p>
-        <p id="champsfiche">Code : {{analyse.getRefGedi() }}</p>
+        <span class="champsfiche" id="tarif">..............Tarification : {{analyse.getNomenclatureBBhn().getValeurNomenclature()}} .............. Code : {{ analyse.getRefGedi()}}..............</span>
+        <p class="champsfiche">Analyte : {{ analyse.getAnalyte() }} </p>
+        <p class="champsfiche">Volume du contenant :{{ analyse.getContenantAnalyse() }}</p>
+        <p class="champsfiche">Secteur Réalisant l’analyse : Standby</p>
+        <p class="champsfiche">Principe : {{ analyse.getPrincipeMethode().getNomPrincipeMethode() }}</p>
+        <p class="champsfiche">Délai minimum de réalisation :{{ analyse.getDelaiResultat().getValeurResultat() }} Fréquence : {{ analyse.getDelaiResultat().getFrequenceRealisation() }}</p>
+        <div id="ext">
+            <p class="champsfiche"><b>Si vous n’êtes pas sur le site de Charles Nicolle :</b></p>
+            <p class="champsfiche">Nous faire parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{ analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
+            <p class="champsfiche">Conservation:Standby</p>
+            <p class="champsfiche">Conditions de transport : {{analyse.getTransport().getTemperatureTransport()}}  dans un délai de {{ analyse.getTransport().getDelaiTransport() }}</p>
+        </div>
     </div>
 
 {% endblock %}
