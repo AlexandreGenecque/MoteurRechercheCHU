@@ -131,4 +131,33 @@ class Laboratoire
     {
         return $this->nomLaboratoire;
     }
+    /**
+     * @var string
+     */
+    private $plan;
+
+
+    /**
+     * Set plan
+     *
+     * @param string $plan
+     *
+     * @return Laboratoire
+     */
+    public function setPlan($plan)
+    {
+        $this->plan = $plan;
+
+        return $this;
+    }
+
+    /**
+     * Get plan
+     *
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
 }
