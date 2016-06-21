@@ -2,18 +2,18 @@
 
 
 {% block body %}
-    <h1>Liste Analyse</h1>
+    <h1 class="titre">Liste Analyse</h1>
 
     <ul>
-        <li>
+        <li class="champsfiche">
             <a href="{{ path('analyse_new') }}">Créer une nouvelle entrée</a>
         </li>
-        <li>
+        <li class="champsfiche">
             <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
         </li>
     </ul>
 
-    <table>
+    <table id="table" class="table-bordered">
         <thead>
             <tr>
                 <th>Id</th>

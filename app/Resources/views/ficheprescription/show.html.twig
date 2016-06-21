@@ -1,35 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>FichePrescription</h1>
+    <h1 class="titre">FichePrescription</h1>
 
-    <table>
+    <table id="table" class="table table-bordered">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ fichePrescription.id }}</td>
+                <th class="champsfiche">Id</th>
+                <td class="champsfiche">{{ fichePrescription.id }}</td>
             </tr>
             <tr>
-                <th>Nom de la fiche de prescription</th>
-                <td>{{ fichePrescription.nomFichePrescription }}</td>
+                <th class="champsfiche" >Nom de la fiche de prescription</th>
+                <td class="champsfiche">{{ fichePrescription.nomFichePrescription }}</td>
             </tr>
             <tr>
-                <th>Url de la fiche</th>
-                <td>{{ fichePrescription.url }}</td>
+                <th class="champsfiche">Url de la fiche</th>
+                <td class="champsfiche">{{ fichePrescription.url }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
+        <li class="champsfiche">
             <a href="{{ path('ficheprescription_index') }}">Retour sur la liste des fiches</a>
         </li>
-        <li>
+        <li class="champsfiche">
             <a href="{{ path('ficheprescription_edit', { 'id': fichePrescription.id }) }}">Modifier</a>
         </li>
-        <li>
+        <li class="champsfiche">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
+                <input class="btn btn-primary" type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

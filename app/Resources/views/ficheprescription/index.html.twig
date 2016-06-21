@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des fiches de prescription</h1>
+    <h1 class="titre">Liste des fiches de prescription</h1>
 
-    <table>
+    <table  id="table" class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -34,10 +34,10 @@
     </table>
 
     <ul>
-        <li>
+        <li class="champsfiche">
             <a href="{{ path('ficheprescription_new') }}">Créer une nouvelle entrée</a> 
         </li>
-        <li>
+        <li class="champsfiche">
             <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
         </li>
     </ul>

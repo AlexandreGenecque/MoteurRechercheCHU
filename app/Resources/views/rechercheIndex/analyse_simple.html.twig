@@ -2,13 +2,13 @@
 
 {% block body %}
     <div style="text-align: center">
-        <h2 style="color: #0088CC">{{ analyse.nomAnalyse }}</h2>
-        <p style="font-size: x-large"><i>{{ analyse.natureAnalyse }}</i></p>
+        <h2 id="nomanalyse">{{ analyse.nomAnalyse }}</h2>
+        <p id="natureanalyse">{{ analyse.natureAnalyse }}</p>
     </div>
         <div>
                <br><p class="champsfiche">Nature du prélévement: {{analyse.getNaturePrelevement().nomNaturePrelevement }}</p>
                 <br><p class="champsfiche">Micro-Organisme: Standby </p>
-        <br><p class="champsfiche">L'analyse se trouve sur la fiche : {{analyse.getFichePrescription().nomFichePrescription }}</p>
+        <br><p class="champsfiche">L'analyse se trouve sur la fiche : <a href="{{ path('ficheprescription_show', { 'id': analyse.getFichePrescription().id}) }}">{{analyse.getFichePrescription().nomFichePrescription }}</a></p>
             <div id="cadrefiole">
                 {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
                 <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" />
@@ -22,11 +22,9 @@
         {% endif %}
         </div>
         <input id="bouton_d" type="button" class="btn btn-primary" value="Plus de détails" onclick="resize()">
-    {% image '@MoteurRechercheBundle/Resources/public/images/IBC_provisoir.png' %}
-    <img id="carte" src="{{ asset_url }}" alt="Example"  />
-    {% endimage %}
-    <div style="display:none; width: auto;margin-left:5%" id="cache" class="media-list">
-        <span class="champsfiche" id="tarif">..............Tarification : {{analyse.getNomenclatureBBhn().getValeurNomenclature()}} .............. Code : {{ analyse.getRefGedi()}}..............</span>
+    <div style="display:none; width: auto;" id="cache" class="media-list">
+        <span class="champsfiche tarif">Tarification : {{analyse.getNomenclatureBBhn().getValeurNomenclature()}}</span>
+        <span class="champsfiche tarif"> Code : {{ analyse.getRefGedi()}}</span>
         <p class="champsfiche">Analyte : {{ analyse.getAnalyte() }} </p>
         <p class="champsfiche">Volume du contenant :{{ analyse.getVolumeContenantAnalyse() }}</p>
         <p class="champsfiche">Secteur Réalisant l’analyse : Standby</p>
@@ -34,10 +32,13 @@
         <p class="champsfiche">Délai minimum de réalisation :{{ analyse.getDelaiResultat().getValeurResultat() }} Fréquence : {{ analyse.getDelaiResultat().getFrequenceRealisation() }}</p>
         <div id="ext">
             <p class="champsfiche"><b>Si vous n’êtes pas sur le site de Charles Nicolle :</b></p>
-            <p class="champsfiche">Nous faire parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{ analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
-            <p class="champsfiche">Conservation:Standby</p>
-            <p class="champsfiche">Conditions de transport : {{analyse.getTransport().getTemperatureTransport()}}  dans un délai de {{ analyse.getTransport().getDelaiTransport() }}</p>
+            <p class="champsfiche">Nous faire parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }}, {{ analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
+            <p class="champsfiche">Volume Minimum : Standby</p>
+            <p class="champsfiche"><u>Conditions de transport</u><br> Température : {{analyse.getTransport().getTemperatureTransport()}}<br>Délai :{{ analyse.getTransport().getDelaiTransport() }}</p>
         </div>
     </div>
+    {% image '@MoteurRechercheBundle/Resources/public/images/IBC_provisoir.png' %}
+    <img id="carte" src="{{ asset_url }}" alt="Example" onclick="id='carteUP'" onmouseout="id='carte'" />
+    {% endimage %}
 
 {% endblock %}

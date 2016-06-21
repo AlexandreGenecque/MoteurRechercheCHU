@@ -107,11 +107,12 @@ background-image:
 .champsfiche{
     margin-left: 15%;
     font-size: large;
+    width: 70%;
 }
 #champsfiche2{
     margin-left: 15%;
     font-size: large;
-    height: 100px;
+    height: 150px;
     width: 45%;
 }
 #bouton_d{
@@ -128,15 +129,22 @@ div#cadrefiole {
     height:200px;
 }
 #carte{
-    width:75%;
-    margin-left: 12.5%;
+     width:75%;
+     margin-left: 12.5%;
+     text-align: center;
+     margin-bottom: 2%;
+     margin-top: 10px;
+     border-radius: 10px;
+     border: double #59aac8 4px;
+ }
+#carteUP{
+    width:100%;
     text-align: center;
     margin-bottom: 2%;
     margin-top: 10px;
-    border-radius: 10%;
-    border: double darkblue 2Px;
+    border-radius: 10px;
+    border: double  #59aac8 4px;
 }
-
 #zonePresentation {
     //width:80%;
     margin:0;
@@ -144,22 +152,45 @@ div#cadrefiole {
 
 #zonePresentation h4{
     color : #337ab7;
-    text-decoration: strong;
+    text-decoration: double;
 }
 
 #zonePresentation p, li{
     text-align:justify;
 }
 #ext{
-    background-color: lightgoldenrodyellow;
-    border: double darkorange 2px;
-    border-radius:15%;
-margin-left: 12.5%;
+    background-color: #59aac8;
+    border: double whitesmoke 6px;
+    border-radius:10px;
+    margin-left: 15%;
+    color: whitesmoke;
     width:70%;
 }
-#tarif
+.tarif
 {
+    background-color:lightblue;
+    margin-top: 20%;
+    text-align: center;
+}
+#table{
     margin-left: 12.5%;
     width:70%;
-    background-color:lightblue;
+}
+.titre{
+    font-size: x-large;
+    color: darkblue;
+    text-align: center;
+}
+#nomanalyse{
+    color:#0088CC;
+    margin-left: 15%;
+    width: 70%;
+    text-align: center;
+}
+#natureanalyse{
+    font-size: x-large;
+    margin-left: 15%;
+    width: 70%;
+    text-align: center;
+    font-style: italic;
 }
