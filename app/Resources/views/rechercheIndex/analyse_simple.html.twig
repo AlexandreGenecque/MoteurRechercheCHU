@@ -30,10 +30,10 @@
         <input id="bouton_d" type="button" class="btn btn-primary" value="Plus de détails" onclick="resize()">
     <div style="display:none; width: auto;" id="cache" class="media-list">
         <span class="champsfiche tarif">Tarification : {{analyse.getNomenclatureBBhn().getValeurNomenclature()}}</span>
-        <span class="champsfiche tarif"> Référence GEDI : {{ analyse.getRefGedi()}}</span>
         {% if  analyse.getCodeNomenclature() is not empty%}
             <span class="champsfiche tarif"> Code: {{ analyse.getCodeNomenclature()}}</span>
         {% endif %}
+        <br><span class="champsfiche tarif"> Référence GEDI : {{ analyse.getRefGedi()}}</span>
         <p class="champsfiche">Analyte : {{ analyse.getAnalyte() }} </p>
         <p class="champsfiche">Volume du contenant :{{ analyse.getVolumeContenantAnalyse() }}</p>
         <p class="champsfiche">Secteur Réalisant l’analyse : Standby</p>
