@@ -7,19 +7,26 @@
     </div>
         <div>
                <br><p class="champsfiche">Nature du prélévement: {{analyse.getNaturePrelevement().nomNaturePrelevement }}</p>
-                <br><p class="champsfiche">Micro-Organisme: Standby </p>
-        <br><p class="champsfiche">L'analyse se trouve sur la fiche : <a href="{{ path('ficheprescription_show', { 'id': analyse.getFichePrescription().id}) }}">{{analyse.getFichePrescription().nomFichePrescription }}</a></p>
+    {% if analyse.getMicroOrganismeAnalyse().first().getNomMicroOrganisme() is not empty %}
+       <br><p class="champsfiche">Micro-Organisme: </p>
+        {% for micro in analyse.getMicroOrganismeAnalyse() %}
+        <p class="champsfiche"> - {{ micro.getNomMicroOrganisme }}</p>
+        {% endfor %}
+    {% endif %}
+        <br><p class="champsfiche">L'analyse se trouve sur la fiche : <a href="{{ analyse.getFichePrescription().url }}">{{analyse.getFichePrescription().nomFichePrescription }}</a></p>
             <div id="cadrefiole">
-                {% image '@MoteurRechercheBundle/Resources/public/images/Citrate_Ad.jpg' %}
-                <img id="fiole" src="{{ asset_url }}" alt="Example" width="auto" />
-                {% endimage %}
+                {% set tube = analyse.getTube().getNomImageTube()%}
+                {%set nom = tube~'.jpg'%}
+                <img id="fiole" src="{{asset('bundles/moteurrecherche/images/'~nom)}}" alt="Example" width="auto" />
+
             </div>
             <br><p class="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
         <br><p class="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
-        <br><p class="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }} à {{ analyse.getTransport().temperatureTransport }}</p>
-            {% if analyse.getConditionPrelevement() is not null %}
+        <br><p class="champsfiche">Température: {{ analyse.getTransport().temperatureTransport }}</p>
+        <br><p class="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }}</p>
+            {% if analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
         <br><p id="champsfiche2">Autres renseignements utiles: {{analyse.getConditionPrelevement().valeurCP }} {{analyse.getConditionPrelevement().precisionCP }}</p>
-        {% endif %}
+            {% endif %}
         </div>
         <input id="bouton_d" type="button" class="btn btn-primary" value="Plus de détails" onclick="resize()">
     <div style="display:none; width: auto;" id="cache" class="media-list">

@@ -100,6 +100,7 @@ background-image:
 #fiole{
     height: 250px;
     width: 170px;
+    border: double  #59aac8 4px;
 }
 .enligne{
     display: inline-block;
@@ -112,7 +113,6 @@ background-image:
 #champsfiche2{
     margin-left: 15%;
     font-size: large;
-    height: 150px;
     width: 45%;
 }
 #bouton_d{
