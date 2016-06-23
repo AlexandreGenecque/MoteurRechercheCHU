@@ -761,4 +761,62 @@ class Analyse
     {
         return $this->codeNomenclature;
     }
+    /**
+     * @var string
+     */
+    private $volumeMinimum;
+
+    /**
+     * @var string
+     */
+    private $analyseSaintJulien;
+
+
+    /**
+     * Set volumeMinimum
+     *
+     * @param string $volumeMinimum
+     *
+     * @return Analyse
+     */
+    public function setVolumeMinimum($volumeMinimum)
+    {
+        $this->volumeMinimum = $volumeMinimum;
+
+        return $this;
+    }
+
+    /**
+     * Get volumeMinimum
+     *
+     * @return string
+     */
+    public function getVolumeMinimum()
+    {
+        return $this->volumeMinimum;
+    }
+
+    /**
+     * Set analyseSaintJulien
+     *
+     * @param string $analyseSaintJulien
+     *
+     * @return Analyse
+     */
+    public function setAnalyseSaintJulien($analyseSaintJulien)
+    {
+        $this->analyseSaintJulien = $analyseSaintJulien;
+
+        return $this;
+    }
+
+    /**
+     * Get analyseSaintJulien
+     *
+     * @return string
+     */
+    public function getAnalyseSaintJulien()
+    {
+        return $this->analyseSaintJulien;
+    }
 }

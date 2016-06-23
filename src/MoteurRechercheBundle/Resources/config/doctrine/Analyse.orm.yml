@@ -53,6 +53,14 @@ MoteurRechercheBundle\Entity\Analyse:
             type: string
             length: 255
             nullable: true
+        volumeMinimum:
+            type: string
+            length: 255
+            nullable: true
+        analyseSaintJulien:
+            type: string
+            length: 255
+            nullable: true
     manyToMany:
         microOrganisme_analyse:
             targetEntity: MicroOrganisme
