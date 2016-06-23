@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Création de la fiche de prescription</h1>
+    <h1 class="titre">Création de la fiche de prescription</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
+        <input class="btn btn-success" type="submit" value="Créer" />
     {{ form_end(form) }}
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('ficheprescription_index') }}">Retour à la liste</a>
         </li>

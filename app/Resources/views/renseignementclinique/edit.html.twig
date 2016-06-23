@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Renseignement Clinique edit</h1>
+    <h1 class="titre">Renseignement Clinique edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Modifier" />
+        <input class="btn btn-primary" type="submit" value="Modifier" />
     {{ form_end(edit_form) }}
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('renseignementclinique_index') }}">Retour à la liste</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
+                <input class="btn btn-danger" type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

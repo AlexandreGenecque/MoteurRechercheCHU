@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>FrequenceRealisation list</h1>
+    <h1 class="titre">FrequenceRealisation list</h1>
 
-    <table>
+    <table id="table" class="table-striped table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -33,9 +33,9 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
-            <a href="{{ path('frequencerealisation_new') }}">Create a new entry</a>
+            <a href="{{ path('frequencerealisation_new') }}">Nouvelle entrée</a>
         </li>
     </ul>
 {% endblock %}

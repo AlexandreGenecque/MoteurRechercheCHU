@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste Principe Méthode</h1>
+    <h1 class="titre">Liste Principe Méthode</h1>
 
-    <table>
+    <table id="table" class="table-bordered table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -31,7 +31,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('principemethode_new') }}">Créer une nouvelle entrée</a>
         </li>

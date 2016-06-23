@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Delai Resultat</h1>
+    <h1 class="titre">Delai Resultat</h1>
 
-    <table>
+    <table class="table-bordered table-striped" id="table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -20,7 +20,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('delairesultat_index') }}">Retour à la liste</a>
         </li>

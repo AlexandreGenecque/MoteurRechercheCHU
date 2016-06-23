@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Principe Méthode</h1>
+    <h1 class="titre">Principe Méthode</h1>
 
-    <table>
+    <table id="table" class="table-striped table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -16,7 +16,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('principemethode_index') }}">Retour à la liste</a>
         </li>
@@ -25,7 +25,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
+                <input class="btn btn-danger" type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

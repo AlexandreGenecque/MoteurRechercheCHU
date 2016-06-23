@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>RenseignementClinique</h1>
+    <h1 class="titre">RenseignementClinique</h1>
 
-    <table>
+    <table id="table" class="table-striped table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -16,7 +16,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('renseignementclinique_index') }}">Back to the list</a>
         </li>
@@ -25,7 +25,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-danger" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

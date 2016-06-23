@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste Secteur</h1>
+    <h1 class="titre">Liste Secteur</h1>
 
-    <table>
+    <table class="table-bordered table-striped" id="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -33,7 +33,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('secteur_new') }}">Créer une nouvelle entrée</a>
         </li>

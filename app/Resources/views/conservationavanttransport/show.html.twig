@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Conservation Avant Transport</h1>
+    <h1 class="titre">Conservation Avant Transport</h1>
 
-    <table>
+    <table id="table" class="table-bordered table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -16,7 +16,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="champsfiche">
         <li>
             <a href="{{ path('conservationavanttransport_index') }}">Retour à la liste</a>
         </li>
