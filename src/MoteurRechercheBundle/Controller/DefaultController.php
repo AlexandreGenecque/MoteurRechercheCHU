@@ -48,8 +48,12 @@ class DefaultController extends Controller
 	$html2pdf->writeHTML($html);
 
 	//Output envoit le document PDF au navigateur internet
-	return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
+	/*return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
+		       return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array(
+            'analyse' => $analyse,
+        ));*/
 
+		 return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyse' => $analyse,));
     }
 
     public function vidageTableAction(){
