@@ -98,9 +98,9 @@ background-image:
     margin-left: 15%;
 }
 #fiole{
-    height: 250px;
-    width: 170px;
     border: double  #59aac8 4px;
+    float: right;
+    width:130px;
 }
 .enligne{
     display: inline-block;
@@ -127,7 +127,7 @@ background-image:
     font-size: large;
     margin-left: 15%;
 }
-div#cadrefiole {
+#cadrefiole {
     float: right;
     margin-right: 23%;
     width:100px;
@@ -230,17 +230,23 @@ li{
     border: double darkcyan 2px;
     border-radius: 4px;
     padding: 3px;
-    width: 45%;
+    width: 70%;
+    margin-left: 15%;
 }
 #cadrerouge{
     border: double orangered 2px;
     border-radius: 4px;
     padding: 3px;
-    width: 45%;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3px;
 }
 #cadrejaune{
     border: double darkkhaki 2px;
     border-radius: 4px;
     padding: 3px;
-    width: 45%;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
