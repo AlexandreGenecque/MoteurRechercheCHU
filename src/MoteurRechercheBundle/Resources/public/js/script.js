@@ -13,7 +13,7 @@ function ouvre(fichier)
  }
 
 
- function rechercheLettre(){
+ function rechercheLettre(event){
 
     var lettre = event.currentTarget.value;
 
