@@ -116,7 +116,12 @@ background-image:
     width: 45%;
 }
 #bouton_d{
+     margin-left: 15%;
+ }
+#detailsmoins{
     margin-left: 15%;
+    display: none;
+    margin-bottom: 10px;
 }
 #champsresul{
     font-size: large;
@@ -167,7 +172,6 @@ div#cadrefiole {
 }
 .tarif
 {
-    background-color:lightblue;
     margin-top: 20%;
     text-align: center;
 }
@@ -192,4 +196,10 @@ div#cadrefiole {
     width: 70%;
     text-align: center;
     font-style: italic;
+}
+#divtarif{
+    background-color:lightblue;
+    width: 70%;
+    border-radius: 5px;
+    margin-left: 15%;
 }

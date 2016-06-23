@@ -35,4 +35,10 @@ function ouvre(fichier)
 function resize(){
     document.getElementById('cache').style.display="block";
     document.getElementById('bouton_d').style.display="none";
+    document.getElementById('detailsmoins').style.display="block";
+}
+function moins(){
+    document.getElementById('cache').style.display="none";
+    document.getElementById('bouton_d').style.display="block";
+    document.getElementById('detailsmoins').style.display="none";
 }
