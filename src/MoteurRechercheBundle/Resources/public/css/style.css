@@ -159,9 +159,16 @@ div#cadrefiole {
     text-decoration: double;
 }
 
-#zonePresentation p, li{
+#zonePresentation li{
+    font-size:14px;
+    text-align:justify;
+    margin-left:0;
+}
+
+#zonePresentation p{
     text-align:justify;
 }
+
 #ext{
     background-color: #59aac8;
     border: double whitesmoke 6px;

@@ -1,7 +1,7 @@
 function RAZvalue()
 {
-	document.getElementById("zoneLibre").value = " ";
-	document.getElementById("zoneResultat").innerHTML = " ";
+	document.getElementById("zoneLibre").value = "";
+	document.getElementById("zoneResultat").innerHTML = "";
 
 	document.getElementById("selectLabo").value = "defaut";
 	document.getElementById("selectMicroOrg").value = "defaut";
