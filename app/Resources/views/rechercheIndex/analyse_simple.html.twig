@@ -6,11 +6,12 @@
         <p id="natureanalyse">{{ analyse.natureAnalyse }}</p>
     </div>
         <div>
+            {% set tube = analyse.getTube().getNomImageTube()%}
+            {%set nom = tube~'.jpg'%}
+            <img id="fiole" src="{{asset('bundles/moteurrecherche/images/'~nom)}}" alt="Example"/>
             <div id="cadrebleu">
-                <img  src="{{asset('bundles/moteurrecherche/images/labo.svg')}}" alt="labo" width="36"/>
-                {% set tube = analyse.getTube().getNomImageTube()%}
-                {%set nom = tube~'.jpg'%}
-                <img id="fiole" src="{{asset('bundles/moteurrecherche/images/'~nom)}}" alt="Example"/>
+                <img style="margin-top: 5px" src="{{asset('bundles/moteurrecherche/images/labo.svg')}}" alt="labo" width="50"/>
+
                <br><p class="champsfiche">Nature du prélévement: {{analyse.getNaturePrelevement().nomNaturePrelevement }}</p>
     {% if analyse.getMicroOrganismeAnalyse().first().getNomMicroOrganisme() is not empty %}
        <br><p class="champsfiche">Micro-Organisme: </p>
@@ -23,12 +24,12 @@
             <br><p class="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
             </div>
             <div id="cadrerouge">
-                <img  src="{{asset('bundles/moteurrecherche/images/ambulance.svg')}}" alt="labo" width="36"/>
+                <img style="margin-top: 5px" src="{{asset('bundles/moteurrecherche/images/ambulance.svg')}}" alt="labo" width="50"/>
         <br><p class="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
         <br><p class="champsfiche">Température d'acheminement :{{ analyse.getTransport().temperatureTransport }} dans un délai de  {{ analyse.getTransport().delaiTransport }}</p>
             </div>
             <div id="cadrejaune">
-                <img  src="{{asset('bundles/moteurrecherche/images/warning.svg')}}" alt="labo" width="36"/>
+                <img style="margin-top: 5px" src="{{asset('bundles/moteurrecherche/images/warning.svg')}}" alt="labo" width="50"/>
                 {% if analyse.getRenseignementClinique().getValeurRC()  is not empty %}
             <p class="champsfiche"> {{ analyse.getRenseignementClinique().getValeurRC() }}</p>
         {% endif %}

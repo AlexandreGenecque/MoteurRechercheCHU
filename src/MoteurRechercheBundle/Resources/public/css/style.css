@@ -100,7 +100,8 @@ background-image:
 #fiole{
     border: double  #59aac8 4px;
     float: right;
-    width:130px;
+    width:220px;
+    margin-right: 13%;
 }
 .enligne{
     display: inline-block;
@@ -230,14 +231,14 @@ li{
     border: double darkcyan 2px;
     border-radius: 4px;
     padding: 3px;
-    width: 70%;
+    width: 55%;
     margin-left: 15%;
 }
 #cadrerouge{
     border: double orangered 2px;
     border-radius: 4px;
     padding: 3px;
-    width: 70%;
+    width: 55%;
     margin-left: 15%;
     margin-top: 3px;
 }
