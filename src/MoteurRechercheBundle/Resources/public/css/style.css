@@ -226,3 +226,21 @@ li{
     margin-left: 12.5%;
     font-size: large;
 }
+#cadrebleu{
+    border: double darkcyan 2px;
+    border-radius: 4px;
+    padding: 3px;
+    width: 45%;
+}
+#cadrerouge{
+    border: double orangered 2px;
+    border-radius: 4px;
+    padding: 3px;
+    width: 45%;
+}
+#cadrejaune{
+    border: double darkkhaki 2px;
+    border-radius: 4px;
+    padding: 3px;
+    width: 45%;
+}

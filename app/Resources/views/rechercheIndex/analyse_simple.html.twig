@@ -13,7 +13,8 @@
         <p class="champsfiche"> - {{ micro.getNomMicroOrganisme }}</p>
         {% endfor %}
     {% endif %}
-        <br><p class="champsfiche">L'analyse se trouve sur la fiche : <a href="{{ analyse.getFichePrescription().url }}">{{analyse.getFichePrescription().nomFichePrescription }}</a></p>
+
+        <br><p class="champsfiche" id="cadrebleu"><img  src="{{asset('bundles/moteurrecherche/images/labo.svg')}}" alt="labo" width="36"/>L'analyse se trouve sur la fiche : <a href="{{ analyse.getFichePrescription().url }}">{{analyse.getFichePrescription().nomFichePrescription }}</a></p>
             <div id="cadrefiole">
                 {% set tube = analyse.getTube().getNomImageTube()%}
                 {%set nom = tube~'.jpg'%}
@@ -21,10 +22,9 @@
             </div>
             <br><p class="champsfiche">Il faut prélever : {{analyse.contenantAnalyse }}</p>
         <br><p class="champsfiche">Acheminer le prélévement au laboratoire: {{analyse.getLaboratoire().nomLaboratoire }}</p>
-        <br><p class="champsfiche">Température: {{ analyse.getTransport().temperatureTransport }}</p>
-        <br><p class="champsfiche">Dans un délai de  {{ analyse.getTransport().delaiTransport }}</p>
+        <br><p id="cadrerouge"class="champsfiche"><img  src="{{asset('bundles/moteurrecherche/images/ambulance.svg')}}" alt="labo" width="36"/> Température d'acheminement :{{ analyse.getTransport().temperatureTransport }} dans un délai de  {{ analyse.getTransport().delaiTransport }}</p>
         {% if analyse.getRenseignementClinique().getValeurRC()  is not empty %}
-            <p class="champsfiche">Renseignements cliniques : {{ analyse.getRenseignementClinique().getValeurRC() }}</p>
+            <p id="cadrejaune" class="champsfiche"><img  src="{{asset('bundles/moteurrecherche/images/warning.svg')}}" alt="labo" width="36"/> {{ analyse.getRenseignementClinique().getValeurRC() }}</p>
         {% endif %}
             {% if analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
         <br><p id="champsfiche2">Autres renseignements utiles: {{analyse.getConditionPrelevement().valeurCP }} <br>{{analyse.getConditionPrelevement().precisionCP }}</p>
