@@ -3,10 +3,24 @@
 
     <style>
 
-        hr{
+        #traitDebut{
             color: black;
             background-color: black;
             height: 1px;
+        }
+
+        .traitBasique{
+            color: black;
+            background-color: black;
+            width:50%;
+        }
+
+        #traitVert{
+            display:inline-block;
+            width:0px;
+            height:100px;
+            color:black;
+            margin-top:30px;
         }
 
         #partieSup
@@ -15,10 +29,42 @@
             margin-left:-4px;
         }
 
-        #partiesupGauche, #partiesupDroite{
+
+        #partieBas
+        {
+            width : 100%;
+        }
+
+        #partieBas p
+        {
+            font-style:italic;
+            font-size:17px;
+        }
+
+        #partieCent
+        {
+            margin-top:-10px;
+        }
+
+        #partieSupGauche, #partieCentGauche{
+            width:55%;
+        }
+
+        #partieSupDroite, #partieCentDroite{
+            width:43%;
+        }
+
+        #partieSupGauche, #partieSupDroite{
             display:inline-block;
-            height:500px;
-            width:48%;
+            height:120px;
+           // width:48%;
+            vertical-align:top
+        }
+
+        #partieCentGauche, #partieCentDroite{
+            display:inline-block;
+            height:170px;
+           // width:45%;
             vertical-align:top
         }
 
@@ -55,6 +101,21 @@
             margin-left:8px;
         }
 
+        .champPlus{
+            color:#b7bed1;
+            font-size:15px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left:8px;
+        }
+
+        .champPlusGauche{
+            color:#b7bed1;
+            font-size:15px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
         .value{
             font-size:14px;
             display: inline-block;
@@ -62,9 +123,18 @@
             margin-left:3px;
         }
 
+        .retourLigne{
+            margin-top:-20px;
+        }
+
+        .retourLigneMargin{
+            margin-top:-20px;
+            margin-left:20px;
+        }
+
     </style>
 
-    <hr />
+    <hr id="traitDebut" />
     <div id="partieSup">
         <div id="partieSupGauche">
             <div id="divNomAnalyse"><p id="pNomAnalyse">{{ analyse.nomAnalyse }}</p></div>
@@ -73,8 +143,85 @@
         <div id="partieSupDroite">
             <p class="champ">Cotation : </p><p class="value">B</p>
             <p class="champ">Fiche : </p><p class="value">Immuno blablablabla</p>
+            <div class="retourLigne">
+            <p class="champ">Méthode : </p><p class="value">ELISA</p>
+            </div>
+            <div class="retourLigne">
+            <p class="champ">Délai min. de réalisation : </p><p class="value">24 heures</p>
+            </div>
+            <div class="retourLigne">
+            <p class="champ">Fréquence de réalisation : </p><p class="value">tous les 15 jours</p>
+            </div>
         </div>
     </div>
+
+
+
+    <hr class="traitBasique" />
+
+    <div id="partieCent">
+        <div id="partieCentGauche">
+            <p class="champPlusGauche">Ce que les services de soins doivent nous faire parvenir : </p>
+            <div class="retourLigne">
+            <p class="value">Sang</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Conservation : </p><p class="value">+4°</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Transport : </p><p class="value">température ambiante</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Délai d'acheminement </p><p class="value">3 jour(s)</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Volume min.</p><p class="value">5 ml</p>
+            </div>
+
+        </div>
+
+        <hr id="traitVert" />
+
+        <div id="partieCentDroite">
+            <p class="champPlus">Ce que les laboratoires extérieurs doivent nous faire parvenir : </p>
+        
+            <div class="retourLigne">
+                <p class="value">Sérum</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Conservation : </p><p class="value">+4°</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Transport : </p><p class="value">+4°</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Délai d'acheminement </p><p class="value">5 jours si délais > 5 jours ngélation du sérum à -20</p>
+            </div>
+
+            <div class="retourLigneMargin">
+            <p class="champ">Volume min.</p><p class="value">1 ml</p>
+            </div>
+
+        </div>
+
+        <hr class="traitBasique" />
+
+        <div id="partieBas">
+            <p>
+                De préférence à jeun. Pour les prélèvements externes au CHU de Rouen, acheminement du sérum: à + 4°
+                si délai acheminement < ou égal à 5 jours Renseignements Cliniques : voir fiche GEDI 9720
+            </p>
+        </div>
+
+    </div>
+
 
 
 {% endblock %}
