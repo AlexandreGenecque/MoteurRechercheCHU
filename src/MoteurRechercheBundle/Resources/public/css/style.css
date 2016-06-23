@@ -159,6 +159,13 @@ div#cadrefiole {
     text-decoration: double;
 }
 
+#mainContainer h1{
+    color : #337ab7;
+    text-decoration: bold;
+    text-align: center;
+    font-style: 15px;
+}
+
 #zonePresentation li{
     font-size:14px;
     text-align:justify;
