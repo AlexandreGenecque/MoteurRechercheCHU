@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titre">Liste Laboratoire</h1>
+    <h1>Liste NomenclatureBBhn</h1>
 
-    <ul class="champsfiche">
+     <ul>
         <li>
-            <a href="{{ path('laboratoire_new') }}">Créer une nouvelle entrée</a>
+            <a href="{{ path('nomenclaturebbhn_new') }}">Créer une nouvelle entrée</a>
         </li>
         <li>
             <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
@@ -16,22 +16,22 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom laboratoire</th>
+                <th>Valeurnomenclature</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for laboratoire in laboratoires %}
+        {% for nomenclatureBBhn in nomenclatureBBhns %}
             <tr>
-                <td><a href="{{ path('laboratoire_show', { 'id': laboratoire.id }) }}">{{ laboratoire.id }}</a></td>
-                <td>{{ laboratoire.nomLaboratoire }}</td>
+                <td><a href="{{ path('nomenclaturebbhn_show', { 'id': nomenclatureBBhn.id }) }}">{{ nomenclatureBBhn.id }}</a></td>
+                <td>{{ nomenclatureBBhn.valeurNomenclature }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('laboratoire_show', { 'id': laboratoire.id }) }}">Voir</a>
+                            <a href="{{ path('nomenclaturebbhn_show', { 'id': nomenclatureBBhn.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('laboratoire_edit', { 'id': laboratoire.id }) }}">Modifier</a>
+                            <a href="{{ path('nomenclaturebbhn_edit', { 'id': nomenclatureBBhn.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -39,6 +39,5 @@
         {% endfor %}
         </tbody>
     </table>
-
 
 {% endblock %}

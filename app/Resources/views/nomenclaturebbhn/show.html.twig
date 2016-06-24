@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titre">Conservation Avant Transport</h1>
+    <h1 class="titre">NomenclatureBBhn</h1>
 
     <table id="table" class="table-bordered table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ conservationAvantTransport.id }}</td>
+                <td>{{ nomenclatureBBhn.id }}</td>
             </tr>
             <tr>
-                <th>Valeurconservation</th>
-                <td>{{ conservationAvantTransport.valeurConservation }}</td>
+                <th>Valeurnomenclature</th>
+                <td>{{ nomenclatureBBhn.valeurNomenclature }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul class="champsfiche">
         <li>
-            <a href="{{ path('conservationavanttransport_index') }}">Retour à la liste</a>
+            <a href="{{ path('nomenclaturebbhn_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('conservationavanttransport_edit', { 'id': conservationAvantTransport.id }) }}">Modifier</a>
+            <a href="{{ path('nomenclaturebbhn_edit', { 'id': nomenclatureBBhn.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -97,4 +97,9 @@ class NomenclatureBBhn
     {
         return $this->analyses;
     }
+
+    public function __toString()
+    {
+        return $this->valeurNomenclature;
+    }
 }

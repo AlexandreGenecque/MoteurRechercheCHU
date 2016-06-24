@@ -21,6 +21,13 @@ class AnalyseType extends AbstractType
             ->add('volumeAnalyse')
             ->add('contenantAnalyse')
             ->add('volumeContenantAnalyse')
+            ->add('refGedi')
+            ->add('matriceTemperatureTransport')
+            ->add('matriceConservationAvantTransport')
+            ->add('matriceDelaiAcheminement')
+            ->add('codeNomenclature')
+            ->add('volumeMinimum')
+            ->add('analyseSaintJulien')
             ->add('microOrganisme_analyse')
             ->add('laboratoire')
             ->add('fichePrescription')
@@ -31,6 +38,10 @@ class AnalyseType extends AbstractType
             ->add('transport')
             ->add('conservationAvantTransport')
             ->add('delaiResultat')
+            ->add('tube')
+            ->add('nomenclatureBBhn')
+            ->add('natureMatrice')
+
 
 
 

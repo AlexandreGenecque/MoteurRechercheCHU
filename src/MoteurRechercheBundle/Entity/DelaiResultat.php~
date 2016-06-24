@@ -129,6 +129,6 @@ class DelaiResultat
 
     public function __toString()
     {
-        return $this->valeurResultat;
+        return 'VALEUR RESULTAT: '.$this->valeurResultat.' / FREQUENCE REALISATION: '.$this->frequenceRealisation;
     }
 }

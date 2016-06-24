@@ -129,7 +129,7 @@ class FichePrescription
 
     public function __toString()
     {
-        return $this->nomFichePrescription;
+        return 'NOM FICHE PRESCRIPTION: '.$this->nomFichePrescription.' / URL: '.$this->url;
     }
 
 

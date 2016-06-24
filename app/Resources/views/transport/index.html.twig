@@ -4,6 +4,15 @@
     <h1 class="titre">Liste Transport</h1>
 
     <table id="table" class="table-bordered table-striped">
+
+    <ul>
+        <li>
+            <a href="{{ path('transport_new') }}">Créer une nouvelle entrée</a>
+        </li>
+        <li>
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
+        </li>
+    </ul>
         <thead>
             <tr>
                 <th>Id</th>
@@ -33,12 +42,5 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('transport_new') }}">Créer une nouvelle entrée</a>
-        </li>
-        <li>
-            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
-        </li>
-    </ul>
+    
 {% endblock %}

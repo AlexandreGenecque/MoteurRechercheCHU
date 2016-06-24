@@ -1,0 +1,24 @@
+nomenclaturebbhn_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:NomenclatureBBhn:index" }
+    methods:  GET
+
+nomenclaturebbhn_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:NomenclatureBBhn:show" }
+    methods:  GET
+
+nomenclaturebbhn_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:NomenclatureBBhn:new" }
+    methods:  [GET, POST]
+
+nomenclaturebbhn_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:NomenclatureBBhn:edit" }
+    methods:  [GET, POST]
+
+nomenclaturebbhn_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:NomenclatureBBhn:delete" }
+    methods:  DELETE

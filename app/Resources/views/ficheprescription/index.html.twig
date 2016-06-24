@@ -3,6 +3,15 @@
 {% block body %}
     <h1 class="titre">Liste des fiches de prescription</h1>
 
+     <ul>
+        <li class="champsfiche">
+            <a href="{{ path('ficheprescription_new') }}">Créer une nouvelle entrée</a> 
+        </li>
+        <li class="champsfiche">
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
+        </li>
+    </ul>
+
     <table  id="table" class="table table-bordered">
         <thead>
             <tr>
@@ -33,12 +42,5 @@
         </tbody>
     </table>
 
-    <ul>
-        <li class="champsfiche">
-            <a href="{{ path('ficheprescription_new') }}">Créer une nouvelle entrée</a> 
-        </li>
-        <li class="champsfiche">
-            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
-        </li>
-    </ul>
+   
 {% endblock %}

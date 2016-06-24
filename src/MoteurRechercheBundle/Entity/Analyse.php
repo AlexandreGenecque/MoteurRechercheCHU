@@ -103,6 +103,52 @@ class Analyse
     private $microOrganisme_analyse;
 
     /**
+     * @var \MoteurRechercheBundle\Entity\NomenclatureBBhn
+     */
+    private $nomenclatureBBhn;
+
+    /**
+     * @var string
+     */
+    private $volumeMinimum;
+
+    /**
+     * @var string
+     */
+    private $analyseSaintJulien;
+
+    /**
+     * @var string
+     */
+    private $codeNomenclature;
+
+    /**
+     * @var string
+     */
+    private $refGedi;
+
+        /**
+     * @var string
+     */
+    private $matriceConservationAvantTransport;
+
+    /**
+     * @var string
+     */
+    private $matriceDelaiAcheminement;
+
+    /**
+     * @var string
+     */
+    private $matriceTemperatureTransport;
+
+    /**
+     * @var \MoteurRechercheBundle\Entity\Tube
+     */
+    private $tube;
+
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -558,10 +604,6 @@ class Analyse
     {
         return $this->nomAnalyse;
     }
-    /**
-     * @var \MoteurRechercheBundle\Entity\NomenclatureBBhn
-     */
-    private $nomenclatureBBhn;
 
 
     /**
@@ -587,25 +629,7 @@ class Analyse
     {
         return $this->nomenclatureBBhn;
     }
-    /**
-     * @var string
-     */
-    private $matriceConservationAvantTransport;
 
-    /**
-     * @var string
-     */
-    private $matriceDelaiAcheminement;
-
-    /**
-     * @var string
-     */
-    private $matriceTemperatureTransport;
-
-    /**
-     * @var \MoteurRechercheBundle\Entity\Tube
-     */
-    private $tube;
 
 
     /**
@@ -703,10 +727,6 @@ class Analyse
     {
         return $this->tube;
     }
-    /**
-     * @var string
-     */
-    private $refGedi;
 
 
     /**
@@ -732,10 +752,7 @@ class Analyse
     {
         return $this->refGedi;
     }
-    /**
-     * @var string
-     */
-    private $codeNomenclature;
+
 
 
     /**
@@ -761,15 +778,7 @@ class Analyse
     {
         return $this->codeNomenclature;
     }
-    /**
-     * @var string
-     */
-    private $volumeMinimum;
 
-    /**
-     * @var string
-     */
-    private $analyseSaintJulien;
 
 
     /**

@@ -129,6 +129,6 @@ class NatureMatrice
 
         public function __toString()
     {
-        return $this->valeurMatrice;
+        return 'VALEUR MATRICE: '.$this->valeurMatrice.' / PRECISION MATRICE: '.$this->precisionMatrice;
     }
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titre">Modifier fiche de prescription</h1>
+    <h1 class="titre">Modifier NomenclatureBBhn</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -10,11 +10,11 @@
 
     <ul class="champsfiche">
         <li>
-            <a href="{{ path('ficheprescription_index') }}">Retour à la liste</a>
+            <a href="{{ path('nomenclaturebbhn_index') }}">Retour à la liste</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input class="btn btn-danger"  type="submit" value="Supprimer">
+                <input  class="btn btn-danger" type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

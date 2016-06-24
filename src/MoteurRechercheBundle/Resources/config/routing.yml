@@ -18,6 +18,14 @@ moteur_recherche_ficheprescription:
         resource: "@MoteurRechercheBundle/Resources/config/routing/ficheprescription.yml"
         prefix:   /ficheprescription
 
+moteur_recherche_tube:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/tube.yml"
+        prefix:   /tube
+
+moteur_recherche_nomenclaturebbhn:
+        resource: "@MoteurRechercheBundle/Resources/config/routing/nomenclaturebbhn.yml"
+        prefix:   /nomenclaturebbhn
+
 moteur_recherche_laboratoire:
         resource: "@MoteurRechercheBundle/Resources/config/routing/laboratoire.yml"
         prefix:   /laboratoire
@@ -104,7 +112,7 @@ moteur_recherche_administration_NatureMatrice:
 
 moteur_recherche_administration_ConservationAvantTransport:
     path:     /administration/conservationavanttransport
-    defaults: { _controller: MoteurRechercheBundle:ConsersationAvantTransport:index }
+    defaults: { _controller: MoteurRechercheBundle:ConservationAvantTransport:index }
 
 moteur_recherche_administration_DelaiResultat:
     path:     /administration/delairesultat
@@ -121,3 +129,11 @@ moteur_recherche_administration_Laboratoire:
 moteur_recherche_administration_Secteur:
     path:     /administration/secteur
     defaults: { _controller: MoteurRechercheBundle:Secteur:index }
+
+moteur_recherche_administration_Tube:
+    path:     /administration/tube
+    defaults: { _controller: MoteurRechercheBundle:Tube:index }
+
+moteur_recherche_administration_NomenclatureBBHN:
+    path:     /administration/nomenclatureBBHN
+    defaults: { _controller: MoteurRechercheBundle:NomenclatureBBhn:index }

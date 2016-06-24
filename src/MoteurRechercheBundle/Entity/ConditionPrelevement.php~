@@ -129,6 +129,6 @@ class ConditionPrelevement
 
     public function __toString()
     {
-        return $this->valeurCP;
+        return 'VALEUR CP: '.$this->valeurCP.' / PRECISION CP: '.$this->precisionCP;
     }
 }

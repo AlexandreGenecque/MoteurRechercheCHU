@@ -100,6 +100,6 @@ class ConservationAvantTransport
 
         public function __toString()
     {
-        return $this->valeurConservation;
+        return 'VALEUR CONSERVATION: '.$this->valeurConservation;
     }
 }

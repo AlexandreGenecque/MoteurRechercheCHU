@@ -3,6 +3,15 @@
 {% block body %}
     <h1 class="titre">Liste Secteur</h1>
 
+    <ul class="champsfiche">
+        <li>
+            <a href="{{ path('secteur_new') }}">Créer une nouvelle entrée</a>
+        </li>
+        <li>
+            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
+        </li>
+    </ul>
+
     <table class="table-bordered table-striped" id="table">
         <thead>
             <tr>
@@ -32,13 +41,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul class="champsfiche">
-        <li>
-            <a href="{{ path('secteur_new') }}">Créer une nouvelle entrée</a>
-        </li>
-        <li>
-            <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
-        </li>
-    </ul>
 {% endblock %}

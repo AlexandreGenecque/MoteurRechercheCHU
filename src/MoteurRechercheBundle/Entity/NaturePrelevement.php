@@ -129,6 +129,6 @@ class NaturePrelevement
 
     public function __toString()
     {
-        return $this->nomNaturePrelevement;
+        return 'NOM NATURE PRELEVEMENT: '.$this->nomNaturePrelevement.' /PRECISION PRELEVEMENT: '.$this->precisionPrelevement;
     }
 }

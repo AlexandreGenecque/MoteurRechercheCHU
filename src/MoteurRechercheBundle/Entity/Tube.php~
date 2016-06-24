@@ -17,10 +17,6 @@ class Tube
      */
     private $nomImageTube;
 
-    /**
-     * @var string
-     */
-    private $contenantAnalyse;
 
 
     /**
@@ -57,29 +53,6 @@ class Tube
         return $this->nomImageTube;
     }
 
-    /**
-     * Set contenantAnalyse
-     *
-     * @param string $contenantAnalyse
-     *
-     * @return Tube
-     */
-    public function setContenantAnalyse($contenantAnalyse)
-    {
-        $this->contenantAnalyse = $contenantAnalyse;
-
-        return $this;
-    }
-
-    /**
-     * Get contenantAnalyse
-     *
-     * @return string
-     */
-    public function getContenantAnalyse()
-    {
-        return $this->contenantAnalyse;
-    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */

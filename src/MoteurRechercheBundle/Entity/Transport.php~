@@ -129,6 +129,6 @@ class Transport
 
         public function __toString()
     {
-        return $this->temperatureTransport;
+        return 'TEMPERATURE TRANSPORT: '.$this->temperatureTransport.'  / DELAI TRANSPORT: '.$this->delaiTransport;
     }
 }

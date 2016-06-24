@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titre">Liste Laboratoire</h1>
+    <h1 class="titre">Liste Tube</h1>
 
-    <ul class="champsfiche">
+    <ul>
         <li>
-            <a href="{{ path('laboratoire_new') }}">Créer une nouvelle entrée</a>
+            <a href="{{ path('tube_new') }}">Créer une nouvelle entrée</a>
         </li>
         <li>
             <a href="{{ path('moteur_recherche_administration') }}">Retour sur l'interface d'administration</a>
@@ -16,22 +16,22 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom laboratoire</th>
+                <th>Nomimagetube</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for laboratoire in laboratoires %}
+        {% for tube in tubes %}
             <tr>
-                <td><a href="{{ path('laboratoire_show', { 'id': laboratoire.id }) }}">{{ laboratoire.id }}</a></td>
-                <td>{{ laboratoire.nomLaboratoire }}</td>
+                <td><a href="{{ path('tube_show', { 'id': tube.id }) }}">{{ tube.id }}</a></td>
+                <td>{{ tube.nomImageTube }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('laboratoire_show', { 'id': laboratoire.id }) }}">Voir</a>
+                            <a href="{{ path('tube_show', { 'id': tube.id }) }}">Voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('laboratoire_edit', { 'id': laboratoire.id }) }}">Modifier</a>
+                            <a href="{{ path('tube_edit', { 'id': tube.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -39,6 +39,5 @@
         {% endfor %}
         </tbody>
     </table>
-
 
 {% endblock %}

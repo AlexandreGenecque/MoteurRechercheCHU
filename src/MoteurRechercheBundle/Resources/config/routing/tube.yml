@@ -1,0 +1,24 @@
+tube_index:
+    path:     /
+    defaults: { _controller: "MoteurRechercheBundle:Tube:index" }
+    methods:  GET
+
+tube_show:
+    path:     /{id}/show
+    defaults: { _controller: "MoteurRechercheBundle:Tube:show" }
+    methods:  GET
+
+tube_new:
+    path:     /new
+    defaults: { _controller: "MoteurRechercheBundle:Tube:new" }
+    methods:  [GET, POST]
+
+tube_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MoteurRechercheBundle:Tube:edit" }
+    methods:  [GET, POST]
+
+tube_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MoteurRechercheBundle:Tube:delete" }
+    methods:  DELETE

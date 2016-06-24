@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="titre">Tube</h1>
+
+    <table id="table" class="table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tube.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomimagetube</th>
+                <td>{{ tube.nomImageTube }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="champsfiche">
+        <li>
+            <a href="{{ path('tube_index') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('tube_edit', { 'id': tube.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
