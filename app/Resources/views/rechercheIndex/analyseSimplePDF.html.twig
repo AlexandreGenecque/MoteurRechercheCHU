@@ -134,28 +134,36 @@
 
     </style>
 
+{% for analyse in analyses %}
+
     <hr id="traitDebut" />
     <div id="partieSup">
         <div id="partieSupGauche">
+
+
+        
+
+
             <div id="divNomAnalyse"><p id="pNomAnalyse">{{ analyse.nomAnalyse }}</p></div>
-            <div id="divNatureAnalyse"><p id="pNatureAnalyse">Recherche des anti-envoplakine</p></div>
+            <div id="divNatureAnalyse"><p id="pNatureAnalyse">{{ analyse.natureAnalyse }}</p></div>
+        
         </div>
         <div id="partieSupDroite">
-            <p class="champ">Cotation : </p><p class="value">B</p>
-            <p class="champ">Fiche : </p><p class="value">Immuno blablablabla</p>
+            <p class="champ">Cotation : </p><p class="value">{{ analyse.getNomenclatureBBhn.valeurNomenclature }}</p>
+            <p class="champ">Fiche : </p><p class="value">{{ analyse.getFichePrescription().nomFichePrescription }}</p>
             <div class="retourLigne">
-            <p class="champ">Méthode : </p><p class="value">ELISA</p>
+            <p class="champ">Méthode : </p><p class="value">{{ analyse.getPrincipeMethode.nomPrincipeMethode }}</p>
             </div>
             <div class="retourLigne">
-            <p class="champ">Délai min. de réalisation : </p><p class="value">24 heures</p>
+            <p class="champ">Délai min. de réalisation : </p><p class="value">{{ analyse.getDelaiResultat.valeurResultat }}</p>
             </div>
             <div class="retourLigne">
-            <p class="champ">Fréquence de réalisation : </p><p class="value">tous les 15 jours</p>
+            <p class="champ">Fréquence de réalisation : </p><p class="value">{{ analyse.getDelaiResultat.frequenceRealisation }}</p>
             </div>
         </div>
     </div>
 
-
+        
 
     <hr class="traitBasique" />
 
@@ -163,23 +171,31 @@
         <div id="partieCentGauche">
             <p class="champPlusGauche">Ce que les services de soins doivent nous faire parvenir : </p>
             <div class="retourLigne">
-            <p class="value">Sang</p>
+            <p class="value">
+
+            {% if analyse.getNaturePrelevement().nomNaturePrelevement is defined %}
+                {{ analyse.getNaturePrelevement.nomNaturePrelevement }}
+            {% else %}
+                {{ analyse.contenantAnalyse }}
+            {% endif %}
+
+            </p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Conservation : </p><p class="value">+4°</p>
+            <p class="champ">Conservation : </p><p class="value">{{ analyse.conservationAvantTransport }}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Transport : </p><p class="value">température ambiante</p>
+            <p class="champ">Transport : </p><p class="value">{{ analyse.getTransport.delaiTransport}}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Délai d'acheminement </p><p class="value">3 jour(s)</p>
+            <p class="champ">Délai d'acheminement </p><p class="value">{{ analyse.volumeAnalyse}}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Volume min.</p><p class="value">5 ml</p>
+            <p class="champ">Volume min.</p><p class="value">{{ analyse.getConditionPrelevement.valeurCP ~ ' ' ~ analyse.getConditionPrelevement.precisionCP ~ ' ' ~ analyse.getRenseignementClinique.valeurRC}}</p>
             </div>
 
         </div>
@@ -187,32 +203,33 @@
         <hr id="traitVert" />
 
         <div id="partieCentDroite">
-            <p class="champPlus">Ce que les laboratoires extérieurs doivent nous faire parvenir : </p>
+            <p class="champPlus">Ce que les laboratoires extérieurs doivent nous faire parvenir :  </p>
         
             <div class="retourLigne">
-                <p class="value">Sérum</p>
+                <p class="value">{{ analyse.getNatureMatrice.valeurMatrice }}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Conservation : </p><p class="value">+4°</p>
+            <p class="champ">Conservation : </p><p class="value">{{ analyse.matriceConservationAvantTransport }}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Transport : </p><p class="value">+4°</p>
+            <p class="champ">Transport : </p><p class="value">{{ analyse.matriceTemperatureTransport }}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Délai d'acheminement </p><p class="value">5 jours si délais > 5 jours ngélation du sérum à -20</p>
+            <p class="champ">Délai d'acheminement </p><p class="value">{{ analyse.matriceDelaiAcheminement }}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Volume min.</p><p class="value">1 ml</p>
+            <p class="champ">Volume min.</p><p class="value">{{ analyse.volumeMinimum }}</p>
             </div>
 
         </div>
 
         <hr class="traitBasique" />
 
+        
         <div id="partieBas">
             <p>
                 De préférence à jeun. Pour les prélèvements externes au CHU de Rouen, acheminement du sérum: à + 4°
@@ -221,7 +238,8 @@
         </div>
 
     </div>
-
+{% endfor %}
 
 
 {% endblock %}
+

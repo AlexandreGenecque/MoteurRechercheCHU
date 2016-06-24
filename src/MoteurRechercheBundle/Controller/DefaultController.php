@@ -33,27 +33,27 @@ class DefaultController extends Controller
 
 	$em = $this->getDoctrine()->getManager();
 
-       $analyse = $em->getRepository('MoteurRechercheBundle:Analyse')->find(4);
+       $analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
 
 
 
 
     	//on stocke la vue à convertir en PDF, en n'oubliant pas les paramètres twig si la vue comporte des données dynamiques
-	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig',array('analyse' => $analyse));
+	/*$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig',array('analyses' => $analyses));
 	//on appelle le service html2pdf
 	$html2pdf = $this->get('html2pdf_factory')->create();
+
 	//real : utilise la taille réelle
-	$html2pdf->pdf->SetDisplayMode('real');
+	$html2pdf->pdf->SetDisplayMode('fullpage');
 	//writeHTML va tout simplement prendre la vue stocker dans la variable $html pour la convertir en format PDF
-	$html2pdf->writeHTML($html);
+	$html2pdf->writeHTML($html);*/
+	//$html2pdf->pdf->Output('nom-du-pdf.pdf');
 
 	//Output envoit le document PDF au navigateur internet
 	/*return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
-		       return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array(
-            'analyse' => $analyse,
-        ));*/
-
-		 return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyse' => $analyse,));
+		       return $this->render('rechercheIndex/index.html.twig');
+*/
+		 return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
     }
 
     public function vidageTableAction(){
