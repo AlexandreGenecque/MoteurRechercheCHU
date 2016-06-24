@@ -33,7 +33,7 @@ class DefaultController extends Controller
 
 	$em = $this->getDoctrine()->getManager();
 
-       $analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
+     $analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
 
 
 
@@ -46,14 +46,32 @@ class DefaultController extends Controller
 	//real : utilise la taille réelle
 	$html2pdf->pdf->SetDisplayMode('fullpage');
 	//writeHTML va tout simplement prendre la vue stocker dans la variable $html pour la convertir en format PDF
-	$html2pdf->writeHTML($html);*/
-	//$html2pdf->pdf->Output('nom-du-pdf.pdf');
+	$html2pdf->writeHTML($html);
+	
+	$html2pdf->pdf->Output('nom-du-pdf.pdf');
 
 	//Output envoit le document PDF au navigateur internet
-	/*return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
+	return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
 		       return $this->render('rechercheIndex/index.html.twig');
-*/
-		 return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
+//
+	*/	// return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
+
+	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
+
+	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
+    'analyses'  => $analyses
+));
+
+return new Response(
+    $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+    array('orientation'=>'Landscape',
+    'default-header'=>true));
+
+/*$pdf = $this->get('knp_snappy.pdf')->getOutputFromHtml($html,
+                                   array('orientation'=>'Landscape',
+                                         'default-header'=>true));*/
+
+
     }
 
     public function vidageTableAction(){

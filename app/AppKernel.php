@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new MoteurRechercheBundle\MoteurRechercheBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Ensepar\Html2pdfBundle\EnseparHtml2pdfBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
