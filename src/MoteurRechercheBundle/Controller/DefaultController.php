@@ -54,6 +54,7 @@ class DefaultController extends Controller
 	return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
 		       return $this->render('rechercheIndex/index.html.twig');
 //
+<<<<<<< Updated upstream
 	*/	 
 
 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
@@ -67,6 +68,19 @@ class DefaultController extends Controller
 	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
 	 'default-header'=>false)), 200,
 	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
+=======
+	*/	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
+
+	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
+
+	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
+    'analyses'  => $analyses));
+
+
+return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array('orientation'=>'Landscape',
+ 'default-header'=>true)), 200,
+ array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
+>>>>>>> Stashed changes
 
 /*$pdf = $this->get('knp_snappy.pdf')->getOutputFromHtml($html,
                                    array('orientation'=>'Landscape',
