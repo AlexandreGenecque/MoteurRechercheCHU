@@ -33,9 +33,9 @@ class DefaultController extends Controller
 
 	$em = $this->getDoctrine()->getManager();
 
-     $analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
+    $analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
 
-
+//	$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->find(4);
 
 
     	//on stocke la vue à convertir en PDF, en n'oubliant pas les paramètres twig si la vue comporte des données dynamiques
@@ -54,15 +54,17 @@ class DefaultController extends Controller
 	return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
 		       return $this->render('rechercheIndex/index.html.twig');
 //
-	*/	// return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
+	*/	 
+
+	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 
 	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
 
-	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
+ 	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
     'analyses'  => $analyses
 ));
 
-	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array('orientation'=>'Landscape',
+	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
 	 'default-header'=>false)), 200,
 	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
 
