@@ -3,6 +3,15 @@
 
     <style>
 
+        body{
+        margin:0;
+        }
+
+        #mainContainer{
+            height:27cm;
+           // border:solid red
+        }
+
         #traitDebut{
             color: black;
             background-color: black;
@@ -33,23 +42,24 @@
         #partieBas
         {
             width : 100%;
-            margin-top:200px;
         }
 
         #partieBas p
         {
             margin-top:15px;
             font-style:italic;
-            font-size:17px;
+            font-size:15px;
         }
 
         #partieCent
         {
-            margin-top:-10px;
+            margin-top:-20px;
+           // height:10%;
         }
 
         #partieSupGauche, #partieCentGauche{
             width:55%;
+           // height:10%;
         }
 
         #partieSupDroite, #partieCentDroite{
@@ -58,15 +68,13 @@
 
         #partieSupGauche, #partieSupDroite{
             display:inline-block;
-            height:120px;
            // width:48%;
             vertical-align:top
         }
 
         #partieCentGauche, #partieCentDroite{
             display:inline-block;
-            height:170px;
-           // width:45%;
+            margin-top:-20px;
             vertical-align:top
         }
 
@@ -130,7 +138,6 @@
         }
 
         .NouvelleAnalyse{
-            margin-top:80px;
         }
 
         .retourLigneMargin{
@@ -148,18 +155,23 @@
             text-align:justify;
         }
 
+        #containerVolumeMin{
+            //height:200px;
+        }
+
     </style>
+
+{% set i = 0 %}
 
 {% for analyse in analyses %}
 
-    <hr id="traitDebut" />
+
+    <div id="mainContainer">
+
+    <hr id="traitDebut" />    
     <div id="partieSup">
-        <div id="partieSupGauche">
-
-
         
-
-
+        <div id="partieSupGauche">
             <div id="divNomAnalyse"><p id="pNomAnalyse">{{ analyse.nomAnalyse }}</p></div>
             <div id="divNatureAnalyse"><p id="pNatureAnalyse">{{ analyse.natureAnalyse }}</p></div>
         
@@ -181,9 +193,10 @@
 
         
 
-    <hr class="traitBasique" />
+
 
     <div id="partieCent">
+        <hr class="traitBasique" />
         <div id="partieCentGauche">
             <p class="champPlusGauche">Ce que les services de soins doivent nous faire parvenir : </p>
             <div class="retourLigne">
@@ -210,7 +223,7 @@
             <p class="champ">Délai d'acheminement </p><p class="value">{{ analyse.volumeAnalyse}}</p>
             </div>
 
-            <div class="retourLigneMargin">
+            <div id="containerVolumeMin"class="retourLigneMargin">
             <p class="champ">Volume min.</p>
             <p id="volumeMin">{{ analyse.getConditionPrelevement.valeurCP ~ ' ' ~ analyse.getConditionPrelevement.precisionCP ~ ' ' ~ analyse.getRenseignementClinique.valeurRC}}</p>
             </div>
@@ -247,10 +260,6 @@
         </div>
 
     </div>
-
-
-    
-
         
     <div id="partieBas">
         <hr class="traitBasique" />
@@ -260,7 +269,15 @@
         </p>
             </div>
 
-    <div class="NouvelleAnalyse"></div>
+    </div>
+
+     <!--{% if i is divisible by(2) %}
+        <br><br>
+    {% endif %}
+
+
+    {% set i = i + 1 %}
+       <p>i={{ i }}</p> -->
 {% endfor %}
 
 
