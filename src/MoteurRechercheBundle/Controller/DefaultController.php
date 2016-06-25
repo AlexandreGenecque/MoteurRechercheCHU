@@ -63,7 +63,7 @@ class DefaultController extends Controller
 ));
 
 	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array('orientation'=>'Landscape',
-	 'default-header'=>true)), 200,
+	 'default-header'=>false)), 200,
 	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
 
 /*$pdf = $this->get('knp_snappy.pdf')->getOutputFromHtml($html,
