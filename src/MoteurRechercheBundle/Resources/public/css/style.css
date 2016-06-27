@@ -228,26 +228,32 @@ li{
     font-size: large;
 }
 #cadrebleu{
-    border: double darkcyan 2px;
-    border-radius: 4px;
-    padding: 3px;
+    border-top: solid darkcyan 3px;
     width: 55%;
     margin-left: 15%;
+    border-left:solid darkcyan 3px ;
+    border-left-width: 20px;
+    padding: 4px;
+    margin-bottom: 20px;
 }
 #cadrerouge{
-    border: double orangered 2px;
-    border-radius: 4px;
-    padding: 3px;
+    border-top: solid orangered 3px;
     width: 55%;
     margin-left: 15%;
-    margin-top: 3px;
+    border-left:solid orangered 3px ;
+    border-left-width: 20px;
+    padding: 4px;
+    margin-bottom: 20px;
+
 }
 #cadrejaune{
-    border: double darkkhaki 2px;
-    border-radius: 4px;
-    padding: 3px;
+
+    border-top: solid darkkhaki 3px;
     width: 55%;
     margin-left: 15%;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    border-left:solid darkkhaki 3px ;
+    border-left-width: 20px;
+    padding: 4px;
+    margin-bottom: 20px;
+
 }
