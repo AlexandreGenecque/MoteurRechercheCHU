@@ -220,16 +220,16 @@
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Transport : </p><p class="value">{{ analyse.getTransport.delaiTransport}}</p>
+            <p class="champ">Transport : </p><p class="value">{{ analyse.getTransport.temperatureTransport}}</p>
             </div>
 
             <div class="retourLigneMargin">
-            <p class="champ">Délai d'acheminement </p><p class="value">{{ analyse.volumeAnalyse}}</p>
+            <p class="champ">Délai d'acheminement </p><p class="value">{{ analyse.getTransport.delaiTransport}}</p>
             </div>
 
             <div id="containerVolumeMin"class="retourLigneMargin">
             <p class="champ">Volume min.</p>
-            <p id="volumeMin">{{ analyse.getConditionPrelevement.valeurCP ~ ' ' ~ analyse.getConditionPrelevement.precisionCP ~ ' ' ~ analyse.getRenseignementClinique.valeurRC}}</p>
+            <p id="volumeMin">{{ analyse.volumeAnalyse}}</p>
             </div>
 
         </div>
@@ -268,8 +268,7 @@
     <div id="partieBas">
         <hr class="traitBasique" />
         <p>
-                    De préférence à jeun. Pour les prélèvements externes au CHU de Rouen, acheminement du sérum: à + 4°
-                    si délai acheminement < ou égal à 5 jours Renseignements Cliniques : voir fiche GEDI 9720
+             {{ analyse.getConditionPrelevement.valeurCP ~ ' ' ~ analyse.getConditionPrelevement.precisionCP ~ ' ' ~ analyse.getRenseignementClinique.valeurRC}}
         </p>
             </div>
 
