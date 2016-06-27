@@ -60,10 +60,10 @@ class DefaultController extends Controller
 
 	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
 
-<<<<<<< HEAD
+
 
 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
-=======
+
 	
 
     $html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
@@ -76,7 +76,6 @@ class DefaultController extends Controller
 
 
 	 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
->>>>>>> master
 
 	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
 
@@ -87,21 +86,7 @@ class DefaultController extends Controller
 return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array('orientation'=>'Landscape',
  'default-header'=>true)), 200,
  array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-=======
-	
-	
-	
->>>>>>> Stashed changes
->>>>>>> master
-=======
 
-	
-	
-
->>>>>>> Stashed changes
 
 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 
