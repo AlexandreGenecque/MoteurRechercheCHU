@@ -3,7 +3,6 @@
 {% block body %}
 <div id="zoneResultat">
 
-        
 
         {% if resultat is defined %}
             <p> {{ resultat|length }} résultat(s) ont été trouvé(s) pour votre recherche </p>
@@ -18,6 +17,20 @@
                     </div>
             {% endfor %}
         {% endif %}
+
+    {% if entities is not empty %}
+        <ul>
+            {% for entity in entities %}</ul>
+                <li>{{ entity.name }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if pager.haveToPaginate %}
+            {{ pagerfanta(pager, 'default_translated', {'routeName': 'cars_paginated'}) }}
+        {% endif %}
+    {% else %}
+        <p>Aucune voiture trouvée.</p>
+    {% endif %}
 </div>
 
 {% endblock %}

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Ensepar\Html2pdfBundle\EnseparHtml2pdfBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

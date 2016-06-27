@@ -8,7 +8,7 @@
         -
         <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
     {% else %}
-        <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+        <a class="btn btn-primary"href="{{ path('fos_user_security_login') }}">Connexion</a>
     {% endif %}
     
     <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
