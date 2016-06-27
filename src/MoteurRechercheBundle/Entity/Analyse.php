@@ -819,13 +819,5 @@ class Analyse
         return $this;
     }
 
-    /**
-     * Get analyseSaintJulien
-     *
-     * @return string
-     */
-    public function getAnalyseSaintJulien()
-    {
-        return $this->analyseSaintJulien;
-    }
+
 }
