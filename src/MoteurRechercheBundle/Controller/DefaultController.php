@@ -73,7 +73,7 @@ class DefaultController extends Controller
 	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
 	 'default-header'=>false)), 200,
 	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
-<<<<<<< Updated upstream
+
 
 	 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 >>>>>>> master
@@ -87,6 +87,7 @@ class DefaultController extends Controller
 return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array('orientation'=>'Landscape',
  'default-header'=>true)), 200,
  array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 =======
@@ -95,6 +96,12 @@ return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array
 	
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+
+	
+	
+
+>>>>>>> Stashed changes
 
 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 
