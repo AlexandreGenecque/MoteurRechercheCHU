@@ -818,7 +818,7 @@ class Analyse
 
         return $this;
     }
-    
+
     /**
      * Get analyseSaintJulien
      *

@@ -2,6 +2,7 @@
 
 namespace MoteurRechercheBundle\Controller;
 
+use Pagerfanta\Adapter\ArrayAdapter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -51,7 +52,6 @@ class RechercheIndexController extends Controller
 
         //return $this->render('rechercheIndex/index.html.twig');
     }
-
 
     public function rechercheAjaxAction(Request $request)
     {
@@ -114,9 +114,8 @@ class RechercheIndexController extends Controller
                 }
             else
             {
-               /* $adapter = new DoctrineORMAdapter($resultat);
+                $adapter = new ArrayAdapter($resultat);
                 $pagerfanta = new Pagerfanta($adapter);
-
 
                 $page = $request->query->get('page',1);
                 try 
@@ -136,11 +135,10 @@ class RechercheIndexController extends Controller
                 catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
                     throw $this->createNotFoundException("Cette page n'existe pas.");
                 }
-                */
-              /* return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat
-                    ,'pager' => $pagerfanta,)); */
+               return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat
+                    ,'pager' => $pagerfanta,));
 
-                return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+             /*   return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));*/
             }
         }
 
@@ -173,7 +171,7 @@ class RechercheIndexController extends Controller
                 return new Response('<html><body>Pas de résultat pour la lettre '.$saisie.'</body></html>');
             }
 
-            return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+            return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat,));
         }
         
         return $this->render('rechercheIndex/index.html.twig');
