@@ -22,6 +22,10 @@ use MoteurRechercheBundle\Entity\Transport;
 
 use Symfony\Component\HttpFoundation\Response;
 
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
+
+
 /**
  * Analyse controller.
  *
@@ -109,7 +113,35 @@ class RechercheIndexController extends Controller
                     return new Response('<html><body>Pas de résultat pour votre recherche </body></html>');
                 }
             else
+            {
+               /* $adapter = new DoctrineORMAdapter($resultat);
+                $pagerfanta = new Pagerfanta($adapter);
+
+
+                $page = $request->query->get('page',1);
+                try 
+                {
+                    $resultat = $pagerfanta
+
+                  //  $entities = $pagerfanta
+                        // Le nombre maximum d'éléments par page
+                        ->setMaxPerPage(10)
+                        // Notre position actuelle (numéro de page)
+                        ->setCurrentPage($page)
+                        // On récupère nos entités via Pagerfanta,
+                        // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
+                        ->getCurrentPageResults()
+                    ;
+                } 
+                catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
+                    throw $this->createNotFoundException("Cette page n'existe pas.");
+                }
+                */
+              /* return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat
+                    ,'pager' => $pagerfanta,)); */
+
                 return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
+            }
         }
 
         return $this->render('rechercheIndex/index.html.twig');
