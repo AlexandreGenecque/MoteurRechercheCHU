@@ -76,7 +76,7 @@
                 <a href="http://www.codage.ext.cnamts.fr/cgi/nabm/cgi-fiche?p_code_nabm={{ analyse.getCodeNomenclature() }}&p_date_jo_arrete=%25&p_menu=FICHE&p_site=AMELI"  target="_blank" class="champsfiche tarif"> Code: {{ analyse.getCodeNomenclature() }}</a>
             {% endif %}
                 {% endif %}
-            <br><span class="champsfiche tarif"> Référence GEDI : {{ analyse.getRefGedi() }}</span>
+            <br><a target="_blank" href="http://thot:8080/eDoc/actions/redirect?method=attachment&amp;ref={{analyse.getRefGedi()}}&amp;datasource=ennovged&amp;workspace=intranet" class="champsfiche tarif"> Référence GEDI : {{ analyse.getRefGedi() }}</a>
         </div>
         {% if  analyse.getAnalyte() is not empty %}
             <p class="champsfiche">Analyte : <b>{{ analyse.getAnalyte() }}</b></p>
