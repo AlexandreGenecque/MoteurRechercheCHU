@@ -9,6 +9,10 @@
 
         #mainContainer{
             height:27cm;
+           // height:13.4cm;
+           // max-height:13.4cm;
+           height:8.85cm;
+           max-height:8.85cm;
            // border:solid red
         }
 
@@ -24,11 +28,6 @@
             width:50%;
         }
 
-        #pNomAnalyse{
-            margin-left:6px;
-            font-size:15px;
-        }
-
         #traitVert{
             display:inline-block;
             width:0px;
@@ -39,7 +38,7 @@
 
         #partieSup
         {
-            margin-top:-25px;
+            margin-top:-22px;
             margin-left:-4px;
         }
 
@@ -53,7 +52,7 @@
         {
             margin-top:15px;
             font-style:italic;
-            font-size:15px;
+            font-size:10px;
         }
 
         #partieCent
@@ -91,34 +90,39 @@
             background-color: #e4ecd6;
             height:35px;
             line-height: 35px;
+            margin-top:13px;
         }
 
         #pNomAnalyse{
-            font-size:18px;
+            margin-left:6px;
+            font-size:10px;
             font-weight: bold;
         }
 
         #divNatureAnalyse{
-            height:2px;
-            line-height:2px;
+            //line-height:2px;
         }
 
         #pNatureAnalyse{
-            font-size:16px;
+            margin-top:-2px;
+            font-size:10px;
             color:#6f8b99;
+            height:30px;
+            line-height:15px;
+            margin-left:6px;
         }
 
         .champ{
             color:#b7bed1;
-            font-size:14px;
+            font-size:11px;
             display: inline-block;
-            vertical-align: top;
+          //  vertical-align: top;
             margin-left:8px;
         }
 
         .champPlus{
             color:#b7bed1;
-            font-size:15px;
+            font-size:13px;
             display: inline-block;
             vertical-align: top;
             margin-left:8px;
@@ -126,16 +130,18 @@
 
         .champPlusGauche{
             color:#b7bed1;
-            font-size:15px;
+            font-size:13px;
             display: inline-block;
             vertical-align: top;
+            width:100%;
         }
 
         .value{
-            font-size:14px;
+            font-size:10px;
             display: inline-block;
-            vertical-align: top;
+            //vertical-align: top;
             margin-left:3px;
+            line-height:13px;
         }
 
         .retourLigne{
@@ -151,8 +157,8 @@
         }
 
         #volumeMin{
-            margin-top:16px;
-            font-size:12px;
+            //margin-top:16px;
+            font-size:10px;
             display: inline-block;
             vertical-align: top;
             margin-left:3px;
@@ -228,9 +234,9 @@
             <p class="champ">Délai d'acheminement </p><p class="value">{{ analyse.getTransport.delaiTransport}}</p>
             </div>
 
-            <div id="containerVolumeMin"class="retourLigneMargin">
+            <div class="retourLigneMargin">
             <p class="champ">Volume min.</p>
-            <p id="volumeMin">{{ analyse.volumeAnalyse}}</p>
+            <p class="value">{{ analyse.volumeAnalyse}}</p>
             </div>
 
         </div>
