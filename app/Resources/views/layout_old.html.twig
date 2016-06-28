@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Site de recherche pour le CHU de Rouen{% endblock %}</title>
+       {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/*' %}
+
+       {% image '@MoteurRechercheBundle/Resources/public/images/logo.png' %}
+            <img src="{{ asset_url }}" alt="Example" />
+        {% endimage %}
+
+       {% endstylesheets %}
+
+        <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
+    </head>
+    <body>
+
+        <H1><center> Interface d'administration</center></H1>
+        
+        {% block body %}
+
+
+
+
+        {% endblock %}
+
+
+
+        {% block footer %}{% endblock %}
+    </body>
+</html>
