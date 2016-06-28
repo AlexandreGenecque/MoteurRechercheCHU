@@ -43,9 +43,6 @@
             <p class="champsfiche">Acheminer le prélévement au
                 laboratoire:<b>{{ analyse.getLaboratoire().nomLaboratoire }}</b></p>
             <br>
-            {% if analyse.getAnalyseSaintJulien() =="Oui" %}
-                <p class="champsfiche"> ( Analyse également disponible à Saint Julien )</p>
-            {% endif %}
 
             <p class="champsfiche">Température d'acheminement :<b>{{ analyse.getTransport().temperatureTransport }}</b>
                 dans un délai de <b>{{ analyse.getTransport().delaiTransport }}</b></p>
@@ -88,7 +85,7 @@
             <p class="champsfiche">Nous faire
                 parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{ ','~analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
 
-            <p class="champsfiche">Volume Minimum : {{ analyse.getVolumeMinimum() }}</p>
+            <p class="champsfiche">Volume Minimum : Standby</p>
 
             <p class="champsfiche"><u>Conditions de transport</u><br> Température
                 : {{ analyse.getTransport().getTemperatureTransport() }}<br>Délai
