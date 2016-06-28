@@ -11,7 +11,7 @@ MoteurRechercheBundle\Entity\ConditionPrelevement:
     fields:
         valeurCP:
             type: string
-            length: 255
+            length: 512
             nullable: true
         precisionCP:
             type: string
