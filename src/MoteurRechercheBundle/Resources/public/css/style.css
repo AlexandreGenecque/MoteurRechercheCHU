@@ -253,3 +253,6 @@ font-size: small;
     margin-bottom: 20px;
 
 }
+.lipage{
+    list-style-type: none;
+}

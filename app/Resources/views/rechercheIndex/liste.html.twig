@@ -4,14 +4,6 @@
 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
 {% endstylesheets %}
 {% block javascripts %}
-    {% javascripts '@MoteurRechercheBundle/Resources/public/js/script.js' %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-
-    {% javascripts '@MoteurRechercheBundle/Resources/public/js/jquery-3.0.0.min.js' %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-
     {% javascripts '@MoteurRechercheBundle/Resources/public/js/jquery.paginate.js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -40,7 +32,8 @@
     <script>
         //call paginate
         $('#example').paginate({
-            perPage:15
+            perPage:15,
+            paginatePosition:   ['top','bottom'],
         });
     </script>
     <script type="text/javascript">
