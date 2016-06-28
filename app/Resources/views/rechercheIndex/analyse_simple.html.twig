@@ -59,8 +59,7 @@
             {% if analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
                 <br><p id="champsfiche2">Autres renseignements
                 utiles:<b>{{ analyse.getConditionPrelevement().valeurCP }}</b>
-                <br><b>{{ analyse.getConditionPrelevement().precisionCP }}
-                {{ dump(analyse.getConditionPrelevement) }}</b></p>
+                <br><b>{{ analyse.getConditionPrelevement().precisionCP }}</b></p>
             {% endif %}
         </div>
         {% endif %}
@@ -71,7 +70,7 @@
         <div id="divtarif">
             <span class="champsfiche tarif">Tarification : {{ analyse.getNomenclatureBBhn().getValeurNomenclature() }}</span>
             {% if  analyse.getCodeNomenclature() is not empty %}
-                <span class="champsfiche tarif"> Code: {{ analyse.getCodeNomenclature() }}</span>
+                <a href="http://www.codage.ext.cnamts.fr/cgi/nabm/cgi-fiche?p_code_nabm={{ analyse.getCodeNomenclature() }}&p_date_jo_arrete=%25&p_menu=FICHE&p_site=AMELI"  target="_blank" class="champsfiche tarif"> Code: {{ analyse.getCodeNomenclature() }}</a>
             {% endif %}
             <br><span class="champsfiche tarif"> Référence GEDI : {{ analyse.getRefGedi() }}</span>
         </div>
@@ -92,7 +91,7 @@
             <p class="champsfiche"><b>Si vous n’êtes pas sur le site de Charles Nicolle :</b></p>
 
             <p class="champsfiche">Nous faire
-                parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{ ','~analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
+                parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
 
             {% if  analyse.getVolumeMinimum() is not empty %}
             <p class="champsfiche">Volume Minimum : {{ analyse.getVolumeMinimum() }}</p>
