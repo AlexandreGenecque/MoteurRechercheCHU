@@ -49,6 +49,7 @@
             <br><p class="champsfiche">Température d'acheminement :<b>{{ analyse.getTransport().temperatureTransport }}</b>
                 dans un délai de <b>{{ analyse.getTransport().delaiTransport }}</b></p>
         </div>
+        {% if analyse.getRenseignementClinique().getValeurRC() or analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
         <div id="cadrejaune">
             <img style="margin-top: 5px" src="{{ asset('bundles/moteurrecherche/images/warning.svg') }}" alt="labo"
                  width="50"/>
@@ -58,9 +59,11 @@
             {% if analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
                 <br><p id="champsfiche2">Autres renseignements
                 utiles:<b>{{ analyse.getConditionPrelevement().valeurCP }}</b>
-                <br><b>{{ analyse.getConditionPrelevement().precisionCP }}</b></p>
+                <br><b>{{ analyse.getConditionPrelevement().precisionCP }}
+                {{ dump(analyse.getConditionPrelevement) }}</b></p>
             {% endif %}
         </div>
+        {% endif %}
     </div>
     <input id="bouton_d" type="button" class="btn btn-primary" value="Plus de détails" onclick="resize()">
     <input id="detailsmoins" type="button" class="btn btn-primary" value="Moins de détails" onclick="moins()">
@@ -72,11 +75,15 @@
             {% endif %}
             <br><span class="champsfiche tarif"> Référence GEDI : {{ analyse.getRefGedi() }}</span>
         </div>
-        <p class="champsfiche">Analyte : <b>{{ analyse.getAnalyte() }}</b></p>
-
-        <p class="champsfiche">Volume du contenant :<b>{{ analyse.getVolumeContenantAnalyse() }}</b></p>
-
-        <p class="champsfiche">Principe :<b>{{ analyse.getPrincipeMethode().getNomPrincipeMethode() }}</b></p>
+        {% if  analyse.getAnalyte() is not empty %}
+            <p class="champsfiche">Analyte : <b>{{ analyse.getAnalyte() }}</b></p>
+        {% endif %}
+        {% if  analyse.getVolumeContenantAnalyse() is not empty %}
+            <p class="champsfiche">Volume du contenant :<b>{{ analyse.getVolumeContenantAnalyse() }}</b></p>
+        {% endif %}
+        {% if  analyse.getPrincipeMethode().getNomPrincipeMethode() is not empty %}
+            <p class="champsfiche">Principe :<b>{{ analyse.getPrincipeMethode().getNomPrincipeMethode() }}</b></p>
+        {% endif %}
 
         <p class="champsfiche">Délai minimum de réalisation :<b>{{ analyse.getDelaiResultat().getValeurResultat() }}</b>
             Fréquence : <b>{{ analyse.getDelaiResultat().getFrequenceRealisation() }}</b></p>
@@ -87,9 +94,11 @@
             <p class="champsfiche">Nous faire
                 parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{ ','~analyse.getNatureMatrice().getPrecisionMatrice() }}</p>
 
+            {% if  analyse.getVolumeMinimum() is not empty %}
             <p class="champsfiche">Volume Minimum : {{ analyse.getVolumeMinimum() }}</p>
+            {% endif %
 
-            <p class="champsfiche"><u>Conditions de transport</u><br> Température
+            <p class="champsfiche"><u>Conditions de transport</u><br> Tempérture
                 : {{ analyse.getTransport().getTemperatureTransport() }}<br>Délai
                 :{{ analyse.getTransport().getDelaiTransport() }}</p>
         </div>
