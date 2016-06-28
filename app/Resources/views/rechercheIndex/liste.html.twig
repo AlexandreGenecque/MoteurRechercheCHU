@@ -1,23 +1,61 @@
 {# {% extends '::index.html.twig' %} #}
 
+ {% stylesheets  '@MoteurRechercheBundle/Resources/public/css/jquery.paginate.css'%}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% block javascripts %}
+    {% javascripts '@MoteurRechercheBundle/Resources/public/js/script.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% javascripts '@MoteurRechercheBundle/Resources/public/js/jquery-3.0.0.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% javascripts '@MoteurRechercheBundle/Resources/public/js/jquery.paginate.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
 {% block body %}
 <div id="zoneResultat">
 
 
         {% if resultat is defined %}
             <p> {{ resultat|length }} résultat(s) ont été trouvé(s) pour votre recherche </p>
+             <ul id="example">
             {% for entity in resultat %}
                     <div class="resultat">
                         <div class="titreResultat">
-                    <a onclick="ouvre('{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}')" target="_blank" > {{ entity.nomAnalyse }} </a>
+                    <li class="lipage"><a onclick="ouvre('{{ path ('ouvrir_analyse_simple', { 'id': entity.id }) }}')" target="_blank" > {{ entity.nomAnalyse }} </a>
+                        </li>
                         </div>
                         <div class="descriptionResultat">
                     {{ entity.natureAnalyse }}
                         </div>
                     </div>
             {% endfor %}
-            <div class="pagerfanta">{{ pagerfanta(pager) }}</div>
+             </ul>
         {% endif %}
+    <script>
+        //call paginate
+        $('#example').paginate({
+            perPage:15
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
 </div>
 
 {% endblock %}

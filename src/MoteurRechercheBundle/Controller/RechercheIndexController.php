@@ -113,7 +113,7 @@ class RechercheIndexController extends Controller
                     return new Response('<html><body>Pas de résultat pour votre recherche </body></html>');
                 }
             else
-            {
+            { /*
                 $adapter = new ArrayAdapter($resultat);
                 $pagerfanta = new Pagerfanta($adapter);
 
@@ -136,9 +136,9 @@ class RechercheIndexController extends Controller
                     throw $this->createNotFoundException("Cette page n'existe pas.");
                 }
                return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat
-                    ,'pager' => $pagerfanta,));
+                    ,'pager' => $pagerfanta,)); */
 
-             /*   return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));*/
+                return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
             }
         }
 
