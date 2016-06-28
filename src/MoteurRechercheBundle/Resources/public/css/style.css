@@ -256,3 +256,8 @@ font-size: small;
 .lipage{
     list-style-type: none;
 }
+#stjul{
+    font-style: italic;
+    font-size: medium;
+    color: #000077;
+}
