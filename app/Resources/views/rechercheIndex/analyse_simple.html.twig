@@ -1,6 +1,11 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+    <a href="javascript:window.close()">
+        {% image '@MoteurRechercheBundle/Resources/public/images/close.png' %}
+        <img id="close" src="{{ asset_url }}" alt="fermer" width="36" />
+        {% endimage %}
+    </a>
     <div style="text-align: center">
         <h2 id="nomanalyse">{{ analyse.nomAnalyse }}</h2>
 
