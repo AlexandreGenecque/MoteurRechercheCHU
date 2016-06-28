@@ -15,7 +15,7 @@ MoteurRechercheBundle\Entity\ConditionPrelevement:
             nullable: true
         precisionCP:
             type: string
-            length: 255
+            length: 512
             nullable: true
     oneToMany:
         analyses:
