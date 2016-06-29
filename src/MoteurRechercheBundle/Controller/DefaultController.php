@@ -88,6 +88,8 @@ class DefaultController extends Controller
 	 'default-header'=>false,  
 	 'footer-center' => '[page]',
 	 'page-size' => 'A4',
+	 'page-width' => '210mm',
+	 'page-height' => '297mm',
 	 'dpi' => 100
 
 	 )), 200,
