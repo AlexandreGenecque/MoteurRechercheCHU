@@ -2,9 +2,10 @@ moteur_recherche_analyse:
     resource: "@MoteurRechercheBundle/Resources/config/routing/analyse.yml"
     prefix:   /analyse
 
-moteur_recherche_conditionprelevement:
-        resource: "@MoteurRechercheBundle/Resources/config/routing/conditionprelevement.yml"
-        prefix:   /conditionprelevement
+moteur_recherche_administration_ConditionPrelevement:
+    resource: "@MoteurRechercheBundle/Resources/config/routing/conditionprelevement.yml"
+    prefix:     /administration/conditionprelevement
+    defaults: { _controller: MoteurRechercheBundle:ConditionPrelevement:index }
 
 moteur_recherche_conservationavanttransport:
         resource: "@MoteurRechercheBundle/Resources/config/routing/conservationavanttransport.yml"
@@ -97,10 +98,6 @@ moteur_recherche_administration_NaturePrelevement:
 moteur_recherche_administration_RenseignementClinique:
     path:     /administration/renseignementclinique
     defaults: { _controller: MoteurRechercheBundle:RenseignementClinique:index }
-
-moteur_recherche_administration_ConditionPrelevement:
-    path:     /administration/conditionprelevement
-    defaults: { _controller: MoteurRechercheBundle:ConditionPrelevement:index }
 
 moteur_recherche_administration_Transport:
     path:     /administration/transport
