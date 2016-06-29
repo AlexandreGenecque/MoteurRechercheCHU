@@ -20,10 +20,10 @@
 
             <br>
 
-            <p class="champsfiche">Nature du prélévement:
+            <p class="champsfiche">Nature du prélévement :
                 <b>{{ analyse.getNaturePrelevement().nomNaturePrelevement }}</b></p>
             {% if analyse.getMicroOrganismeAnalyse().first().getNomMicroOrganisme() is not empty %}
-                <br><p class="champsfiche">Micro-Organisme: </p>
+                <br><p class="champsfiche">Micro-Organisme : </p>
                 {% for micro in analyse.getMicroOrganismeAnalyse() %}
                     <p class="champsfiche"><b> - {{ micro.getNomMicroOrganisme }}</b></p>
                 {% endfor %}
@@ -36,20 +36,20 @@
 
             <br>
 
-            <p class="champsfiche">Il faut prélever :<b> {{ analyse.contenantAnalyse }}</b></p>
+            <p class="champsfiche">Il faut prélever : <b>{{ analyse.contenantAnalyse }}</b></p>
         </div>
         <div id="cadrerouge">
             <img style="margin-top: 5px" src="{{ asset('bundles/moteurrecherche/images/ambulance.svg') }}" alt="labo"
                  width="50"/>
             <br>
 
-            <p class="champsfiche">Acheminer le prélévement au
-                laboratoire:<b>{{ analyse.getLaboratoire().nomLaboratoire }}</b></p>
+            <p class="champsfiche">L'analyse est réalisée par le laboratoire de :
+                <b>{{ analyse.getLaboratoire().nomLaboratoire }}</b></p>
             {% if analyse.getAnalyseSaintJulien() =="Oui" %}
                 <p class="champsfiche" id="stjul">( Analyse également disponible à Saint Julien )</p>
             {% endif %}
 
-            <br><p class="champsfiche">Température d'acheminement :<b>{{ analyse.getTransport().temperatureTransport }}</b>
+            <br><p class="champsfiche">Température d'acheminement : <b>{{ analyse.getTransport().temperatureTransport }}</b>
                 dans un délai de <b>{{ analyse.getTransport().delaiTransport }}</b></p>
         </div>
         {% if analyse.getRenseignementClinique().getValeurRC() or analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
@@ -61,7 +61,7 @@
             {% endif %}
             {% if analyse.getConditionPrelevement().valeurCP or analyse.getConditionPrelevement().precisionCP  is not empty %}
                 <br><p id="champsfiche2">Autres renseignements
-                utiles:<b>{{ analyse.getConditionPrelevement().valeurCP }}</b>
+                utiles : <b>{{ analyse.getConditionPrelevement().valeurCP }}</b>
                 <br><b>{{ analyse.getConditionPrelevement().precisionCP }}</b></p>
             {% endif %}
         </div>
@@ -85,17 +85,17 @@
             <p class="champsfiche">Analyte : <b>{{ analyse.getAnalyte() }}</b></p>
         {% endif %}
         {% if  analyse.getVolumeContenantAnalyse() is not empty %}
-            <p class="champsfiche">Volume du contenant :<b>{{ analyse.getVolumeContenantAnalyse() }}</b></p>
+            <p class="champsfiche">Volume du contenant : <b>{{ analyse.getVolumeContenantAnalyse() }}</b></p>
         {% endif %}
         {% if  analyse.getPrincipeMethode().getNomPrincipeMethode() is not empty %}
-            <p class="champsfiche">Principe :<b>{{ analyse.getPrincipeMethode().getNomPrincipeMethode() }}</b></p>
+            <p class="champsfiche">Principe : <b>{{ analyse.getPrincipeMethode().getNomPrincipeMethode() }}</b></p>
         {% endif %}
 
-        <p class="champsfiche">Délai minimum de réalisation :<b>{{ analyse.getDelaiResultat().getValeurResultat() }}</b>
+        <p class="champsfiche">Délai minimum de réalisation : <b>{{ analyse.getDelaiResultat().getValeurResultat() }}</b>
             Fréquence : <b>{{ analyse.getDelaiResultat().getFrequenceRealisation() }}</b></p>
 
         <div id="ext">
-            <p class="champsfiche"><b>Si vous n’êtes pas sur le site de Charles Nicolle :</b></p>
+            <p class="champsfiche"><b>Si vous n’êtes pas sur le site de Charles Nicolle : </b></p>
 
             <p class="champsfiche">Nous faire
                 parvenir : {{ analyse.getNatureMatrice().getValeurMatrice() }} {{analyse.getNatureMatrice().getPrecisionMatrice() }}</p>

@@ -102,6 +102,7 @@ background-image:
     float: right;
     width:16%;
     margin-right: 13%;
+    border-radius: 10px;
 }
 .enligne{
     display: inline-block;
@@ -231,6 +232,8 @@ font-size: small;
     border-left-width: 20px;
     padding: 4px;
     margin-bottom: 20px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 #cadrerouge{
     border-top: solid orangered 3px;
@@ -240,6 +243,8 @@ font-size: small;
     border-left-width: 20px;
     padding: 4px;
     margin-bottom: 20px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 
 }
 #cadrejaune{
@@ -251,6 +256,8 @@ font-size: small;
     border-left-width: 20px;
     padding: 4px;
     margin-bottom: 20px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 
 }
 .lipage{
