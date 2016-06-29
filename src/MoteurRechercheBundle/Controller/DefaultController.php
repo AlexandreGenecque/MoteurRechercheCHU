@@ -64,17 +64,29 @@ class DefaultController extends Controller
 
 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 
-	
+	date_default_timezone_set('UTC');
 		      
-		       
+	$mois = date("M");
+
+	 switch($mois)
+    	{
+    		case "Feb": $mois = "Fev";
+    		case "Apr":$mois = "Avr";
+    		case "May":$mois = "Mai";
+    		case "Jun": $mois = "Juin";
+    		case "Jul": $mois  = "Juillet";
+    		case "Aug": $mois = "Août";
+    	}
+
+	$date = $mois. " " . date("Y");
 		    
     $html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
     'analyses'  => $analyses
 	));
 
 	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
-	 'default-header'=>false)), 200,
-	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
+	 'default-header'=>false,  'footer-center' => '[page]')), 200,
+	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="catalogue PBC '.$date.'.pdf"'));
 	
 	
 
@@ -96,6 +108,23 @@ return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array
 
 
     }
+
+    public function convertirDateFR($mois)
+    {
+    	switch($mois)
+    	{
+    		case "feb": return "fev";
+    		case "apr":return "avr";
+    		case "may":return "mai";
+    		case "jun": return "juin";
+    		case "jul": return "juillet";
+    		case "aug": return "août";
+    		default: return $mois;
+    	}
+
+    }
+
+
 
     public function vidageTableAction(){
 
