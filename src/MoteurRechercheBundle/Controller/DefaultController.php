@@ -87,7 +87,9 @@ class DefaultController extends Controller
 	return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
 	 'default-header'=>false,  
 	 'footer-center' => '[page]',
-	 'dpi' => 125
+	 'page-size' => 'A4',
+	 'dpi' => 100
+
 	 )), 200,
 	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="catalogue PBC '.$date.'.pdf"'));
 	
