@@ -35,34 +35,6 @@ class DefaultController extends Controller
 
     $analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findBy(array(), array('nomAnalyse' => 'asc'));
 
-//	$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->find(4);
-
-
-    	//on stocke la vue à convertir en PDF, en n'oubliant pas les paramètres twig si la vue comporte des données dynamiques
-	/*$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig',array('analyses' => $analyses));
-	//on appelle le service html2pdf
-	$html2pdf = $this->get('html2pdf_factory')->create();
-
-	//real : utilise la taille réelle
-	$html2pdf->pdf->SetDisplayMode('fullpage');
-	//writeHTML va tout simplement prendre la vue stocker dans la variable $html pour la convertir en format PDF
-	$html2pdf->writeHTML($html);
-	
-	$html2pdf->pdf->Output('nom-du-pdf.pdf');
-
-	//Output envoit le document PDF au navigateur internet
-	return new Response($html2pdf->Output('nom-du-pdf.pdf'), 200, array('Content-Type' => 'application/pdf'));
-		       return $this->render('rechercheIndex/index.html.twig');
-
-	*/	 
-
-	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
-
-	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
-
-
-
-	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 
 	date_default_timezone_set('UTC');
 		      
@@ -95,23 +67,6 @@ class DefaultController extends Controller
 	 )), 200,
 	 array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="catalogue PBC '.$date.'.pdf"'));
 	
-	
-
-	 	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
-
-	//$analyses = $em->getRepository('MoteurRechercheBundle:Analyse')->findall();
-
-	/*
-	$html = $this->renderView('rechercheIndex/analyseSimplePDF.html.twig', array(
-    'analyses'  => $analyses));
-
-
-return new Response($this->get('knp_snappy.pdf')->getOutputFromHtml($html, array('orientation'=>'Landscape',
- 'default-header'=>true)), 200,
- array('Content-Type' => 'application/pdf', 'Content-Disposition' => 'attachment; filename="Test.pdf"'));
-	*/
-
-	//return $this->render('rechercheIndex/analyseSimplePDF.html.twig', array('analyses' => $analyses));
 
 
     }

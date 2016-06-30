@@ -113,31 +113,7 @@ class RechercheIndexController extends Controller
                     return new Response('<html><body>Pas de résultat pour votre recherche </body></html>');
                 }
             else
-            { /*
-                $adapter = new ArrayAdapter($resultat);
-                $pagerfanta = new Pagerfanta($adapter);
-
-                $page = $request->query->get('page',1);
-                try 
-                {
-                    $resultat = $pagerfanta
-
-                  //  $entities = $pagerfanta
-                        // Le nombre maximum d'éléments par page
-                        ->setMaxPerPage(10)
-                        // Notre position actuelle (numéro de page)
-                        ->setCurrentPage($page)
-                        // On récupère nos entités via Pagerfanta,
-                        // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
-                        ->getCurrentPageResults()
-                    ;
-                } 
-                catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
-                    throw $this->createNotFoundException("Cette page n'existe pas.");
-                }
-               return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat
-                    ,'pager' => $pagerfanta,)); */
-
+            { 
                 return $this->render('rechercheIndex/liste.html.twig', array('resultat' => $resultat));
             }
         }
@@ -149,8 +125,6 @@ class RechercheIndexController extends Controller
 
     public function rechercheButtonAjaxAction(Request $request)
     {
-      //  $saisie = $request->get('lettre');
-    // return new Response('<html><body>Pas de résultat pour la lettre</body></html>');
 
        if($request->isXmlHttpRequest())
         {
@@ -181,15 +155,12 @@ class RechercheIndexController extends Controller
     {
         $em = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:Analyse');
         $analyse = $em->find($id);
-        $em2 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:NaturePrelevement');
-        $prelevement = $em2->find($id);
-        $em3 = $this->getDoctrine()->getManager()->getRepository('MoteurRechercheBundle:MicroOrganisme');
-        $microorganisme = $em3->find($id);
+
         if(! $analyse){
             throw $this->createNotFoundException("Erreur : impossible de trouver l'analyse");
         }
 
-        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse,'prelevement' =>$prelevement,'microorganisme'=>$microorganisme)); 
+        return $this->render('rechercheIndex/analyse_simple.html.twig', array('analyse' => $analyse)); 
  
 
     }
