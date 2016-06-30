@@ -1,74 +1,81 @@
 moteur_recherche_analyse:
     resource: "@MoteurRechercheBundle/Resources/config/routing/analyse.yml"
-    prefix:   /analyse
+    prefix:   /administration/analyse
 
 moteur_recherche_administration_ConditionPrelevement:
-    resource: "@MoteurRechercheBundle/Resources/config/routing/conditionprelevement.yml"
-    prefix:     /administration/conditionprelevement
+    path:     /administration/conditionprelevement
     defaults: { _controller: MoteurRechercheBundle:ConditionPrelevement:index }
 
+moteur_recherche_conditionprelevement:
+    resource: "@MoteurRechercheBundle/Resources/config/routing/conditionprelevement.yml"
+    prefix:     /administration/conditionprelevement
+
 moteur_recherche_conservationavanttransport:
-        resource: "@MoteurRechercheBundle/Resources/config/routing/conservationavanttransport.yml"
-        prefix:   /conservationavanttransport
+    resource: "@MoteurRechercheBundle/Resources/config/routing/conservationavanttransport.yml"
+    prefix:   /administration/conservationavanttransport
+
+moteur_recherche_administration_ConservationAvantTransport:
+    path:     /administration/conservationavanttransport
+    defaults: { _controller: MoteurRechercheBundle:ConservationAvantTransport:index }
 
 moteur_recherche_delairesultat:
         resource: "@MoteurRechercheBundle/Resources/config/routing/delairesultat.yml"
-        prefix:   /delairesultat
+        prefix:   /administration/delairesultat
 
 moteur_recherche_ficheprescription:
         resource: "@MoteurRechercheBundle/Resources/config/routing/ficheprescription.yml"
-        prefix:   /ficheprescription
+        prefix:   /administration/ficheprescription
 
 moteur_recherche_tube:
         resource: "@MoteurRechercheBundle/Resources/config/routing/tube.yml"
-        prefix:   /tube
+        prefix:   /administration/tube
 
 moteur_recherche_nomenclaturebbhn:
         resource: "@MoteurRechercheBundle/Resources/config/routing/nomenclaturebbhn.yml"
-        prefix:   /nomenclaturebbhn
+        prefix:   /administration/nomenclaturebbhn
 
 moteur_recherche_laboratoire:
         resource: "@MoteurRechercheBundle/Resources/config/routing/laboratoire.yml"
-        prefix:   /laboratoire
+        prefix:   /administration/laboratoire
 
 moteur_recherche_microorganisme:
         resource: "@MoteurRechercheBundle/Resources/config/routing/microorganisme.yml"
-        prefix:   /microorganisme
+        prefix:   /administration/microorganisme
 
 moteur_recherche_naturematrice:
         resource: "@MoteurRechercheBundle/Resources/config/routing/naturematrice.yml"
-        prefix:   /naturematrice
+        prefix:   /administration/naturematrice
 
 moteur_recherche_natureprelevement:
         resource: "@MoteurRechercheBundle/Resources/config/routing/natureprelevement.yml"
-        prefix:   /natureprelevement
+        prefix:   /administration/natureprelevement
 
 moteur_recherche_principemethode:
         resource: "@MoteurRechercheBundle/Resources/config/routing/principemethode.yml"
-        prefix:   /principemethode
+        prefix:   /administration/principemethode
 
 moteur_recherche_renseignementclinique:
         resource: "@MoteurRechercheBundle/Resources/config/routing/renseignementclinique.yml"
-        prefix:   /renseignementclinique
+        prefix:   /administration/renseignementclinique
 
 moteur_recherche_secteur:
         resource: "@MoteurRechercheBundle/Resources/config/routing/secteur.yml"
-        prefix:   /secteur
+        prefix:   /administration/secteur
 
 moteur_recherche_transport:
         resource: "@MoteurRechercheBundle/Resources/config/routing/transport.yml"
-        prefix:   /transport
+        prefix:   /administration/transport
 
 moteur_recherche_insertion:
-    path:     /insertion
+    path:     /administration/insertion
     defaults: { _controller: MoteurRechercheBundle:Default:jeuxInsertion }
 
 moteur_recherche_vidage:
-    path:     /vidageBDD
+    path:     /administration/vidageBDD
     defaults: { _controller: MoteurRechercheBundle:Default:vidageTable }
 
 moteur_recherche_PDF:
-    path:     /PDF
+    path:     /administration/PDF
     defaults: { _controller: MoteurRechercheBundle:Default:generatePDF }
 
 moteur_recherche_homepage:
@@ -106,10 +113,6 @@ moteur_recherche_administration_Transport:
 moteur_recherche_administration_NatureMatrice:
     path:     /administration/naturematrice
     defaults: { _controller: MoteurRechercheBundle:NatureMatrice:index }
-
-moteur_recherche_administration_ConservationAvantTransport:
-    path:     /administration/conservationavanttransport
-    defaults: { _controller: MoteurRechercheBundle:ConservationAvantTransport:index }
 
 moteur_recherche_administration_DelaiResultat:
     path:     /administration/delairesultat
